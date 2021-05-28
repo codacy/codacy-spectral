@@ -7,7 +7,7 @@
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD002",
@@ -19,7 +19,7 @@
           "default": 1
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD003",
@@ -31,7 +31,7 @@
           "default": "consistent"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD004",
@@ -43,21 +43,21 @@
           "default": "consistent"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD005",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD006",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD007",
@@ -73,7 +73,7 @@
           "default": false
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD009",
@@ -93,7 +93,7 @@
           "default": false
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD010",
@@ -105,14 +105,14 @@
           "default": true
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD011",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD012",
@@ -124,7 +124,7 @@
           "default": 1
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD013",
@@ -168,42 +168,42 @@
           "default": false
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD014",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD018",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD019",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD020",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD021",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD022",
@@ -219,14 +219,14 @@
           "default": 1
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD023",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD024",
@@ -242,7 +242,7 @@
           "default": false
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD025",
@@ -258,7 +258,7 @@
           "default": "^\\s*title\\s*[:=]"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD026",
@@ -270,21 +270,21 @@
           "default": ".,;:!。，；：！"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD027",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD028",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD029",
@@ -296,7 +296,7 @@
           "default": "one_or_ordered"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD030",
@@ -320,7 +320,7 @@
           "default": 1
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD031",
@@ -332,14 +332,14 @@
           "default": true
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD032",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD033",
@@ -351,14 +351,14 @@
           "default": []
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD034",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD035",
@@ -370,7 +370,7 @@
           "default": "consistent"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD036",
@@ -382,35 +382,35 @@
           "default": ".,;:!?。，；：！？"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD037",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD038",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD039",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD040",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD041",
@@ -426,14 +426,14 @@
           "default": "^\\s*title\\s*[:=]"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD042",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD043",
@@ -449,7 +449,7 @@
           "default": []
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD044",
@@ -465,14 +465,14 @@
           "default": true
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD045",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD046",
@@ -484,14 +484,14 @@
           "default": "consistent"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD047",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "MD048",
@@ -503,7 +503,7 @@
           "default": "consistent"
         }
       ],
-      "enabled": false
+      "enabled": true
     }
   ]
 }

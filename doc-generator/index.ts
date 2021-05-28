@@ -30,11 +30,7 @@ function createDescriptionFiles(rules: string[], rulesJson: any): void {
     })
 }
 
-async function generateSpecification(ruleTitles: string[]) {
-    const request = await axios.get(repositoryUrlBase + "schema/markdownlint-config-schema.json")
-
-    const patternsSchema = request.data
-
+async function generateSpecification(ruleTitles: string[], patternsSchema: any) {
     const patternSpecs = ruleTitles.map((ruleTitle) => {
         const ruleId = getPatternId(ruleTitle)
         const propertiesStructure = patternsSchema["properties"][ruleId]["properties"]
@@ -46,18 +42,16 @@ async function generateSpecification(ruleTitles: string[]) {
             })
 
         }
-        return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, false)
+
+        const enabled = patternsSchema["properties"][ruleId]["default"]
+        return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, enabled)
     })
 
     const specification = new Specification("markdownlint", markdownlint.getVersion(), patternSpecs)
     await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2))
 }
 
-async function generatePatternsDescription(ruleTitles: string[]) {
-    const request = await axios.get(repositoryUrlBase + "schema/markdownlint-config-schema.json")
-
-    const patternsSchema = request.data
-
+async function generatePatternsDescription(ruleTitles: string[], patternsSchema: any) {
     const descriptionEntries = ruleTitles.map((ruleTitle) => {
         const ruleId = getPatternId(ruleTitle)
 
@@ -89,17 +83,19 @@ function createFolderIfNotExists(dir: string) {
 async function main() {
     createFolderIfNotExists(docsPath + "description")
 
-    const request = await axios.get(repositoryUrlBase + "doc/Rules.md")
+    const rulesRequest = await axios.get(repositoryUrlBase + "doc/Rules.md")
 
-    const rulesJson = md2json.parse(request.data)
+    const rulesJson = md2json.parse(rulesRequest.data)
+
+    const rulesSchemaRequest = await axios.get(repositoryUrlBase + "schema/markdownlint-config-schema.json")
 
     const rules = Object.keys(rulesJson["Rules"]).filter(a => a != "raw")
 
     createDescriptionFiles(rules, rulesJson["Rules"])
 
-    generateSpecification(rules)
+    generateSpecification(rules, rulesSchemaRequest.data)
 
-    generatePatternsDescription(rules)
+    generatePatternsDescription(rules, rulesSchemaRequest.data)
     
     return rules
 }
