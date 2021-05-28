@@ -6,6 +6,7 @@
 !/package.json
 !/package-lock.json
 !/tsconfig.json
+!/docs
 !/doc-generator
 
 # Ignore unnecessary files inside allowed directories

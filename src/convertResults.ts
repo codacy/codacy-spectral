@@ -10,7 +10,7 @@ export async function convertResults(report: LintResults): Promise<Issue[]> {
     const lines = fileContent.toString().split("\n")
     return issues.map(issue => {
       const line = issue.lineNumber
-      const message = issue.errorDetail
+      const message = issue.errorDetail ?? issue.ruleDescription
       const patternId = issue.ruleNames[0]
       const suggestion = issue.fixInfo ? computeSuggestion(
         lines[line-1],

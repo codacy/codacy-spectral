@@ -5,7 +5,7 @@ WORKDIR /src
 COPY ./doc-generator/package.json package.json
 RUN npm install
 COPY doc-generator/. /src/
-RUN mkdir /docs
+COPY docs/ /docs
 RUN npm run compile && node dist/index.js
 
 
