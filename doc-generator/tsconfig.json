@@ -13,6 +13,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*.ts", "package.json"],
+  "include": ["*.ts", "package.json", "md-2-json.d.ts"],
   "exclude": ["node_modules"]
 }

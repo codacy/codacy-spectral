@@ -1,31 +1,32 @@
 {
-  "name": "codacy-eslint",
-  "description": "Eslint Tool for Codacy",
+  "name": "codacy-markdownlint",
+  "description": "Markdownlint Tool for Codacy",
   "keywords": [
     "codacy",
-    "eslint",
-    "javascript",
+    "markdownlint",
+    "markdown",
     "linter",
     "typescript"
   ],
-  "homepage": "https://github.com/codacy/codacy-eslint#readme",
+  "homepage": "https://github.com/codacy/codacy-markdownlint#readme",
   "bugs": {
-    "url": "https://github.com/codacy/codacy-eslint/issues"
+    "url": "https://github.com/codacy/codacy-markdownlint/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codacy/codacy-eslint.git"
+    "url": "git+https://github.com/codacy/codacy-markdownlint.git"
   },
   "license": "Apache-2.0",
   "main": "dist/src/index.js",
   "directories": {
     "test": "./src/test",
-    "src": "./src"
+    "src": "./src",
+    "doc-generator": "./doc-generator"
   },
   "scripts": {
     "compile": "tsc",
-    "dockerBuild": "docker build -t codacy-eslint .",
-    "generateDocs": "npm run compile && node dist/src/docGeneratorMain.js",
+    "dockerBuild": "docker build -t codacy-markdownlint .",
+    "generateDocs": "tsc doc-generator/ && node dist/doc-generator/index.js",
     "test": "mocha"
   },
   "husky": {

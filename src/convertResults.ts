@@ -11,7 +11,7 @@ export async function convertResults(report: LintResults): Promise<Issue[]> {
     return issues.map(issue => {
       const line = issue.lineNumber
       const message = issue.errorDetail
-      const patternId = issue.ruleNames[1] // Markdownlint has a name for a rule, and an alias, since aliases are more human-friendly we're using that instead of the name
+      const patternId = issue.ruleNames[0]
       const suggestion = issue.fixInfo ? computeSuggestion(
         lines[line-1],
         issue.fixInfo

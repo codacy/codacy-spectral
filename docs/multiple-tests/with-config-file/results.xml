@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<checkstyle version="4.3">
-    <file name="test1.MD">
-        <error source="MD013 - line-length" line="4" message="Expected: 80; Actual: 106" severity="info" />
-        <error source="MD013 - line-length" line="7" message="Expected: 80; Actual: 102" severity="info" />
-        <error source="MD041 - first-line-heading - first-line-h1" line="1" message="null" severity="info" />
-        <error source="MD047 - single-trailing-newline" line="7" message="null" severity="info" />
-    </file>
-</checkstyle>

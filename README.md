@@ -1,4 +1,4 @@
-# Codacy ESLint
+# Codacy Markdownlint
 
 ## Adding new plugins / configs
 
@@ -30,6 +30,12 @@ at `src/eslintDefaultOptions.ts` to include them on the generated documentation.
 npm install
 npm run generateDocs
 ```
+
+# Heading 1
+
+### Heading 3
+
+We skipped out a 2nd level heading in this document
 
 ## Test changes to codacy-seed locally
 You may need to test changes that comes from our [codacy-engine-typescript-seed](https://github.com/codacy/codacy-engine-typescript-seed).
