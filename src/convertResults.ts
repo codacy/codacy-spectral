@@ -19,6 +19,6 @@ export async function convertResults(report: LintResults): Promise<Issue[]> {
       return new Issue(filename, message, patternId, line, suggestion)
     })
   })
-  const something = await Promise.all(promiseArray)
-  return something.flat()
+  const issuesPromise = await Promise.all(promiseArray)
+  return issuesPromise.flat()
 }
