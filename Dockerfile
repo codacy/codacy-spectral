@@ -8,7 +8,6 @@ COPY doc-generator/. /src/
 COPY docs/ /docs
 RUN npm run compile && node dist/index.js
 
-
 FROM node:$NODE_IMAGE_VERSION as builder
 COPY package*.json ./
 RUN npm install
@@ -19,8 +18,7 @@ RUN npm run compile
 
 FROM node:$NODE_IMAGE_VERSION
 
-COPY --from=builder package.json ./
-COPY --from=builder package-lock.json ./
+COPY --from=builder package*.json ./
 RUN npm install --production
 
 COPY --from=builder dist dist
