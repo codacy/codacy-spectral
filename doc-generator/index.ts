@@ -37,13 +37,12 @@ async function generateSpecification(ruleTitles: string[], patternsSchema: any) 
         var parametersSpecs: ParameterSpec[] = []
         if(propertiesStructure) {
             var propertiesNames = Object.keys(propertiesStructure)
-            parametersSpecs = propertiesNames.map((property) => {
-                return new ParameterSpec(property, propertiesStructure[property]["default"])
-            })
-
+            parametersSpecs = propertiesNames.map((property) => 
+                new ParameterSpec(property, propertiesStructure[property]["default"])
+            )
         }
 
-        const enabled = patternsSchema["properties"][ruleId]["default"]
+        const enabled = patternsSchema["properties"][ruleId]["default"] === true
         return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, enabled)
     })
 
@@ -55,14 +54,16 @@ async function generatePatternsDescription(ruleTitles: string[], patternsSchema:
     const descriptionEntries = ruleTitles.map((ruleTitle) => {
         const ruleId = getPatternId(ruleTitle)
 
-        const description =  patternsSchema["properties"][ruleId]["description"].split("-")[1]
+        const ruleSchema = patternsSchema["properties"][ruleId]
+
+        const description =  ruleSchema["description"].split("-")[1]
         
-        const propertiesStructure = patternsSchema["properties"][ruleId]["properties"]
+        const propertiesStructure = ruleSchema["properties"]
         var parameters: DescriptionParameter[] = []
         if(propertiesStructure) {
             var propertiesNames = Object.keys(propertiesStructure)
             parameters = propertiesNames.map((property) => {
-                return new DescriptionParameter(property, patternsSchema["properties"][ruleId]["properties"][property]["description"])
+                return new DescriptionParameter(property, ruleSchema["properties"][property]["description"])
             })
 
         }
