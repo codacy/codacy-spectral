@@ -21,10 +21,14 @@ function getPatternId(title: string): string {
     return title.split("-")[0].replace("~~", "").trim()
 }
 
+function cleanRuleTitle(title: string): string {
+    return title.replace(/~~/g, "")
+}
+
 function createDescriptionFiles(rules: string[], rulesJson: any): void {
     rules.forEach( (rule, i, arrays) => {
         const body = rulesJson[rule]["raw"].replace(ruleLink, "").trim()
-        const content = "# " + rule + "\n\n" + body
+        const content = "# " + cleanRuleTitle(rule) + "\n\n" + body
         const ruleId = getPatternId(rule)
         fs.writeFileSync(docsPath + "description/" + ruleId + ".md", content)
     })
@@ -68,7 +72,7 @@ async function generatePatternsDescription(ruleTitles: string[], patternsSchema:
 
         }
 
-        const title = ruleTitle.replace(/~~/g, "")
+        const title = cleanRuleTitle(ruleTitle)
         return new DescriptionEntry(ruleId, title, description, undefined,  parameters)
     })
 
