@@ -72,7 +72,7 @@ async function generatePatternsDescription(ruleTitles: string[], patternsSchema:
         return new DescriptionEntry(ruleId, title, description, undefined,  parameters)
     })
 
-    await writeFile(docsPath + "description/description.json", JSON.stringify(descriptionEntries, null, 2))
+    await writeFile(docsPath + "description/description.json", JSON.stringify(descriptionEntries, null, 2) + "\n")
 }
 
 function createFolderIfNotExists(dir: string) {
