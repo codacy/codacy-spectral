@@ -2,6 +2,7 @@ import { Codacyrc, Pattern } from "codacy-seed"
 import { Configuration, Options, promises } from "markdownlint"
 import { toolName } from "./toolMetadata"
 import { fromPairs } from "lodash"
+import * as glob from "glob"
 
 
 function patternsToRules(
@@ -10,11 +11,7 @@ function patternsToRules(
     const rules = patterns.map((pattern) => {
         const patternId = pattern.patternId
         if (pattern.parameters) {
-            const parameters = (pattern.parameters.length == 1 && pattern.parameters[0].name == "unnamedParam") ?
-                pattern.parameters[0].value :
-                fromPairs(
-                    pattern.parameters.map((p) => [p.name, p.value])
-                )
+            const parameters = fromPairs(pattern.parameters.map((p) => [p.name, p.value]))
             return [patternId, parameters]
         } else {
             return [patternId, true]
@@ -41,7 +38,7 @@ export async function configCreator(
 ): Promise<Options> {
     const configuration = await createConfiguration(codacyInput)
 
-    const files = codacyInput && codacyInput.files ? codacyInput.files : [] // TODO: search for all the files
+    const files = codacyInput && codacyInput.files ? codacyInput.files : glob.sync("**/*.md")
     const options: Options = {
         files: files,
         config: configuration,
