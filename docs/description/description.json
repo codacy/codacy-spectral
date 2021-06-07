@@ -1,0 +1,461 @@
+[
+  {
+    "parameters": [],
+    "patternId": "MD001",
+    "title": "MD001 - Heading levels should only increment by one level at a time",
+    "description": "increment/header"
+  },
+  {
+    "parameters": [
+      {
+        "name": "level",
+        "description": "Heading level"
+      }
+    ],
+    "patternId": "MD002",
+    "title": "MD002 - First heading should be a top-level heading",
+    "description": "heading"
+  },
+  {
+    "parameters": [
+      {
+        "name": "style",
+        "description": "Heading style"
+      }
+    ],
+    "patternId": "MD003",
+    "title": "MD003 - Heading style",
+    "description": "style/header"
+  },
+  {
+    "parameters": [
+      {
+        "name": "style",
+        "description": "List style"
+      }
+    ],
+    "patternId": "MD004",
+    "title": "MD004 - Unordered list style",
+    "description": "style "
+  },
+  {
+    "parameters": [],
+    "patternId": "MD005",
+    "title": "MD005 - Inconsistent indentation for list items at the same level",
+    "description": "indent "
+  },
+  {
+    "parameters": [],
+    "patternId": "MD006",
+    "title": "MD006 - Consider starting bulleted lists at the beginning of the line",
+    "description": "start"
+  },
+  {
+    "parameters": [
+      {
+        "name": "indent",
+        "description": "Spaces for indent"
+      },
+      {
+        "name": "start_indented",
+        "description": "Whether to indent the first level of the list"
+      }
+    ],
+    "patternId": "MD007",
+    "title": "MD007 - Unordered list indentation",
+    "description": "indent "
+  },
+  {
+    "parameters": [
+      {
+        "name": "br_spaces",
+        "description": "Spaces for line break"
+      },
+      {
+        "name": "list_item_empty_lines",
+        "description": "Allow spaces for empty lines in list items"
+      },
+      {
+        "name": "strict",
+        "description": "Include unnecessary breaks"
+      }
+    ],
+    "patternId": "MD009",
+    "title": "MD009 - Trailing spaces",
+    "description": "trailing"
+  },
+  {
+    "parameters": [
+      {
+        "name": "code_blocks",
+        "description": "Include code blocks"
+      }
+    ],
+    "patternId": "MD010",
+    "title": "MD010 - Hard tabs",
+    "description": "hard"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD011",
+    "title": "MD011 - Reversed link syntax",
+    "description": "reversed"
+  },
+  {
+    "parameters": [
+      {
+        "name": "maximum",
+        "description": "Consecutive blank lines"
+      }
+    ],
+    "patternId": "MD012",
+    "title": "MD012 - Multiple consecutive blank lines",
+    "description": "multiple"
+  },
+  {
+    "parameters": [
+      {
+        "name": "line_length",
+        "description": "Number of characters"
+      },
+      {
+        "name": "heading_line_length",
+        "description": "Number of characters for headings"
+      },
+      {
+        "name": "code_block_line_length",
+        "description": "Number of characters for code blocks"
+      },
+      {
+        "name": "code_blocks",
+        "description": "Include code blocks"
+      },
+      {
+        "name": "tables",
+        "description": "Include tables"
+      },
+      {
+        "name": "headings",
+        "description": "Include headings"
+      },
+      {
+        "name": "headers",
+        "description": "Include headings"
+      },
+      {
+        "name": "strict",
+        "description": "Strict length checking"
+      },
+      {
+        "name": "stern",
+        "description": "Stern length checking"
+      }
+    ],
+    "patternId": "MD013",
+    "title": "MD013 - Line length",
+    "description": "length "
+  },
+  {
+    "parameters": [],
+    "patternId": "MD014",
+    "title": "MD014 - Dollar signs used before commands without showing output",
+    "description": "show"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD018",
+    "title": "MD018 - No space after hash on atx style heading",
+    "description": "missing"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD019",
+    "title": "MD019 - Multiple spaces after hash on atx style heading",
+    "description": "multiple"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD020",
+    "title": "MD020 - No space inside hashes on closed atx style heading",
+    "description": "missing"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD021",
+    "title": "MD021 - Multiple spaces inside hashes on closed atx style heading",
+    "description": "multiple"
+  },
+  {
+    "parameters": [
+      {
+        "name": "lines_above",
+        "description": "Blank lines above heading"
+      },
+      {
+        "name": "lines_below",
+        "description": "Blank lines below heading"
+      }
+    ],
+    "patternId": "MD022",
+    "title": "MD022 - Headings should be surrounded by blank lines",
+    "description": "around"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD023",
+    "title": "MD023 - Headings must start at the beginning of the line",
+    "description": "start"
+  },
+  {
+    "parameters": [
+      {
+        "name": "allow_different_nesting",
+        "description": "Only check sibling headings"
+      },
+      {
+        "name": "siblings_only",
+        "description": "Only check sibling headings"
+      }
+    ],
+    "patternId": "MD024",
+    "title": "MD024 - Multiple headings with the same content",
+    "description": "duplicate"
+  },
+  {
+    "parameters": [
+      {
+        "name": "level",
+        "description": "Heading level"
+      },
+      {
+        "name": "front_matter_title",
+        "description": "RegExp for matching title in front matter"
+      }
+    ],
+    "patternId": "MD025",
+    "title": "MD025 - Multiple top-level headings in the same document",
+    "description": "title/single"
+  },
+  {
+    "parameters": [
+      {
+        "name": "punctuation",
+        "description": "Punctuation characters"
+      }
+    ],
+    "patternId": "MD026",
+    "title": "MD026 - Trailing punctuation in heading",
+    "description": "trailing"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD027",
+    "title": "MD027 - Multiple spaces after blockquote symbol",
+    "description": "multiple"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD028",
+    "title": "MD028 - Blank line inside blockquote",
+    "description": "blanks"
+  },
+  {
+    "parameters": [
+      {
+        "name": "style",
+        "description": "List style"
+      }
+    ],
+    "patternId": "MD029",
+    "title": "MD029 - Ordered list item prefix",
+    "description": "prefix "
+  },
+  {
+    "parameters": [
+      {
+        "name": "ul_single",
+        "description": "Spaces for single-line unordered list items"
+      },
+      {
+        "name": "ol_single",
+        "description": "Spaces for single-line ordered list items"
+      },
+      {
+        "name": "ul_multi",
+        "description": "Spaces for multi-line unordered list items"
+      },
+      {
+        "name": "ol_multi",
+        "description": "Spaces for multi-line ordered list items"
+      }
+    ],
+    "patternId": "MD030",
+    "title": "MD030 - Spaces after list markers",
+    "description": "marker"
+  },
+  {
+    "parameters": [
+      {
+        "name": "list_items",
+        "description": "Include list items"
+      }
+    ],
+    "patternId": "MD031",
+    "title": "MD031 - Fenced code blocks should be surrounded by blank lines",
+    "description": "around"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD032",
+    "title": "MD032 - Lists should be surrounded by blank lines",
+    "description": "around"
+  },
+  {
+    "parameters": [
+      {
+        "name": "allowed_elements",
+        "description": "Allowed elements"
+      }
+    ],
+    "patternId": "MD033",
+    "title": "MD033 - Inline HTML",
+    "description": "inline"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD034",
+    "title": "MD034 - Bare URL used",
+    "description": "bare"
+  },
+  {
+    "parameters": [
+      {
+        "name": "style",
+        "description": "Horizontal rule style"
+      }
+    ],
+    "patternId": "MD035",
+    "title": "MD035 - Horizontal rule style",
+    "description": "style "
+  },
+  {
+    "parameters": [
+      {
+        "name": "punctuation",
+        "description": "Punctuation characters"
+      }
+    ],
+    "patternId": "MD036",
+    "title": "MD036 - Emphasis used instead of a heading",
+    "description": "emphasis"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD037",
+    "title": "MD037 - Spaces inside emphasis markers",
+    "description": "space"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD038",
+    "title": "MD038 - Spaces inside code span elements",
+    "description": "space"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD039",
+    "title": "MD039 - Spaces inside link text",
+    "description": "space"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD040",
+    "title": "MD040 - Fenced code blocks should have a language specified",
+    "description": "code"
+  },
+  {
+    "parameters": [
+      {
+        "name": "level",
+        "description": "Heading level"
+      },
+      {
+        "name": "front_matter_title",
+        "description": "RegExp for matching title in front matter"
+      }
+    ],
+    "patternId": "MD041",
+    "title": "MD041 - First line in a file should be a top-level heading",
+    "description": "line"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD042",
+    "title": "MD042 - No empty links",
+    "description": "empty"
+  },
+  {
+    "parameters": [
+      {
+        "name": "headings",
+        "description": "List of headings"
+      },
+      {
+        "name": "headers",
+        "description": "List of headings"
+      }
+    ],
+    "patternId": "MD043",
+    "title": "MD043 - Required heading structure",
+    "description": "headings/required"
+  },
+  {
+    "parameters": [
+      {
+        "name": "names",
+        "description": "List of proper names"
+      },
+      {
+        "name": "code_blocks",
+        "description": "Include code blocks"
+      }
+    ],
+    "patternId": "MD044",
+    "title": "MD044 - Proper names should have the correct capitalization",
+    "description": "names "
+  },
+  {
+    "parameters": [],
+    "patternId": "MD045",
+    "title": "MD045 - Images should have alternate text (alt text)",
+    "description": "alt"
+  },
+  {
+    "parameters": [
+      {
+        "name": "style",
+        "description": "Block style"
+      }
+    ],
+    "patternId": "MD046",
+    "title": "MD046 - Code block style",
+    "description": "block"
+  },
+  {
+    "parameters": [],
+    "patternId": "MD047",
+    "title": "MD047 - Files should end with a single newline character",
+    "description": "trailing"
+  },
+  {
+    "parameters": [
+      {
+        "name": "style",
+        "description": "Code fence syle"
+      }
+    ],
+    "patternId": "MD048",
+    "title": "MD048 - Code fence style",
+    "description": "fence"
+  }
+]
