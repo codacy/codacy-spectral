@@ -8,7 +8,7 @@ import {
   } from "codacy-seed"
 import axios from "axios"
 import * as md2json from "md-2-json"
-import * as fs from "fs"
+import { promises as fs } from "fs"
 import markdownlint from "markdownlint"
 
 const docsPath = "../docs/"
@@ -25,13 +25,13 @@ function cleanRuleTitle(title: string): string {
     return title.replace(/~~/g, "")
 }
 
-function createDescriptionFiles(rules: string[], rulesJson: any): void {
-    rules.forEach( (rule, i, arrays) => {
+async function createDescriptionFiles(rules: string[], rulesJson: any) {
+    Promise.all(rules.map(async (rule, i, arrays) => {
         const body = rulesJson[rule]["raw"].replace(ruleLink, "").trim()
         const content = "# " + cleanRuleTitle(rule) + "\n\n" + body
         const ruleId = getPatternId(rule)
-        fs.writeFileSync(docsPath + "description/" + ruleId + ".md", content)
-    })
+        await fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
+    }))
 }
 
 async function generateSpecification(ruleTitles: string[], patternsSchema: any) {
@@ -79,14 +79,13 @@ async function generatePatternsDescription(ruleTitles: string[], patternsSchema:
     await writeFile(docsPath + "description/description.json", JSON.stringify(descriptionEntries, null, 2) + "\n")
 }
 
-function createFolderIfNotExists(dir: string) {
-    if (!fs.existsSync(dir)){
-        fs.mkdirSync(dir);
-    }
+async function createFolderIfNotExists(dir: string) {
+    const accessPromise = fs.access(dir)
+    await accessPromise.catch(_ => fs.mkdir(dir))
 }
 
 async function main() {
-    createFolderIfNotExists(docsPath + "description")
+    await createFolderIfNotExists(docsPath + "description")
 
     const rulesRequest = await axios.get(repositoryUrlBase + "doc/Rules.md")
 
@@ -96,11 +95,11 @@ async function main() {
 
     const rules = Object.keys(rulesJson["Rules"]).filter(a => a != "raw")
 
-    createDescriptionFiles(rules, rulesJson["Rules"])
+    await createDescriptionFiles(rules, rulesJson["Rules"])
 
-    generateSpecification(rules, rulesSchemaRequest.data)
+    await generateSpecification(rules, rulesSchemaRequest.data)
 
-    generatePatternsDescription(rules, rulesSchemaRequest.data)
+    await generatePatternsDescription(rules, rulesSchemaRequest.data)
     
     return rules
 }
