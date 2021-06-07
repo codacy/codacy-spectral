@@ -3,7 +3,7 @@
     "parameters": [],
     "patternId": "MD001",
     "title": "MD001 - Heading levels should only increment by one level at a time",
-    "description": "increment/header"
+    "description": "Heading levels should only increment by one level at a time"
   },
   {
     "parameters": [
@@ -14,7 +14,7 @@
     ],
     "patternId": "MD002",
     "title": "MD002 - First heading should be a top-level heading",
-    "description": "heading"
+    "description": "First heading should be a top-level heading"
   },
   {
     "parameters": [
@@ -25,7 +25,7 @@
     ],
     "patternId": "MD003",
     "title": "MD003 - Heading style",
-    "description": "style/header"
+    "description": "Heading style"
   },
   {
     "parameters": [
@@ -36,19 +36,19 @@
     ],
     "patternId": "MD004",
     "title": "MD004 - Unordered list style",
-    "description": "style "
+    "description": "Unordered list style"
   },
   {
     "parameters": [],
     "patternId": "MD005",
     "title": "MD005 - Inconsistent indentation for list items at the same level",
-    "description": "indent "
+    "description": "Inconsistent indentation for list items at the same level"
   },
   {
     "parameters": [],
     "patternId": "MD006",
     "title": "MD006 - Consider starting bulleted lists at the beginning of the line",
-    "description": "start"
+    "description": "Consider starting bulleted lists at the beginning of the line"
   },
   {
     "parameters": [
@@ -63,7 +63,7 @@
     ],
     "patternId": "MD007",
     "title": "MD007 - Unordered list indentation",
-    "description": "indent "
+    "description": "Unordered list indentation"
   },
   {
     "parameters": [
@@ -82,7 +82,7 @@
     ],
     "patternId": "MD009",
     "title": "MD009 - Trailing spaces",
-    "description": "trailing"
+    "description": "Trailing spaces"
   },
   {
     "parameters": [
@@ -93,13 +93,13 @@
     ],
     "patternId": "MD010",
     "title": "MD010 - Hard tabs",
-    "description": "hard"
+    "description": "Hard tabs"
   },
   {
     "parameters": [],
     "patternId": "MD011",
     "title": "MD011 - Reversed link syntax",
-    "description": "reversed"
+    "description": "Reversed link syntax"
   },
   {
     "parameters": [
@@ -110,7 +110,7 @@
     ],
     "patternId": "MD012",
     "title": "MD012 - Multiple consecutive blank lines",
-    "description": "multiple"
+    "description": "Multiple consecutive blank lines"
   },
   {
     "parameters": [
@@ -153,37 +153,37 @@
     ],
     "patternId": "MD013",
     "title": "MD013 - Line length",
-    "description": "length "
+    "description": "Line length"
   },
   {
     "parameters": [],
     "patternId": "MD014",
     "title": "MD014 - Dollar signs used before commands without showing output",
-    "description": "show"
+    "description": "Dollar signs used before commands without showing output"
   },
   {
     "parameters": [],
     "patternId": "MD018",
     "title": "MD018 - No space after hash on atx style heading",
-    "description": "missing"
+    "description": "No space after hash on atx style heading"
   },
   {
     "parameters": [],
     "patternId": "MD019",
     "title": "MD019 - Multiple spaces after hash on atx style heading",
-    "description": "multiple"
+    "description": "Multiple spaces after hash on atx style heading"
   },
   {
     "parameters": [],
     "patternId": "MD020",
     "title": "MD020 - No space inside hashes on closed atx style heading",
-    "description": "missing"
+    "description": "No space inside hashes on closed atx style heading"
   },
   {
     "parameters": [],
     "patternId": "MD021",
     "title": "MD021 - Multiple spaces inside hashes on closed atx style heading",
-    "description": "multiple"
+    "description": "Multiple spaces inside hashes on closed atx style heading"
   },
   {
     "parameters": [
@@ -198,13 +198,13 @@
     ],
     "patternId": "MD022",
     "title": "MD022 - Headings should be surrounded by blank lines",
-    "description": "around"
+    "description": "Headings should be surrounded by blank lines"
   },
   {
     "parameters": [],
     "patternId": "MD023",
     "title": "MD023 - Headings must start at the beginning of the line",
-    "description": "start"
+    "description": "Headings must start at the beginning of the line"
   },
   {
     "parameters": [
@@ -219,7 +219,7 @@
     ],
     "patternId": "MD024",
     "title": "MD024 - Multiple headings with the same content",
-    "description": "duplicate"
+    "description": "Multiple headings with the same content"
   },
   {
     "parameters": [
@@ -234,7 +234,7 @@
     ],
     "patternId": "MD025",
     "title": "MD025 - Multiple top-level headings in the same document",
-    "description": "title/single"
+    "description": "Multiple top-level headings in the same document"
   },
   {
     "parameters": [
@@ -245,19 +245,19 @@
     ],
     "patternId": "MD026",
     "title": "MD026 - Trailing punctuation in heading",
-    "description": "trailing"
+    "description": "Trailing punctuation in heading"
   },
   {
     "parameters": [],
     "patternId": "MD027",
     "title": "MD027 - Multiple spaces after blockquote symbol",
-    "description": "multiple"
+    "description": "Multiple spaces after blockquote symbol"
   },
   {
     "parameters": [],
     "patternId": "MD028",
     "title": "MD028 - Blank line inside blockquote",
-    "description": "blanks"
+    "description": "Blank line inside blockquote"
   },
   {
     "parameters": [
@@ -268,7 +268,7 @@
     ],
     "patternId": "MD029",
     "title": "MD029 - Ordered list item prefix",
-    "description": "prefix "
+    "description": "Ordered list item prefix"
   },
   {
     "parameters": [
@@ -291,7 +291,7 @@
     ],
     "patternId": "MD030",
     "title": "MD030 - Spaces after list markers",
-    "description": "marker"
+    "description": "Spaces after list markers"
   },
   {
     "parameters": [
@@ -302,13 +302,13 @@
     ],
     "patternId": "MD031",
     "title": "MD031 - Fenced code blocks should be surrounded by blank lines",
-    "description": "around"
+    "description": "Fenced code blocks should be surrounded by blank lines"
   },
   {
     "parameters": [],
     "patternId": "MD032",
     "title": "MD032 - Lists should be surrounded by blank lines",
-    "description": "around"
+    "description": "Lists should be surrounded by blank lines"
   },
   {
     "parameters": [
@@ -319,13 +319,13 @@
     ],
     "patternId": "MD033",
     "title": "MD033 - Inline HTML",
-    "description": "inline"
+    "description": "Inline HTML"
   },
   {
     "parameters": [],
     "patternId": "MD034",
     "title": "MD034 - Bare URL used",
-    "description": "bare"
+    "description": "Bare URL used"
   },
   {
     "parameters": [
@@ -336,7 +336,7 @@
     ],
     "patternId": "MD035",
     "title": "MD035 - Horizontal rule style",
-    "description": "style "
+    "description": "Horizontal rule style"
   },
   {
     "parameters": [
@@ -347,31 +347,31 @@
     ],
     "patternId": "MD036",
     "title": "MD036 - Emphasis used instead of a heading",
-    "description": "emphasis"
+    "description": "Emphasis used instead of a heading"
   },
   {
     "parameters": [],
     "patternId": "MD037",
     "title": "MD037 - Spaces inside emphasis markers",
-    "description": "space"
+    "description": "Spaces inside emphasis markers"
   },
   {
     "parameters": [],
     "patternId": "MD038",
     "title": "MD038 - Spaces inside code span elements",
-    "description": "space"
+    "description": "Spaces inside code span elements"
   },
   {
     "parameters": [],
     "patternId": "MD039",
     "title": "MD039 - Spaces inside link text",
-    "description": "space"
+    "description": "Spaces inside link text"
   },
   {
     "parameters": [],
     "patternId": "MD040",
     "title": "MD040 - Fenced code blocks should have a language specified",
-    "description": "code"
+    "description": "Fenced code blocks should have a language specified"
   },
   {
     "parameters": [
@@ -386,13 +386,13 @@
     ],
     "patternId": "MD041",
     "title": "MD041 - First line in a file should be a top-level heading",
-    "description": "line"
+    "description": "First line in a file should be a top-level heading"
   },
   {
     "parameters": [],
     "patternId": "MD042",
     "title": "MD042 - No empty links",
-    "description": "empty"
+    "description": "No empty links"
   },
   {
     "parameters": [
@@ -407,7 +407,7 @@
     ],
     "patternId": "MD043",
     "title": "MD043 - Required heading structure",
-    "description": "headings/required"
+    "description": "Required heading structure"
   },
   {
     "parameters": [
@@ -422,13 +422,13 @@
     ],
     "patternId": "MD044",
     "title": "MD044 - Proper names should have the correct capitalization",
-    "description": "names "
+    "description": "Proper names should have the correct capitalization"
   },
   {
     "parameters": [],
     "patternId": "MD045",
     "title": "MD045 - Images should have alternate text (alt text)",
-    "description": "alt"
+    "description": "Images should have alternate text (alt text)"
   },
   {
     "parameters": [
@@ -439,13 +439,13 @@
     ],
     "patternId": "MD046",
     "title": "MD046 - Code block style",
-    "description": "block"
+    "description": "Code block style"
   },
   {
     "parameters": [],
     "patternId": "MD047",
     "title": "MD047 - Files should end with a single newline character",
-    "description": "trailing"
+    "description": "Files should end with a single newline character"
   },
   {
     "parameters": [
@@ -456,6 +456,6 @@
     ],
     "patternId": "MD048",
     "title": "MD048 - Code fence style",
-    "description": "fence"
+    "description": "Code fence style"
   }
 ]
