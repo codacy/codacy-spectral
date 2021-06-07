@@ -60,7 +60,7 @@ async function generatePatternsDescription(ruleTitles: string[], patternsSchema:
 
         const ruleSchema = patternsSchema["properties"][ruleId]
 
-        const description =  ruleSchema["description"].split("-")[1]
+        const description =  ruleSchema["description"].split(" - ")[1]
         
         const propertiesStructure = ruleSchema["properties"]
         var parameters: DescriptionParameter[] = []
