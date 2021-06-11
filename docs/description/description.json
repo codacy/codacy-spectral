@@ -140,7 +140,7 @@
       },
       {
         "name": "headers",
-        "description": "Include headings"
+        "description": "Include headers"
       },
       {
         "name": "strict",
