@@ -3,7 +3,7 @@ import { Codacyrc, Engine, ToolResult } from "codacy-seed"
 import { convertResults } from "./convertResults"
 import { promises } from "markdownlint"
 import { configCreator } from "./configCreator"
-import { readFile } from "fs-extra"
+import { readFile } from "codacy-seed"
 
 export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc

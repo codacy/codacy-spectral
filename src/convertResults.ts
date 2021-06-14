@@ -1,4 +1,4 @@
-import { readFile, Issue } from "codacy-seed"
+import { Issue } from "codacy-seed"
 import { LintResults } from "markdownlint"
 import { computeSuggestion } from "./computeSuggestion"
 
