@@ -14,7 +14,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run compile
+RUN npm run compile && npm test
 
 FROM node:$NODE_IMAGE_VERSION
 
@@ -23,7 +23,6 @@ RUN npm install --production
 
 COPY --from=builder dist dist
 COPY --from=documentation /docs/ docs/
-
 
 RUN adduser -u 2004 -D docker
 RUN chown -R docker:docker /docs
