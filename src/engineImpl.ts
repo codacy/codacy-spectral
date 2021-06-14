@@ -19,10 +19,8 @@ export const engineImpl: Engine = async function (
     }) || []
   )
 
-  const issues = await convertResults(
+  return convertResults(
     markdownlintResults,
     Object.fromEntries(files)
   )
-
-  return issues
 }
