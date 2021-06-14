@@ -14,7 +14,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run compile && npm test
+RUN npm run compile
 
 FROM node:$NODE_IMAGE_VERSION
 
