@@ -3,16 +3,26 @@ import { Codacyrc, Engine, ToolResult } from "codacy-seed"
 import { convertResults } from "./convertResults"
 import { promises } from "markdownlint"
 import { configCreator } from "./configCreator"
+import { readFile } from "fs-extra"
 
 export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc
 ): Promise<ToolResult[]> {
-
   const options = await configCreator(codacyrc)
-  
+
   const markdownlintResults = await promises.markdownlint(options)
 
-  const issues = await convertResults(markdownlintResults)
-  
+  const files = await Promise.all(
+    codacyrc?.files?.map(async (file) => {
+      const fileContent = await readFile(file)
+      return [file, fileContent.toString()]
+    }) || []
+  )
+
+  const issues = await convertResults(
+    markdownlintResults,
+    Object.fromEntries(files)
+  )
+
   return issues
 }

@@ -41,7 +41,7 @@ describe("convertResults", () => {
         ]
     }
 
-    const results = await convertResults(report)
+    const results = await convertResults(report, {})
     const expected: ToolResult[] = [
       new Issue("README.md", "Expected: asterisk; Actual: dash", "MD004", 62),
       new Issue("README.md", "Expected: 80; Actual: 106", "MD013", 63),

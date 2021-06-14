@@ -2,12 +2,12 @@ import { deepStrictEqual } from "assert"
 import { Issue, ToolResult } from "codacy-seed"
 import { Options, promises } from "markdownlint"
 
-import { convertResultsWithStrings } from "../convertResults"
+import { convertResults } from "../convertResults"
 
 async function checkResults(strings: { [x: string]: string }, options: Options, expected: ToolResult[]) {
     const report = await promises.markdownlint(options)
 
-    const results = await convertResultsWithStrings(report, strings)
+    const results = convertResults(report, strings)
 
     deepStrictEqual(results, expected)
 }
