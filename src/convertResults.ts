@@ -1,24 +1,24 @@
-import { readFile, Issue } from "codacy-seed"
+import { Issue } from "codacy-seed"
 import { LintResults } from "markdownlint"
 import { computeSuggestion } from "./computeSuggestion"
 
-
-export async function convertResults(report: LintResults): Promise<Issue[]> {
-  const promiseArray = Object.entries(report).map(async entry => {
+export function convertResults(
+  report: LintResults,
+  filenameToContent: { [x: string]: string }
+): Issue[] {
+  return Object.entries(report).flatMap((entry) => {
     let [filename, issues] = entry
-    const fileContent = await readFile(filename)
-    const lines = fileContent.toString().split("\n")
-    return issues.map(issue => {
-      const line = issue.lineNumber
+    const fileContent = filenameToContent[filename]
+    const lines = fileContent?.split("\n")
+    return issues.map((issue) => {
+      const lineNumber = issue.lineNumber
       const message = issue.errorDetail ?? issue.ruleDescription
       const patternId = issue.ruleNames[0]
-      const suggestion = issue.fixInfo ? computeSuggestion(
-        lines[line-1],
-        issue.fixInfo
-      ) : undefined
-      return new Issue(filename, message, patternId, line, suggestion)
+      const suggestion =
+        lines && issue.fixInfo
+          ? computeSuggestion(lineNumber, lines[lineNumber - 1], issue.fixInfo)
+          : undefined
+      return new Issue(filename, message, patternId, lineNumber, suggestion)
     })
   })
-  const issuesPromise = await Promise.all(promiseArray)
-  return issuesPromise.flat()
 }
