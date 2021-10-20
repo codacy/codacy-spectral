@@ -61,10 +61,12 @@
   },
   "dependencies": {
     "@stoplight/spectral-core": "^1.6.0",
+    "@stoplight/spectral-rulesets": "^1.2.6",
     "@stoplight/spectral-parsers": "^1.0.1",
     "@stoplight/spectral-ruleset-migrator": "^1.5.0",
     "@stoplight/spectral-rulesets": "^1.2.6",
     "codacy-seed": "^2.2.0",
+    "compile": "^0.0.2",
     "glob": "^7.1.7",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
