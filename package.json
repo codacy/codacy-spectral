@@ -1,20 +1,23 @@
 {
-  "name": "codacy-markdownlint",
-  "description": "Markdownlint Tool for Codacy",
+  "name": "codacy-spectral",
+  "description": "Spectral Tool for Codacy",
   "keywords": [
     "codacy",
-    "markdownlint",
-    "markdown",
+    "spectral",
+    "yamlLinter",
+    "jsonLinter",
+    "yaml",
+    "json",
     "linter",
     "typescript"
   ],
-  "homepage": "https://github.com/codacy/codacy-markdownlint#readme",
+  "homepage": "https://github.com/codacy/codacy-spectral#readme",
   "bugs": {
-    "url": "https://github.com/codacy/codacy-markdownlint/issues"
+    "url": "https://github.com/codacy/codacy-spectral/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codacy/codacy-markdownlint.git"
+    "url": "git+https://github.com/codacy/codacy-spectral.git"
   },
   "license": "Apache-2.0",
   "main": "dist/src/index.js",
@@ -25,7 +28,7 @@
   },
   "scripts": {
     "compile": "tsc",
-    "dockerBuild": "docker build -t codacy-markdownlint .",
+    "dockerBuild": "docker build -t codacy-spectral .",
     "generateDocs": "tsc doc-generator/ && node dist/doc-generator/index.js",
     "test": "mocha"
   },

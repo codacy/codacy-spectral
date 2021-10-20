@@ -1,6 +1,6 @@
-# Codacy Markdownlint
+# Codacy Spectral
 
-This is an integration created so that Codacy can run the [Markdownlint](https://github.com/DavidAnson/markdownlint)
+This is an integration created so that Codacy can run the [spectral](https://github.com/stoplightio/spectral)
 tool in its infrastructure, or using its [CLI](https://github.com/codacy/codacy-analysis-cli).
 
 ## Generating documentation

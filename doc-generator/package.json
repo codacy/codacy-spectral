@@ -1,20 +1,23 @@
 {
-  "name": "codacy-markdownlint-doc-generator",
-  "description": "Documentation generator for Codacy's markdownlint",
+  "name": "codacy-spectral-doc-generator",
+  "description": "Documentation generator for Codacy's spectral",
   "keywords": [
     "codacy",
-    "markdownlint",
-    "markdown",
+    "spectral",
+    "yamlLinter",
+    "jsonLinter",
+    "yaml",
+    "json",
     "linter",
     "typescript"
   ],
-  "homepage": "https://github.com/codacy/codacy-markdownlint#readme",
+  "homepage": "https://github.com/codacy/codacy-spectral#readme",
   "bugs": {
-    "url": "https://github.com/codacy/codacy-markdownlint/issues"
+    "url": "https://github.com/codacy/codacy-spectral/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codacy/codacy-markdownlint.git"
+    "url": "git+https://github.com/codacy/codacy-spectral.git"
   },
   "license": "Apache-2.0",
   "main": "dist/index.js",
@@ -35,7 +38,7 @@
   "dependencies": {
     "codacy-seed": "^2.2.0",
     "axios": "^0.21.1",
-    "markdownlint": "^0.23.1",
+    "@stoplight/spectral-core": "^1.6.0",
     "md-2-json": "^2.0.0"
   },
   "devDependencies": {
