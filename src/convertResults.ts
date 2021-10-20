@@ -1,24 +1,17 @@
 import { Issue } from "codacy-seed"
-import { LintResults } from "markdownlint"
-import { computeSuggestion } from "./computeSuggestion"
+import { ISpectralDiagnostic } from "@stoplight/spectral-core"
 
 export function convertResults(
-  report: LintResults,
+  report: ISpectralDiagnostic[],
   filenameToContent: { [x: string]: string }
 ): Issue[] {
   return Object.entries(report).flatMap((entry) => {
-    let [filename, issues] = entry
+    let [filename, issue] = entry
     const fileContent = filenameToContent[filename]
-    const lines = fileContent?.split("\n")
-    return issues.map((issue) => {
-      const lineNumber = issue.lineNumber
-      const message = issue.errorDetail ?? issue.ruleDescription
-      const patternId = issue.ruleNames[0]
-      const suggestion =
-        lines && issue.fixInfo
-          ? computeSuggestion(lineNumber, lines[lineNumber - 1], issue.fixInfo)
-          : undefined
-      return new Issue(filename, message, patternId, lineNumber, suggestion)
-    })
+    const lineNumber = issue.range.start.line
+    const message = issue.message
+    const patternId = ""
+    const suggestion = issue.message
+    return new Issue(filename, message, patternId, lineNumber, suggestion)
   })
 }

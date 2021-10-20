@@ -1,20 +1,20 @@
-import { RuleOnErrorFixInfo } from "markdownlint"
+import { ISpectralDiagnostic } from "@stoplight/spectral-core"
 
 export function computeSuggestion(
   lineNumber: number,
   lineContent: string,
-  fixInfo: RuleOnErrorFixInfo
+  fixInfo: String
 ): string | undefined {
-  if (fixInfo.lineNumber) {
+  if (fixInfo) {
     return computeSuggestionWhenLineNumberIsDefined(
       lineNumber,
       lineContent,
       fixInfo
     )
-  } else if (fixInfo.editColumn || fixInfo.insertText || fixInfo.deleteCount) {
-    const column = fixInfo.editColumn ? fixInfo.editColumn - 1 : 0
-    const newText = fixInfo.insertText ? fixInfo.insertText : ""
-    const deleteCount = fixInfo.deleteCount ? fixInfo.deleteCount : 0
+  } else  {
+    const column = lineNumber
+    const newText = fixInfo
+    const deleteCount = 0
     return (
       lineContent.slice(0, column) +
       newText +
@@ -27,12 +27,9 @@ export function computeSuggestion(
 function computeSuggestionWhenLineNumberIsDefined(
   lineNumber: number,
   lineContent: string,
-  fixInfo: RuleOnErrorFixInfo
+  fixInfo: String
 ): string | undefined {
-  if (
-    fixInfo.lineNumber === lineNumber + 1 &&
-    fixInfo.insertText?.startsWith("\n")
-  ) {
-    return lineContent + fixInfo.insertText
+ {
+    return lineContent + fixInfo
   }
 }

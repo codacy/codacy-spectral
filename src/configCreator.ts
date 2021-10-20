@@ -1,5 +1,4 @@
 import { Codacyrc, Pattern } from "codacy-seed"
-import { Configuration, Options, promises } from "markdownlint"
 import { toolName } from "./toolMetadata"
 import { fromPairs } from "lodash"
 import * as glob from "glob"
@@ -23,26 +22,13 @@ function patternsToRules(
 
 async function createConfiguration(
     codacyInput?: Codacyrc
-): Promise<Configuration> {
+): Promise<String> {
     if (codacyInput && codacyInput.tools) {
         const markdownlint = codacyInput.tools.find((tool) => tool.name === toolName)
         if (markdownlint && markdownlint.patterns) {
-            return patternsToRules(markdownlint.patterns)
+            return ""
         }
     }
-    return promises.readConfig(".markdownlint.json")
+    return ""
 }
 
-export async function configCreator(
-    codacyInput?: Codacyrc
-): Promise<Options> {
-    const configuration = await createConfiguration(codacyInput)
-
-    const files = codacyInput && codacyInput.files ? codacyInput.files : glob.sync("**/*.md")
-    const options: Options = {
-        files: files,
-        config: configuration,
-        resultVersion: 3
-    }
-    return options
-}
