@@ -35,6 +35,8 @@ export const engineImpl: Engine = async function (
     }).flat()
   )
 
+  console.log(JSON.stringify(spectralResults.flat(), null, 4));
+
   return convertResults(
       spectralResults.flat()
   )

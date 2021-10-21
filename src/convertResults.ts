@@ -9,7 +9,6 @@ export function convertResults(
     const lineNumber = issue.range.start.line
     const message = issue.message
     const patternId = issue.code as string 
-    const suggestion = ""
-    return new Issue(filename!, message, patternId, lineNumber, suggestion)
+    return new Issue(filename!, message, patternId, lineNumber)
   })
 }
