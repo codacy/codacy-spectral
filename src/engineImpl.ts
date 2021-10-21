@@ -4,7 +4,7 @@ import { convertResults } from "./convertResults"
 import { Spectral, Document, Ruleset } from "@stoplight/spectral-core"
 import { readFile } from "codacy-seed"
 import { Yaml, Json } from "@stoplight/spectral-parsers"
-const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
+import { oas, asyncapi } from "@stoplight/spectral-rulesets"
 import * as glob from "glob"
 
 export const engineImpl: Engine = async function (
@@ -30,12 +30,10 @@ export const engineImpl: Engine = async function (
     files.map((file) => {
       const filename = file[0];
       const extension = file[0].substring(filename.lastIndexOf('.') + 1, filename.length) || filename;
-      const myDocument = extension === "json" ? new Document(file[1], Json) : new Document(file[1], Yaml)
+      const myDocument = extension === "json" ? new Document(file[1], Json, filename) : new Document(file[1], Yaml, filename)
       return spectral.run(myDocument)
     }).flat()
   )
-
-  console.log(JSON.stringify(spectralResults.flat(), null, 4));
 
   return convertResults(
       spectralResults.flat()
