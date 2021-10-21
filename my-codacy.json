@@ -1,0 +1,14 @@
+{
+    "files" : ["petstore.json"],
+    "tools":[
+      {
+        "name":"spectral",
+        "patterns":[
+          {
+            "patternId":"oas2-valid-media-example",
+            "parameters": []
+          }
+        ]
+      }
+    ]
+  }

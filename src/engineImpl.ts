@@ -7,26 +7,29 @@ import { Yaml, Json } from "@stoplight/spectral-parsers"
 const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
 import * as glob from "glob"
 
+import {extractRulesToApply, extractFiles} from "./configCreator"
+
 export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc
 ): Promise<ToolResult[]> {
 
   const spectral = new Spectral();
 
+  const codacyrcFiles = await extractFiles(codacyrc)
 
-  const codacyrcFiles = codacyrc && codacyrc.files ? codacyrc.files : glob.sync("**/*.+(json|yaml|yml)")
+  const oasRulesToUse = await extractRulesToApply(oas, codacyrc)
+  const asyncRulesToUse = await extractRulesToApply(asyncapi, codacyrc)
 
-  const tool = codacyrc?.tools ? codacyrc?.tools[0] : undefined
+  const rulesToApply = [...oasRulesToUse || [], ...asyncRulesToUse || []]
 
-  const rulesToApply = tool?.patterns?.map(pattern => [pattern.patternId, oas.rules[pattern.patternId as "tag-description"]])
+  console.log("Rules: " + JSON.stringify(rulesToApply, null, 4));
 
-  // fetch async rules
-
-  if (rulesToApply) {
-    spectral.setRuleset(Object.fromEntries(rulesToApply))
+  if (!rulesToApply) {
+    return []
   }
- 
 
+  spectral.setRuleset(Object.fromEntries(rulesToApply))
+  
   const files = await Promise.all(
     codacyrcFiles.map(async (file) => {
       const fileContent = await readFile(file)
@@ -36,13 +39,14 @@ export const engineImpl: Engine = async function (
 
   const spectralResults = await Promise.all(
     files.map((file) => {
-      const filename = file[0];
-      const extension = file[0].substring(filename.lastIndexOf('.') + 1, filename.length) || filename;
-      console.log(extension)
+      const filename = file[0]
+      const extension = file[0].substring(filename.lastIndexOf('.') + 1, filename.length) || filename
       const myDocument = extension === "json" ? new Document(file[1], Json, filename) : new Document(file[1], Yaml, filename)
       return spectral.run(myDocument)
     }).flat()
   )
+
+  console.log(JSON.stringify(spectralResults.flat(), null, 4));
 
   return convertResults(
       spectralResults.flat()
