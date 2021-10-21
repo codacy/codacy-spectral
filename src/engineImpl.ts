@@ -1,4 +1,4 @@
-import { Codacyrc, Engine, ToolResult } from "codacy-seed"
+import { Codacyrc, Engine, Pattern, Tool, ToolResult } from "codacy-seed"
 
 import { convertResults } from "./convertResults"
 import { Spectral, Document } from "@stoplight/spectral-core"
@@ -17,7 +17,19 @@ export const engineImpl: Engine = async function (
         extends: [oas, asyncapi]
     });
 
+
   const codacyrcFiles = codacyrc && codacyrc.files ? codacyrc.files : glob.sync("**/*.+(json|yaml|yml)")
+
+  console.log(JSON.stringify(spectral.ruleset, null, 4));
+
+  const tool = codacyrc?.tools ? codacyrc?.tools[0] : undefined
+
+  const rulesToApply = tool?.patterns?.map(pattern => [pattern.patternId, oas.rules[pattern.patternId as "tag-description"]])
+
+  if (rulesToApply) {
+    spectral.setRuleset(Object.fromEntries(rulesToApply))
+  }
+ 
 
   const files = await Promise.all(
     codacyrcFiles.map(async (file) => {
