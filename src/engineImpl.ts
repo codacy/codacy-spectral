@@ -4,7 +4,7 @@ import { convertResults } from "./convertResults"
 import { Spectral, Document } from "@stoplight/spectral-core"
 import { readFile } from "codacy-seed"
 import { Yaml, Json } from "@stoplight/spectral-parsers"
-const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
+import { oas, asyncapi } from "@stoplight/spectral-rulesets";
 import * as glob from "glob"
 
 export const engineImpl: Engine = async function (
@@ -12,11 +12,6 @@ export const engineImpl: Engine = async function (
 ): Promise<ToolResult[]> {
 
   const spectral = new Spectral();
-
-  spectral.setRuleset({
-        extends: [oas, asyncapi]
-    });
-
 
   const codacyrcFiles = codacyrc && codacyrc.files ? codacyrc.files : glob.sync("**/*.+(json|yaml|yml)")
 
