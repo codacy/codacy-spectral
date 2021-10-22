@@ -16,7 +16,7 @@ popd .
 ## Build docker image
 
 ```bash
-docker build -t codacy-markdownlint .
+docker build -t codacy-spectral .
 ```
 
 ## Test changes to codacy-seed locally
