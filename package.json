@@ -29,7 +29,6 @@
   "scripts": {
     "compile": "tsc",
     "dockerBuild": "docker build -t codacy-spectral .",
-    "generateDocs": "tsc doc-generator/ && node dist/doc-generator/index.js",
     "test": "mocha"
   },
   "husky": {
