@@ -1,3 +1,4 @@
+import axios from "axios"
 import {
     DescriptionEntry,
     DescriptionParameter,
@@ -6,14 +7,12 @@ import {
     Specification,
     writeFile,
   } from "codacy-seed"
-import axios from "axios"
-import * as md2json from "md-2-json"
 import { promises as fs } from "fs"
-import markdownlint from "markdownlint"
+import * as md2json from "md-2-json"
 
 const docsPath = "../docs/"
 
-const repositoryUrlBase = "https://raw.githubusercontent.com/DavidAnson/markdownlint/v" + markdownlint.getVersion() + "/"
+const repositoryUrlBase = "https://raw.githubusercontent.com/DavidAnson/markdownlint/v" + "0.24.0" + "/"
 
 const ruleLink = new RegExp("<a name=.*<\/a>")
 
@@ -50,7 +49,7 @@ async function generateSpecification(ruleTitles: string[], patternsSchema: any) 
         return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, enabled)
     })
 
-    const specification = new Specification("markdownlint", markdownlint.getVersion(), patternSpecs)
+    const specification = new Specification("markdownlint", "0.24.0", patternSpecs)
     await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2))
 }
 
