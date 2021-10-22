@@ -1,7 +1,7 @@
 
+import { ISpectralDiagnostic } from "@stoplight/spectral-core"
 import { deepEqual } from "assert"
 import { Issue, ToolResult } from "codacy-seed"
-import { ISpectralDiagnostic } from "@stoplight/spectral-core"
 
 import { convertResults } from "../convertResults"
 
