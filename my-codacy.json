@@ -5,10 +5,6 @@
         "name":"spectral",
         "patterns":[
           {
-            "patternId":"asyncapi-info-contact",
-            "parameters": []
-          },
-          {
             "patternId":"operation-tags",
             "parameters": []
           },
