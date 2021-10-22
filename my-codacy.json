@@ -1,11 +1,19 @@
 {
-    "files" : ["petstore.json"],
+    "files" : ["petstore.json", "signup.yaml"],
     "tools":[
       {
         "name":"spectral",
         "patterns":[
           {
-            "patternId":"oas2-valid-media-example",
+            "patternId":"asyncapi-info-contact",
+            "parameters": []
+          },
+          {
+            "patternId":"operation-tags",
+            "parameters": []
+          },
+          {
+            "patternId":"asyncapi-tags",
             "parameters": []
           }
         ]
