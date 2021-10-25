@@ -11,6 +11,10 @@
           {
             "patternId":"asyncapi-tags",
             "parameters": []
+          },
+          {
+            "patternId":"nonexistent-rule",
+            "parameters": []
           }
         ]
       }

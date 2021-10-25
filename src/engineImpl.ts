@@ -6,7 +6,7 @@ import { readFile } from "codacy-seed"
 import { Yaml, Json } from "@stoplight/spectral-parsers"
 const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
 
-import {extractPatternIdsToApply, extractFiles} from "./configCreator"
+import {extractPatternIdsToApply, extractFiles} from "./configExtractor"
 
 export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc
@@ -22,11 +22,17 @@ export const engineImpl: Engine = async function (
     return []
   }
 
-  spectral.setRuleset(new Ruleset({
-    extends: [oas, asyncapi]
-  }));
+  const defaultRules = {...oas.rules, ...asyncapi.rules}
 
-  
+  for (let defaultRuleKey in defaultRules) {
+      if ( !patternIdsToApply.includes(defaultRuleKey) ) {
+          delete defaultRules[defaultRuleKey]
+      }
+  }
+
+  const codacyRuleset = new Ruleset( { rules: defaultRules } )
+  spectral.setRuleset(codacyRuleset)
+
   const files = await Promise.all(
     codacyrcFiles.map(async (file) => {
       const fileContent = await readFile(file)
@@ -43,9 +49,7 @@ export const engineImpl: Engine = async function (
     }).flat()
   )
 
-  // console.log(JSON.stringify(spectralResults.flat(), null, 4));
-
   return convertResults(
-      spectralResults.flat().filter(result => patternIdsToApply.includes(result.code as string))
+      spectralResults.flat()
   )
 }
