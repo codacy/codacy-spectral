@@ -36,9 +36,10 @@
     "semi": false
   },
   "dependencies": {
-    "codacy-seed": "^2.2.0",
-    "axios": "^0.21.1",
     "@stoplight/spectral-core": "^1.6.0",
+    "@stoplight/spectral-rulesets": "^1.2.7",
+    "axios": "^0.21.1",
+    "codacy-seed": "^2.2.0",
     "md-2-json": "^2.0.0"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "eslint-plugin-unused-imports": "^1.1.0",
     "husky": "^5.1.3",
     "lint-staged": "^10.5.4",
-    "ts-node": "^9.1.1"
+    "ts-node": "^9.1.1",
+    "typescript": "^4.3.5"
   }
 }

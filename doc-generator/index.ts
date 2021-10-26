@@ -1,4 +1,8 @@
 import axios from "axios"
+import { Spectral, Document, Ruleset } from "@stoplight/spectral-core"
+import { readFile } from "codacy-seed"
+const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
+
 import {
     DescriptionEntry,
     DescriptionParameter,
@@ -12,67 +16,88 @@ import * as md2json from "md-2-json"
 
 const docsPath = "../docs/"
 
-const repositoryUrlBase = "https://raw.githubusercontent.com/DavidAnson/markdownlint/v" + "0.24.0" + "/"
+const openapiRulesdocumentationUrl = "https://raw.githubusercontent.com/stoplightio/spectral/develop/docs/reference/openapi-rules.md"
+const asyncapiRulesdocumentationUrl = "https://raw.githubusercontent.com/stoplightio/spectral/develop/docs/reference/asyncapi-rules.md"
 
-const ruleLink = new RegExp("<a name=.*<\/a>")
+async function createOpenapiDescriptionFiles() {
 
-function getPatternId(title: string): string {
-    return title.split("-")[0].replace("~~", "").trim()
-}
+    const rulesRequest = await axios.get(openapiRulesdocumentationUrl)
+    const rulesJson = await md2json.parse(rulesRequest.data)
+    
+    Promise.all(Object.keys(oas.rules).map(rulekey => {
+        const ruleId = rulekey
+        console.log("Rule Id: " + ruleId)
 
-function cleanRuleTitle(title: string): string {
-    return title.replace(/~~/g, "")
-}
+        const body = parseBodyFromOpanapiRulesJson(rulesJson, ruleId)
 
-async function createDescriptionFiles(rules: string[], rulesJson: any) {
-    Promise.all(rules.map(async (rule, i, arrays) => {
-        const body = rulesJson[rule]["raw"].replace(ruleLink, "").trim()
-        const content = "# " + cleanRuleTitle(rule) + "\n\n" + body
-        const ruleId = getPatternId(rule)
-        await fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
+        const content = "# " + ruleId + "\n\n" + body
+
+        fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
     }))
 }
 
-async function generateSpecification(ruleTitles: string[], patternsSchema: any) {
-    const patternSpecs = ruleTitles.map((ruleTitle) => {
-        const ruleId = getPatternId(ruleTitle)
-        const propertiesStructure = patternsSchema["properties"][ruleId]["properties"]
-        var parametersSpecs: ParameterSpec[] = []
-        if(propertiesStructure) {
-            var propertiesNames = Object.keys(propertiesStructure)
-            parametersSpecs = propertiesNames.map((property) => 
-                new ParameterSpec(property, propertiesStructure[property]["default"])
-            )
-        }
+async function createAsyncapiDescriptionFiles() {
 
-        const enabled = patternsSchema["properties"][ruleId]["default"] === true
-        return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, enabled)
+    const rulesRequest = await axios.get(asyncapiRulesdocumentationUrl)
+    const rulesJson = await md2json.parse(rulesRequest.data)
+    
+    Promise.all(Object.keys(oas.rules).map(rulekey => {
+        const ruleId = rulekey
+        console.log("Rule Id: " + ruleId)
+
+        const body = parseBodyFromOpanapiRulesJson(rulesJson, ruleId)
+
+        const content = "# " + ruleId + "\n\n" + body
+
+        fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
+    }))
+}
+
+async function createDescriptionFiles(rules: Ruleset, documentationUrl: string) {
+
+    const rulesRequest = await axios.get(documentationUrl)
+    const rulesJson = md2json.parse(rulesRequest.data)
+    
+    Promise.all(Object.entries(rules.rules).map(rule => {
+        const ruleId = rule[1].name
+        console.log("Rule Id: " + ruleId)
+
+        const bodyV2V3 = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleId]
+        const bodyV2 = rulesJson["OpenAPI Rules"]["OpenAPI v2.0-only"][ruleId]
+        const bodyV3 = rulesJson["OpenAPI Rules"]["OpenAPI v3-only"][ruleId]
+
+        const body = bodyV2V3 ? bodyV2V3["raw"] : bodyV2 ? bodyV2["raw"] : bodyV3["raw"]
+
+        const content = "# " + ruleId + "\n\n" + body
+
+        fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
+    }))
+}
+
+async function generateSpecification(ruleset: Ruleset) {
+    const patternSpecs = Object.entries(ruleset.rules).map((rule) => {
+        const ruleId = rule[1].name
+        var parametersSpecs: ParameterSpec[] = []
+        const enabled = true
+
+        const level = rule[1].severity
+        const category = rule[1].given
+
+        return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, true)
     })
 
-    const specification = new Specification("markdownlint", "0.24.0", patternSpecs)
+    const specification = new Specification("spectral-rulesets", "1.2.6", patternSpecs)
     await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2))
 }
 
-async function generatePatternsDescription(ruleTitles: string[], patternsSchema: any) {
-    const descriptionEntries = ruleTitles.map((ruleTitle) => {
-        const ruleId = getPatternId(ruleTitle)
+async function generatePatternsDescription(ruleset: Ruleset) {
+    const descriptionEntries = Object.entries(ruleset.rules).map((rule) => {
 
-        const ruleSchema = patternsSchema["properties"][ruleId]
+        const patternId = rule[1].name
+        const description =  rule[1].description ? rule[1].description : "N/A"
+        const title = rule[1].name + " - " + description
 
-        const description =  ruleSchema["description"].split(" - ")[1]
-        
-        const propertiesStructure = ruleSchema["properties"]
-        var parameters: DescriptionParameter[] = []
-        if(propertiesStructure) {
-            var propertiesNames = Object.keys(propertiesStructure)
-            parameters = propertiesNames.map((property) => {
-                return new DescriptionParameter(property, ruleSchema["properties"][property]["description"])
-            })
-
-        }
-
-        const title = cleanRuleTitle(ruleTitle)
-        return new DescriptionEntry(ruleId, title, description, undefined,  parameters)
+        return new DescriptionEntry(patternId, title, description as string)
     })
 
     await writeFile(docsPath + "description/description.json", JSON.stringify(descriptionEntries, null, 2) + "\n")
@@ -86,21 +111,59 @@ async function createFolderIfNotExists(dir: string) {
 async function main() {
     await createFolderIfNotExists(docsPath + "description")
 
-    const rulesRequest = await axios.get(repositoryUrlBase + "doc/Rules.md")
+    const rules = new Ruleset({
+        extends: [oas, asyncapi]
+      });
 
-    const rulesJson = md2json.parse(rulesRequest.data)
+    await createOpenapiDescriptionFiles()
+    await createAsyncapiDescriptionFiles()
 
-    const rulesSchemaRequest = await axios.get(repositoryUrlBase + "schema/markdownlint-config-schema.json")
+    await generateSpecification(rules)
 
-    const rules = Object.keys(rulesJson["Rules"]).filter(a => a != "raw")
-
-    await createDescriptionFiles(rules, rulesJson["Rules"])
-
-    await generateSpecification(rules, rulesSchemaRequest.data)
-
-    await generatePatternsDescription(rules, rulesSchemaRequest.data)
+    await generatePatternsDescription(rules)
     
     return rules
 }
 
 main()
+function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
+
+    const ruleIdEscaped = ""
+
+    const bodyV2V3 = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleId]
+
+    if (bodyV2V3) {
+        return bodyV2V3["raw"]
+    }
+
+    const bodyV2V3Escaped = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleIdEscaped]
+
+    if (bodyV2V3Escaped) {
+        return bodyV2V3Escaped["raw"]
+    }
+
+    const bodyV2 = rulesJson["OpenAPI Rules"]["OpenAPI v2.0-only"][ruleId]
+
+    if (bodyV2) {
+        return bodyV2["raw"]
+    }
+
+    const bodyV2Escaped = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleIdEscaped]
+
+    if (bodyV2Escaped) {
+        return bodyV2Escaped["raw"]
+    }
+
+    const bodyV3 = rulesJson["OpenAPI Rules"]["OpenAPI v3-only"][ruleId]
+
+    if (bodyV3) {
+        return bodyV3["raw"]
+    }
+
+    const bodyV3Escaped = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleIdEscaped]
+
+    if (bodyV3Escaped) {
+        return bodyV3Escaped["raw"]
+    }
+}
+

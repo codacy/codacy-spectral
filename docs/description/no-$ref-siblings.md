@@ -1,0 +1,3 @@
+# no-$ref-siblings
+
+undefined
