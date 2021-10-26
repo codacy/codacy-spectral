@@ -1,6 +1,7 @@
 import { Document, Ruleset,Spectral } from "@stoplight/spectral-core"
 import axios from "axios"
-import { readFile } from "codacy-seed"
+import { DiagnosticSeverity } from "@stoplight/types"
+import { Category, Level, readFile } from "codacy-seed"
 const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
 
 import {
@@ -46,30 +47,8 @@ async function createAsyncapiDescriptionFiles() {
 
     Promise.all(Object.keys(oas.rules).map(rulekey => {
         const ruleId = rulekey
-        console.log("Rule Id: " + ruleId)
 
         const body = parseBodyFromOpanapiRulesJson(rulesJson, ruleId)
-
-        const content = "# " + ruleId + "\n\n" + body
-
-        fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
-    }))
-}
-
-async function createDescriptionFiles(rules: Ruleset, documentationUrl: string) {
-
-    const rulesRequest = await axios.get(documentationUrl)
-    const rulesJson = md2json.parse(rulesRequest.data)
-
-    Promise.all(Object.entries(rules.rules).map(rule => {
-        const ruleId = rule[1].name
-        console.log("Rule Id: " + ruleId)
-
-        const bodyV2V3 = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleId]
-        const bodyV2 = rulesJson["OpenAPI Rules"]["OpenAPI v2.0-only"][ruleId]
-        const bodyV3 = rulesJson["OpenAPI Rules"]["OpenAPI v3-only"][ruleId]
-
-        const body = bodyV2V3 ? bodyV2V3["raw"] : bodyV2 ? bodyV2["raw"] : bodyV3["raw"]
 
         const content = "# " + ruleId + "\n\n" + body
 
@@ -83,10 +62,12 @@ async function generateSpecification(ruleset: Ruleset) {
         var parametersSpecs: ParameterSpec[] = []
         const enabled = true
 
-        const level = rule[1].severity
-        const category = rule[1].given
+        const level: Level = calculateLevel(rule[1].severity)
+        const category: Category = calculateCategory(rule[1].given)
 
-        return new PatternSpec(ruleId, "Info", "CodeStyle", undefined, parametersSpecs, true)
+        DiagnosticSeverity[rule[1].severity]
+
+        return new PatternSpec(ruleId, level, "CodeStyle", undefined, parametersSpecs, true)
     })
 
     const specification = new Specification("spectral-rulesets", "1.2.6", patternSpecs)
@@ -119,7 +100,7 @@ async function main() {
       });
 
     await createOpenapiDescriptionFiles()
-    await createAsyncapiDescriptionFiles()
+    // await createAsyncapiDescriptionFiles()
 
     await generateSpecification(rules)
 
@@ -131,7 +112,7 @@ async function main() {
 //main()
 function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
 
-    const ruleIdEscaped = ""
+    const ruleIdEscaped = ruleId.replace('$', '\\$')
 
     const bodyV2V3 = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleId]
 
@@ -192,3 +173,26 @@ async function main2() {
 }
 
 //main2()
+function calculateLevel(severity: DiagnosticSeverity) : Level{
+    switch(severity){
+        case DiagnosticSeverity.Error:
+            return "Error"
+        case DiagnosticSeverity.Warning:
+            return "Warning"
+        case DiagnosticSeverity.Information:
+            return "Info"
+        case DiagnosticSeverity.Hint:
+            return "Info"
+    }
+}
+
+function calculateCategory(given: string[]): Category {
+
+    // type?: 'validation' | 'style';
+
+    //"ErrorProne" | "CodeStyle" | "Complexity" | "UnusedCode" | "Security" | "Compatibility" | "Performance" | "Documentation" | "BestPractice";
+
+    return "CodeStyle"
+    
+}
+

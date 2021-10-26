@@ -4,441 +4,441 @@
   "patterns": [
     {
       "patternId": "operation-success-response",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-operation-formData-consume-check",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-operationId-unique",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-parameters",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-tag-defined",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "path-params",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "contact-properties",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "duplicated-entry-in-enum",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "info-contact",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "info-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "info-license",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "license-url",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "no-eval-in-markdown",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "no-script-tags-in-markdown",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "openapi-tags-alphabetical",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "openapi-tags",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-operationId",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-operationId-valid-in-url",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-singular-tag",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-tags",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "path-declarations-must-exist",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "path-keys-no-trailing-slash",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "path-not-include-query",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "tag-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "no-$ref-siblings",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "typed-enum",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-api-host",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-api-schemes",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-host-not-example",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-host-trailing-slash",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-parameter-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-operation-security-defined",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-valid-schema-example",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-valid-media-example",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-anyOf",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-oneOf",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-schema",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-unused-definition",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-api-servers",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-examples-value-or-externalValue",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-operation-security-defined",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-parameter-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-server-not-example.com",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-server-trailing-slash",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-valid-media-example",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-valid-schema-example",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-schema",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-unused-component",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-channel-no-empty-parameter",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-channel-no-query-nor-fragment",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-channel-no-trailing-slash",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-headers-schema-type-object",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-info-contact-properties",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-info-contact",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-info-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-info-license-url",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-info-license",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-operation-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-operation-operationId",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-parameter-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-payload-default",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-payload-examples",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
@@ -452,84 +452,84 @@
     },
     {
       "patternId": "asyncapi-payload",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-schema-default",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-schema-examples",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-schema",
-      "level": "Info",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-server-no-empty-variable",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-server-no-trailing-slash",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-server-not-example-com",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-servers",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-tag-description",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-tags-alphabetical",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-tags",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-unused-components-schema",
-      "level": "Info",
+      "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
