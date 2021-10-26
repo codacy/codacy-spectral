@@ -1,5 +1,5 @@
+import { Document, Ruleset,Spectral } from "@stoplight/spectral-core"
 import axios from "axios"
-import { Spectral, Document, Ruleset } from "@stoplight/spectral-core"
 import { readFile } from "codacy-seed"
 const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
 
@@ -14,6 +14,9 @@ import {
 import { promises as fs } from "fs"
 import * as md2json from "md-2-json"
 
+import pack from "./package-lock.json"
+
+
 const docsPath = "../docs/"
 
 const openapiRulesdocumentationUrl = "https://raw.githubusercontent.com/stoplightio/spectral/develop/docs/reference/openapi-rules.md"
@@ -23,7 +26,7 @@ async function createOpenapiDescriptionFiles() {
 
     const rulesRequest = await axios.get(openapiRulesdocumentationUrl)
     const rulesJson = await md2json.parse(rulesRequest.data)
-    
+
     Promise.all(Object.keys(oas.rules).map(rulekey => {
         const ruleId = rulekey
         console.log("Rule Id: " + ruleId)
@@ -40,7 +43,7 @@ async function createAsyncapiDescriptionFiles() {
 
     const rulesRequest = await axios.get(asyncapiRulesdocumentationUrl)
     const rulesJson = await md2json.parse(rulesRequest.data)
-    
+
     Promise.all(Object.keys(oas.rules).map(rulekey => {
         const ruleId = rulekey
         console.log("Rule Id: " + ruleId)
@@ -57,7 +60,7 @@ async function createDescriptionFiles(rules: Ruleset, documentationUrl: string) 
 
     const rulesRequest = await axios.get(documentationUrl)
     const rulesJson = md2json.parse(rulesRequest.data)
-    
+
     Promise.all(Object.entries(rules.rules).map(rule => {
         const ruleId = rule[1].name
         console.log("Rule Id: " + ruleId)
@@ -125,7 +128,7 @@ async function main() {
     return rules
 }
 
-main()
+//main()
 function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
 
     const ruleIdEscaped = ""
@@ -167,3 +170,25 @@ function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
     }
 }
 
+
+async function main2() {
+    const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].version
+    const repositoryUrl = "https://raw.githubusercontent.com/stoplightio/spectral"
+    const repoTagVersion = `%40stoplight/spectral-rulesets-v${spectralVersionInUse}`
+    const humanDocRules = "docs/reference/openapi-rules.md"
+    const rawDocFileUrl = repositoryUrl + "/" + repoTagVersion +  "/" + humanDocRules
+
+    console.log(`Read from package-lock.json the rules version in use is ${spectralVersionInUse}`)
+    console.log(`Downloading rules descriptions from: ${rawDocFileUrl}`)
+
+    axios.get(rawDocFileUrl)
+        .then(rulesRaw => {
+            const rulesInJson = md2json.parse(rulesRaw.data)
+
+            console.log(rulesRaw.data)
+            console.log(rulesInJson)
+        })
+
+}
+
+//main2()
