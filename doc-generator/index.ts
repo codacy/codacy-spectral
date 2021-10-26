@@ -109,7 +109,8 @@ async function main() {
     return rules
 }
 
-//main()
+main()
+
 function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
 
     const ruleIdEscaped = ruleId.replace('$', '\\$')
