@@ -181,14 +181,55 @@ async function main2() {
     console.log(`Read from package-lock.json the rules version in use is ${spectralVersionInUse}`)
     console.log(`Downloading rules descriptions from: ${rawDocFileUrl}`)
 
+    // make sure the file structure exists
+    await createFolderIfNotExists('../docs_vd/')
+    await createFolderIfNotExists('../docs_vd/description/')
+
     axios.get(rawDocFileUrl)
         .then(rulesRaw => {
             const rulesInJson = md2json.parse(rulesRaw.data)
 
-            console.log(rulesRaw.data)
-            console.log(rulesInJson)
+            // rules are separated in 3 sets, one which applies to all OpenApi versions,
+            // another which applies to only v2 and another for only v3.
+
+            // the following removes the unnecessary 'raw' key from the rules lists of each set.
+            const { raw: _raw1 , ...rulesForBoth } = rulesInJson['OpenAPI Rules']['OpenAPI v2 & v3']
+            const { raw: _raw2 , ...rulesForV2 } = rulesInJson['OpenAPI Rules']['OpenAPI v2.0-only']
+            const { raw: _raw3 , ...rulesForV3 } = rulesInJson['OpenAPI Rules']['OpenAPI v3-only']
+
+            // put all rules together in an object. this works for now since all rules
+            // from all sets appear to have unique names between them.
+            const allRules = { ...rulesForBoth, ...rulesForV2, ...rulesForV3 }
+
+            //console.log(rulesRaw.data)
+            //console.log(rulesInJson)
+
+            //console.log(rulesForBoth)
+            //console.log(rulesForV2)
+            //console.log(rulesForV3)
+
+            //console.log(allRules)
+
+            return allRules
+        })
+        .then(rules=> {
+            // fire writing for each file describing a rule as promises
+
+            const filesBeingWritten = Object.entries(rules).map(([ruleName, description]) => {
+                const ruleText: string = (description as any)['raw']
+                const content = `# ${ruleName}\n\n${ruleText}`
+
+                //console.log(ruleName)
+                //console.log(ruleText)
+                //console.log(content)
+
+                return fs.writeFile(`../docs_vd/description/${ruleName}.md`, content)
+            })
+
+            // traverse. list of promises to a promise of list.
+            Promise.all(filesBeingWritten)
         })
 
 }
 
-//main2()
+main2()
