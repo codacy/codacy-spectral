@@ -16,7 +16,7 @@ describe("configCreator", () => {
 
     deepStrictEqual(files, expectedFiles)
   })
-  it("should return empty", async () => {
+  it("should return empty files", async () => {
 
     const codacyrc = new Codacyrc([]);
   

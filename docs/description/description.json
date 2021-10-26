@@ -1,461 +1,458 @@
 [
   {
     "parameters": [],
-    "patternId": "MD001",
-    "title": "MD001 - Heading levels should only increment by one level at a time",
-    "description": "Heading levels should only increment by one level at a time"
-  },
-  {
-    "parameters": [
-      {
-        "name": "level",
-        "description": "Heading level"
-      }
-    ],
-    "patternId": "MD002",
-    "title": "MD002 - First heading should be a top-level heading",
-    "description": "First heading should be a top-level heading"
-  },
-  {
-    "parameters": [
-      {
-        "name": "style",
-        "description": "Heading style"
-      }
-    ],
-    "patternId": "MD003",
-    "title": "MD003 - Heading style",
-    "description": "Heading style"
-  },
-  {
-    "parameters": [
-      {
-        "name": "style",
-        "description": "List style"
-      }
-    ],
-    "patternId": "MD004",
-    "title": "MD004 - Unordered list style",
-    "description": "Unordered list style"
+    "patternId": "operation-success-response",
+    "title": "operation-success-response - Operation must have at least one \"2xx\" or \"3xx\" response.",
+    "description": "Operation must have at least one \"2xx\" or \"3xx\" response."
   },
   {
     "parameters": [],
-    "patternId": "MD005",
-    "title": "MD005 - Inconsistent indentation for list items at the same level",
-    "description": "Inconsistent indentation for list items at the same level"
+    "patternId": "oas2-operation-formData-consume-check",
+    "title": "oas2-operation-formData-consume-check - Operations with \"in: formData\" parameter must include \"application/x-www-form-urlencoded\" or \"multipart/form-data\" in their \"consumes\" property.",
+    "description": "Operations with \"in: formData\" parameter must include \"application/x-www-form-urlencoded\" or \"multipart/form-data\" in their \"consumes\" property."
   },
   {
     "parameters": [],
-    "patternId": "MD006",
-    "title": "MD006 - Consider starting bulleted lists at the beginning of the line",
-    "description": "Consider starting bulleted lists at the beginning of the line"
-  },
-  {
-    "parameters": [
-      {
-        "name": "indent",
-        "description": "Spaces for indent"
-      },
-      {
-        "name": "start_indented",
-        "description": "Whether to indent the first level of the list"
-      }
-    ],
-    "patternId": "MD007",
-    "title": "MD007 - Unordered list indentation",
-    "description": "Unordered list indentation"
-  },
-  {
-    "parameters": [
-      {
-        "name": "br_spaces",
-        "description": "Spaces for line break"
-      },
-      {
-        "name": "list_item_empty_lines",
-        "description": "Allow spaces for empty lines in list items"
-      },
-      {
-        "name": "strict",
-        "description": "Include unnecessary breaks"
-      }
-    ],
-    "patternId": "MD009",
-    "title": "MD009 - Trailing spaces",
-    "description": "Trailing spaces"
-  },
-  {
-    "parameters": [
-      {
-        "name": "code_blocks",
-        "description": "Include code blocks"
-      }
-    ],
-    "patternId": "MD010",
-    "title": "MD010 - Hard tabs",
-    "description": "Hard tabs"
+    "patternId": "operation-operationId-unique",
+    "title": "operation-operationId-unique - Every operation must have unique \"operationId\".",
+    "description": "Every operation must have unique \"operationId\"."
   },
   {
     "parameters": [],
-    "patternId": "MD011",
-    "title": "MD011 - Reversed link syntax",
-    "description": "Reversed link syntax"
-  },
-  {
-    "parameters": [
-      {
-        "name": "maximum",
-        "description": "Consecutive blank lines"
-      }
-    ],
-    "patternId": "MD012",
-    "title": "MD012 - Multiple consecutive blank lines",
-    "description": "Multiple consecutive blank lines"
-  },
-  {
-    "parameters": [
-      {
-        "name": "line_length",
-        "description": "Number of characters"
-      },
-      {
-        "name": "heading_line_length",
-        "description": "Number of characters for headings"
-      },
-      {
-        "name": "code_block_line_length",
-        "description": "Number of characters for code blocks"
-      },
-      {
-        "name": "code_blocks",
-        "description": "Include code blocks"
-      },
-      {
-        "name": "tables",
-        "description": "Include tables"
-      },
-      {
-        "name": "headings",
-        "description": "Include headings"
-      },
-      {
-        "name": "headers",
-        "description": "Include headers"
-      },
-      {
-        "name": "strict",
-        "description": "Strict length checking"
-      },
-      {
-        "name": "stern",
-        "description": "Stern length checking"
-      }
-    ],
-    "patternId": "MD013",
-    "title": "MD013 - Line length",
-    "description": "Line length"
+    "patternId": "operation-parameters",
+    "title": "operation-parameters - Operation parameters are unique and non-repeating.",
+    "description": "Operation parameters are unique and non-repeating."
   },
   {
     "parameters": [],
-    "patternId": "MD014",
-    "title": "MD014 - Dollar signs used before commands without showing output",
-    "description": "Dollar signs used before commands without showing output"
+    "patternId": "operation-tag-defined",
+    "title": "operation-tag-defined - Operation tags must be defined in global tags.",
+    "description": "Operation tags must be defined in global tags."
   },
   {
     "parameters": [],
-    "patternId": "MD018",
-    "title": "MD018 - No space after hash on atx style heading",
-    "description": "No space after hash on atx style heading"
+    "patternId": "path-params",
+    "title": "path-params - Path parameters must be defined and valid.",
+    "description": "Path parameters must be defined and valid."
   },
   {
     "parameters": [],
-    "patternId": "MD019",
-    "title": "MD019 - Multiple spaces after hash on atx style heading",
-    "description": "Multiple spaces after hash on atx style heading"
+    "patternId": "contact-properties",
+    "title": "contact-properties - Contact object must have \"name\", \"url\" and \"email\".",
+    "description": "Contact object must have \"name\", \"url\" and \"email\"."
   },
   {
     "parameters": [],
-    "patternId": "MD020",
-    "title": "MD020 - No space inside hashes on closed atx style heading",
-    "description": "No space inside hashes on closed atx style heading"
+    "patternId": "duplicated-entry-in-enum",
+    "title": "duplicated-entry-in-enum - Enum values must not have duplicate entry.",
+    "description": "Enum values must not have duplicate entry."
   },
   {
     "parameters": [],
-    "patternId": "MD021",
-    "title": "MD021 - Multiple spaces inside hashes on closed atx style heading",
-    "description": "Multiple spaces inside hashes on closed atx style heading"
-  },
-  {
-    "parameters": [
-      {
-        "name": "lines_above",
-        "description": "Blank lines above heading"
-      },
-      {
-        "name": "lines_below",
-        "description": "Blank lines below heading"
-      }
-    ],
-    "patternId": "MD022",
-    "title": "MD022 - Headings should be surrounded by blank lines",
-    "description": "Headings should be surrounded by blank lines"
+    "patternId": "info-contact",
+    "title": "info-contact - Info object must have \"contact\" object.",
+    "description": "Info object must have \"contact\" object."
   },
   {
     "parameters": [],
-    "patternId": "MD023",
-    "title": "MD023 - Headings must start at the beginning of the line",
-    "description": "Headings must start at the beginning of the line"
-  },
-  {
-    "parameters": [
-      {
-        "name": "allow_different_nesting",
-        "description": "Only check sibling headings"
-      },
-      {
-        "name": "siblings_only",
-        "description": "Only check sibling headings"
-      }
-    ],
-    "patternId": "MD024",
-    "title": "MD024 - Multiple headings with the same content",
-    "description": "Multiple headings with the same content"
-  },
-  {
-    "parameters": [
-      {
-        "name": "level",
-        "description": "Heading level"
-      },
-      {
-        "name": "front_matter_title",
-        "description": "RegExp for matching title in front matter"
-      }
-    ],
-    "patternId": "MD025",
-    "title": "MD025 - Multiple top-level headings in the same document",
-    "description": "Multiple top-level headings in the same document"
-  },
-  {
-    "parameters": [
-      {
-        "name": "punctuation",
-        "description": "Punctuation characters"
-      }
-    ],
-    "patternId": "MD026",
-    "title": "MD026 - Trailing punctuation in heading",
-    "description": "Trailing punctuation in heading"
+    "patternId": "info-description",
+    "title": "info-description - Info \"description\" must be present and non-empty string.",
+    "description": "Info \"description\" must be present and non-empty string."
   },
   {
     "parameters": [],
-    "patternId": "MD027",
-    "title": "MD027 - Multiple spaces after blockquote symbol",
-    "description": "Multiple spaces after blockquote symbol"
+    "patternId": "info-license",
+    "title": "info-license - Info object must have \"license\" object.",
+    "description": "Info object must have \"license\" object."
   },
   {
     "parameters": [],
-    "patternId": "MD028",
-    "title": "MD028 - Blank line inside blockquote",
-    "description": "Blank line inside blockquote"
-  },
-  {
-    "parameters": [
-      {
-        "name": "style",
-        "description": "List style"
-      }
-    ],
-    "patternId": "MD029",
-    "title": "MD029 - Ordered list item prefix",
-    "description": "Ordered list item prefix"
-  },
-  {
-    "parameters": [
-      {
-        "name": "ul_single",
-        "description": "Spaces for single-line unordered list items"
-      },
-      {
-        "name": "ol_single",
-        "description": "Spaces for single-line ordered list items"
-      },
-      {
-        "name": "ul_multi",
-        "description": "Spaces for multi-line unordered list items"
-      },
-      {
-        "name": "ol_multi",
-        "description": "Spaces for multi-line ordered list items"
-      }
-    ],
-    "patternId": "MD030",
-    "title": "MD030 - Spaces after list markers",
-    "description": "Spaces after list markers"
-  },
-  {
-    "parameters": [
-      {
-        "name": "list_items",
-        "description": "Include list items"
-      }
-    ],
-    "patternId": "MD031",
-    "title": "MD031 - Fenced code blocks should be surrounded by blank lines",
-    "description": "Fenced code blocks should be surrounded by blank lines"
+    "patternId": "license-url",
+    "title": "license-url - License object must include \"url\".",
+    "description": "License object must include \"url\"."
   },
   {
     "parameters": [],
-    "patternId": "MD032",
-    "title": "MD032 - Lists should be surrounded by blank lines",
-    "description": "Lists should be surrounded by blank lines"
-  },
-  {
-    "parameters": [
-      {
-        "name": "allowed_elements",
-        "description": "Allowed elements"
-      }
-    ],
-    "patternId": "MD033",
-    "title": "MD033 - Inline HTML",
-    "description": "Inline HTML"
+    "patternId": "no-eval-in-markdown",
+    "title": "no-eval-in-markdown - Markdown descriptions must not have \"eval(\".",
+    "description": "Markdown descriptions must not have \"eval(\"."
   },
   {
     "parameters": [],
-    "patternId": "MD034",
-    "title": "MD034 - Bare URL used",
-    "description": "Bare URL used"
-  },
-  {
-    "parameters": [
-      {
-        "name": "style",
-        "description": "Horizontal rule style"
-      }
-    ],
-    "patternId": "MD035",
-    "title": "MD035 - Horizontal rule style",
-    "description": "Horizontal rule style"
-  },
-  {
-    "parameters": [
-      {
-        "name": "punctuation",
-        "description": "Punctuation characters"
-      }
-    ],
-    "patternId": "MD036",
-    "title": "MD036 - Emphasis used instead of a heading",
-    "description": "Emphasis used instead of a heading"
+    "patternId": "no-script-tags-in-markdown",
+    "title": "no-script-tags-in-markdown - Markdown descriptions must not have \"<script>\" tags.",
+    "description": "Markdown descriptions must not have \"<script>\" tags."
   },
   {
     "parameters": [],
-    "patternId": "MD037",
-    "title": "MD037 - Spaces inside emphasis markers",
-    "description": "Spaces inside emphasis markers"
+    "patternId": "openapi-tags-alphabetical",
+    "title": "openapi-tags-alphabetical - OpenAPI object must have alphabetical \"tags\".",
+    "description": "OpenAPI object must have alphabetical \"tags\"."
   },
   {
     "parameters": [],
-    "patternId": "MD038",
-    "title": "MD038 - Spaces inside code span elements",
-    "description": "Spaces inside code span elements"
+    "patternId": "openapi-tags",
+    "title": "openapi-tags - OpenAPI object must have non-empty \"tags\" array.",
+    "description": "OpenAPI object must have non-empty \"tags\" array."
   },
   {
     "parameters": [],
-    "patternId": "MD039",
-    "title": "MD039 - Spaces inside link text",
-    "description": "Spaces inside link text"
+    "patternId": "operation-description",
+    "title": "operation-description - Operation \"description\" must be present and non-empty string.",
+    "description": "Operation \"description\" must be present and non-empty string."
   },
   {
     "parameters": [],
-    "patternId": "MD040",
-    "title": "MD040 - Fenced code blocks should have a language specified",
-    "description": "Fenced code blocks should have a language specified"
-  },
-  {
-    "parameters": [
-      {
-        "name": "level",
-        "description": "Heading level"
-      },
-      {
-        "name": "front_matter_title",
-        "description": "RegExp for matching title in front matter"
-      }
-    ],
-    "patternId": "MD041",
-    "title": "MD041 - First line in a file should be a top-level heading",
-    "description": "First line in a file should be a top-level heading"
+    "patternId": "operation-operationId",
+    "title": "operation-operationId - Operation must have \"operationId\".",
+    "description": "Operation must have \"operationId\"."
   },
   {
     "parameters": [],
-    "patternId": "MD042",
-    "title": "MD042 - No empty links",
-    "description": "No empty links"
-  },
-  {
-    "parameters": [
-      {
-        "name": "headings",
-        "description": "List of headings"
-      },
-      {
-        "name": "headers",
-        "description": "List of headings"
-      }
-    ],
-    "patternId": "MD043",
-    "title": "MD043 - Required heading structure",
-    "description": "Required heading structure"
-  },
-  {
-    "parameters": [
-      {
-        "name": "names",
-        "description": "List of proper names"
-      },
-      {
-        "name": "code_blocks",
-        "description": "Include code blocks"
-      }
-    ],
-    "patternId": "MD044",
-    "title": "MD044 - Proper names should have the correct capitalization",
-    "description": "Proper names should have the correct capitalization"
+    "patternId": "operation-operationId-valid-in-url",
+    "title": "operation-operationId-valid-in-url - N/A",
+    "description": "N/A"
   },
   {
     "parameters": [],
-    "patternId": "MD045",
-    "title": "MD045 - Images should have alternate text (alt text)",
-    "description": "Images should have alternate text (alt text)"
-  },
-  {
-    "parameters": [
-      {
-        "name": "style",
-        "description": "Block style"
-      }
-    ],
-    "patternId": "MD046",
-    "title": "MD046 - Code block style",
-    "description": "Code block style"
+    "patternId": "operation-singular-tag",
+    "title": "operation-singular-tag - Operation must not have more than a single tag.",
+    "description": "Operation must not have more than a single tag."
   },
   {
     "parameters": [],
-    "patternId": "MD047",
-    "title": "MD047 - Files should end with a single newline character",
-    "description": "Files should end with a single newline character"
+    "patternId": "operation-tags",
+    "title": "operation-tags - Operation must have non-empty \"tags\" array.",
+    "description": "Operation must have non-empty \"tags\" array."
   },
   {
-    "parameters": [
-      {
-        "name": "style",
-        "description": "Code fence syle"
-      }
-    ],
-    "patternId": "MD048",
-    "title": "MD048 - Code fence style",
-    "description": "Code fence style"
+    "parameters": [],
+    "patternId": "path-declarations-must-exist",
+    "title": "path-declarations-must-exist - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "path-keys-no-trailing-slash",
+    "title": "path-keys-no-trailing-slash - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "path-not-include-query",
+    "title": "path-not-include-query - Path must not include query string.",
+    "description": "Path must not include query string."
+  },
+  {
+    "parameters": [],
+    "patternId": "tag-description",
+    "title": "tag-description - Tag object must have \"description\".",
+    "description": "Tag object must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "no-$ref-siblings",
+    "title": "no-$ref-siblings - Property must not be placed among $ref",
+    "description": "Property must not be placed among $ref"
+  },
+  {
+    "parameters": [],
+    "patternId": "typed-enum",
+    "title": "typed-enum - Enum values must respect the specified type.",
+    "description": "Enum values must respect the specified type."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-api-host",
+    "title": "oas2-api-host - OpenAPI \"host\" must be present and non-empty string.",
+    "description": "OpenAPI \"host\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-api-schemes",
+    "title": "oas2-api-schemes - OpenAPI host \"schemes\" must be present and non-empty array.",
+    "description": "OpenAPI host \"schemes\" must be present and non-empty array."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-host-not-example",
+    "title": "oas2-host-not-example - Host URL must not point at example.com.",
+    "description": "Host URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-host-trailing-slash",
+    "title": "oas2-host-trailing-slash - Server URL must not have trailing slash.",
+    "description": "Server URL must not have trailing slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-parameter-description",
+    "title": "oas2-parameter-description - Parameter objects must have \"description\".",
+    "description": "Parameter objects must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-operation-security-defined",
+    "title": "oas2-operation-security-defined - Operation \"security\" values must match a scheme defined in the \"securityDefinitions\" object.",
+    "description": "Operation \"security\" values must match a scheme defined in the \"securityDefinitions\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-valid-schema-example",
+    "title": "oas2-valid-schema-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-valid-media-example",
+    "title": "oas2-valid-media-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-anyOf",
+    "title": "oas2-anyOf - anyOf is not available in OpenAPI v2, it was added in OpenAPI v3",
+    "description": "anyOf is not available in OpenAPI v2, it was added in OpenAPI v3"
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-oneOf",
+    "title": "oas2-oneOf - oneOf is not available in OpenAPI v2, it was added in OpenAPI v3",
+    "description": "oneOf is not available in OpenAPI v2, it was added in OpenAPI v3"
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-schema",
+    "title": "oas2-schema - Validate structure of OpenAPI v2 specification.",
+    "description": "Validate structure of OpenAPI v2 specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-unused-definition",
+    "title": "oas2-unused-definition - Potentially unused definition has been detected.",
+    "description": "Potentially unused definition has been detected."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-api-servers",
+    "title": "oas3-api-servers - OpenAPI \"servers\" must be present and non-empty array.",
+    "description": "OpenAPI \"servers\" must be present and non-empty array."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-examples-value-or-externalValue",
+    "title": "oas3-examples-value-or-externalValue - Examples must have either \"value\" or \"externalValue\" field.",
+    "description": "Examples must have either \"value\" or \"externalValue\" field."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-operation-security-defined",
+    "title": "oas3-operation-security-defined - Operation \"security\" values must match a scheme defined in the \"components.securitySchemes\" object.",
+    "description": "Operation \"security\" values must match a scheme defined in the \"components.securitySchemes\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-parameter-description",
+    "title": "oas3-parameter-description - Parameter objects must have \"description\".",
+    "description": "Parameter objects must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-server-not-example.com",
+    "title": "oas3-server-not-example.com - Server URL must not point at example.com.",
+    "description": "Server URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-server-trailing-slash",
+    "title": "oas3-server-trailing-slash - Server URL must not have trailing slash.",
+    "description": "Server URL must not have trailing slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-valid-media-example",
+    "title": "oas3-valid-media-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-valid-schema-example",
+    "title": "oas3-valid-schema-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-schema",
+    "title": "oas3-schema - Validate structure of OpenAPI v3 specification.",
+    "description": "Validate structure of OpenAPI v3 specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-unused-component",
+    "title": "oas3-unused-component - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-no-empty-parameter",
+    "title": "asyncapi-channel-no-empty-parameter - Channel path must not have empty parameter substitution pattern.",
+    "description": "Channel path must not have empty parameter substitution pattern."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-no-query-nor-fragment",
+    "title": "asyncapi-channel-no-query-nor-fragment - Channel path must not include query (\"?\") or fragment (\"#\") delimiter.",
+    "description": "Channel path must not include query (\"?\") or fragment (\"#\") delimiter."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-no-trailing-slash",
+    "title": "asyncapi-channel-no-trailing-slash - Channel path must not end with slash.",
+    "description": "Channel path must not end with slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-headers-schema-type-object",
+    "title": "asyncapi-headers-schema-type-object - Headers schema type must be \"object\".",
+    "description": "Headers schema type must be \"object\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-contact-properties",
+    "title": "asyncapi-info-contact-properties - Contact object must have \"name\", \"url\" and \"email\".",
+    "description": "Contact object must have \"name\", \"url\" and \"email\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-contact",
+    "title": "asyncapi-info-contact - Info object must have \"contact\" object.",
+    "description": "Info object must have \"contact\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-description",
+    "title": "asyncapi-info-description - Info \"description\" must be present and non-empty string.",
+    "description": "Info \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-license-url",
+    "title": "asyncapi-info-license-url - License object must include \"url\".",
+    "description": "License object must include \"url\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-license",
+    "title": "asyncapi-info-license - Info object must have \"license\" object.",
+    "description": "Info object must have \"license\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-operation-description",
+    "title": "asyncapi-operation-description - Operation \"description\" must be present and non-empty string.",
+    "description": "Operation \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-operation-operationId",
+    "title": "asyncapi-operation-operationId - Operation must have \"operationId\".",
+    "description": "Operation must have \"operationId\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-parameter-description",
+    "title": "asyncapi-parameter-description - Parameter objects must have \"description\".",
+    "description": "Parameter objects must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload-default",
+    "title": "asyncapi-payload-default - Default must be valid against its defined schema.",
+    "description": "Default must be valid against its defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload-examples",
+    "title": "asyncapi-payload-examples - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload-unsupported-schemaFormat",
+    "title": "asyncapi-payload-unsupported-schemaFormat - Message schema validation is only supported with default unspecified \"schemaFormat\".",
+    "description": "Message schema validation is only supported with default unspecified \"schemaFormat\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload",
+    "title": "asyncapi-payload - Payloads must be valid against AsyncAPI Schema object.",
+    "description": "Payloads must be valid against AsyncAPI Schema object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-schema-default",
+    "title": "asyncapi-schema-default - Default must be valid against its defined schema.",
+    "description": "Default must be valid against its defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-schema-examples",
+    "title": "asyncapi-schema-examples - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-schema",
+    "title": "asyncapi-schema - Validate structure of AsyncAPI v2.0.0 Specification.",
+    "description": "Validate structure of AsyncAPI v2.0.0 Specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-no-empty-variable",
+    "title": "asyncapi-server-no-empty-variable - Server URL must not have empty variable substitution pattern.",
+    "description": "Server URL must not have empty variable substitution pattern."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-no-trailing-slash",
+    "title": "asyncapi-server-no-trailing-slash - Server URL must not end with slash.",
+    "description": "Server URL must not end with slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-not-example-com",
+    "title": "asyncapi-server-not-example-com - Server URL must not point at example.com.",
+    "description": "Server URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-servers",
+    "title": "asyncapi-servers - AsyncAPI object must have non-empty \"servers\" object.",
+    "description": "AsyncAPI object must have non-empty \"servers\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-tag-description",
+    "title": "asyncapi-tag-description - Tag object must have \"description\".",
+    "description": "Tag object must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-tags-alphabetical",
+    "title": "asyncapi-tags-alphabetical - AsyncAPI object must have alphabetical \"tags\".",
+    "description": "AsyncAPI object must have alphabetical \"tags\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-tags",
+    "title": "asyncapi-tags - AsyncAPI object must have non-empty \"tags\" array.",
+    "description": "AsyncAPI object must have non-empty \"tags\" array."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-unused-components-schema",
+    "title": "asyncapi-unused-components-schema - Potentially unused components schema has been detected.",
+    "description": "Potentially unused components schema has been detected."
   }
 ]

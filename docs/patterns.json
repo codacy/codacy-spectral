@@ -1,508 +1,537 @@
 {
-  "name": "markdownlint",
-  "version": "0.23.1",
+  "name": "spectral-rulesets",
+  "version": "1.2.6",
   "patterns": [
     {
-      "patternId": "MD001",
+      "patternId": "operation-success-response",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD002",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "level",
-          "default": 1
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD003",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "style",
-          "default": "consistent"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD004",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "style",
-          "default": "consistent"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD005",
+      "patternId": "oas2-operation-formData-consume-check",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD006",
+      "patternId": "operation-operationId-unique",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD007",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "indent",
-          "default": 2
-        },
-        {
-          "name": "start_indented",
-          "default": false
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD009",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "br_spaces",
-          "default": 2
-        },
-        {
-          "name": "list_item_empty_lines",
-          "default": false
-        },
-        {
-          "name": "strict",
-          "default": false
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD010",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "code_blocks",
-          "default": true
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD011",
+      "patternId": "operation-parameters",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD012",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "maximum",
-          "default": 1
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD013",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "line_length",
-          "default": 80
-        },
-        {
-          "name": "heading_line_length",
-          "default": 80
-        },
-        {
-          "name": "code_block_line_length",
-          "default": 80
-        },
-        {
-          "name": "code_blocks",
-          "default": true
-        },
-        {
-          "name": "tables",
-          "default": true
-        },
-        {
-          "name": "headings",
-          "default": true
-        },
-        {
-          "name": "headers",
-          "default": true
-        },
-        {
-          "name": "strict",
-          "default": false
-        },
-        {
-          "name": "stern",
-          "default": false
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD014",
+      "patternId": "operation-tag-defined",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD018",
+      "patternId": "path-params",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD019",
+      "patternId": "contact-properties",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD020",
+      "patternId": "duplicated-entry-in-enum",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD021",
+      "patternId": "info-contact",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD022",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "lines_above",
-          "default": 1
-        },
-        {
-          "name": "lines_below",
-          "default": 1
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD023",
+      "patternId": "info-description",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD024",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "allow_different_nesting",
-          "default": false
-        },
-        {
-          "name": "siblings_only",
-          "default": false
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD025",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "level",
-          "default": 1
-        },
-        {
-          "name": "front_matter_title",
-          "default": "^\\s*title\\s*[:=]"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD026",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "punctuation",
-          "default": ".,;:!。，；：！"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD027",
+      "patternId": "info-license",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD028",
+      "patternId": "license-url",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD029",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "style",
-          "default": "one_or_ordered"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD030",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "ul_single",
-          "default": 1
-        },
-        {
-          "name": "ol_single",
-          "default": 1
-        },
-        {
-          "name": "ul_multi",
-          "default": 1
-        },
-        {
-          "name": "ol_multi",
-          "default": 1
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD031",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "list_items",
-          "default": true
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD032",
+      "patternId": "no-eval-in-markdown",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD033",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "allowed_elements",
-          "default": []
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD034",
+      "patternId": "no-script-tags-in-markdown",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD035",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "style",
-          "default": "consistent"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD036",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "punctuation",
-          "default": ".,;:!?。，；：！？"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD037",
+      "patternId": "openapi-tags-alphabetical",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD038",
+      "patternId": "openapi-tags",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD039",
+      "patternId": "operation-description",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD040",
+      "patternId": "operation-operationId",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD041",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "level",
-          "default": 1
-        },
-        {
-          "name": "front_matter_title",
-          "default": "^\\s*title\\s*[:=]"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD042",
+      "patternId": "operation-operationId-valid-in-url",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD043",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "headings",
-          "default": []
-        },
-        {
-          "name": "headers",
-          "default": []
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD044",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "names",
-          "default": []
-        },
-        {
-          "name": "code_blocks",
-          "default": true
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD045",
+      "patternId": "operation-singular-tag",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD046",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "style",
-          "default": "consistent"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "patternId": "MD047",
+      "patternId": "operation-tags",
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
     },
     {
-      "patternId": "MD048",
+      "patternId": "path-declarations-must-exist",
       "level": "Info",
       "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "style",
-          "default": "consistent"
-        }
-      ],
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "path-keys-no-trailing-slash",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "path-not-include-query",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "tag-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "no-$ref-siblings",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "typed-enum",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-api-host",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-api-schemes",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-host-not-example",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-host-trailing-slash",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-parameter-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-operation-security-defined",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-valid-schema-example",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-valid-media-example",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-anyOf",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-oneOf",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-schema",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas2-unused-definition",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-api-servers",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-examples-value-or-externalValue",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-operation-security-defined",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-parameter-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-server-not-example.com",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-server-trailing-slash",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-valid-media-example",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-valid-schema-example",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-schema",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-unused-component",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-channel-no-empty-parameter",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-channel-no-query-nor-fragment",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-channel-no-trailing-slash",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-headers-schema-type-object",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-info-contact-properties",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-info-contact",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-info-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-info-license-url",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-info-license",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-operation-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-operation-operationId",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-parameter-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-payload-default",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-payload-examples",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-payload-unsupported-schemaFormat",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-payload",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-schema-default",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-schema-examples",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-schema",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-server-no-empty-variable",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-server-no-trailing-slash",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-server-not-example-com",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-servers",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-tag-description",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-tags-alphabetical",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-tags",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "asyncapi-unused-components-schema",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
       "enabled": true
     }
   ]
