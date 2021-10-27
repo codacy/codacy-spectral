@@ -1,16 +1,17 @@
-import { Document, Ruleset,Spectral } from "@stoplight/spectral-core"
+import { Rule, Ruleset } from "@stoplight/spectral-core"
 import axios from "axios"
 import { DiagnosticSeverity } from "@stoplight/types"
-import { Category, Level, readFile } from "codacy-seed"
 const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
 
 import {
+    Category,
+    Level,
     DescriptionEntry,
-    DescriptionParameter,
     ParameterSpec,
     PatternSpec,
     Specification,
     writeFile,
+    readFile
   } from "codacy-seed"
 import { promises as fs } from "fs"
 import * as md2json from "md-2-json"
@@ -20,8 +21,13 @@ import pack from "./package-lock.json"
 
 const docsPath = "../docs/"
 
-const openapiRulesdocumentationUrl = "https://raw.githubusercontent.com/stoplightio/spectral/develop/docs/reference/openapi-rules.md"
-const asyncapiRulesdocumentationUrl = "https://raw.githubusercontent.com/stoplightio/spectral/develop/docs/reference/asyncapi-rules.md"
+const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].version
+
+const openapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/openapi-rules.md`
+const asyncapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/asyncapi-rules.md`
+
+console.log(openapiRulesdocumentationUrl)
+console.log(asyncapiRulesdocumentationUrl)
 
 async function createOpenapiDescriptionFiles() {
 
@@ -30,9 +36,8 @@ async function createOpenapiDescriptionFiles() {
 
     Promise.all(Object.keys(oas.rules).map(rulekey => {
         const ruleId = rulekey
-        console.log("Rule Id: " + ruleId)
 
-        const body = parseBodyFromOpanapiRulesJson(rulesJson, ruleId)
+        const body = parseBodyFromOpenapiRulesJson(rulesJson, ruleId)
 
         const content = "# " + ruleId + "\n\n" + body
 
@@ -42,13 +47,22 @@ async function createOpenapiDescriptionFiles() {
 
 async function createAsyncapiDescriptionFiles() {
 
-    const rulesRequest = await axios.get(asyncapiRulesdocumentationUrl)
-    const rulesJson = await md2json.parse(rulesRequest.data)
+    // TODO: implement parser that parses the asyncapi rules
 
-    Promise.all(Object.keys(oas.rules).map(rulekey => {
+    const rulesRequest = await axios.get(asyncapiRulesdocumentationUrl)
+
+    const file = await readFile(docsPath + "description/asyncapirules.md")
+
+    // fs.writeFile(docsPath + "description/asyncapirules.md", rulesRequest.data)
+
+    const rulesJson = await md2json.parse(file.toString())
+
+    console.log(JSON.stringify(rulesJson, null, 5))
+
+    Promise.all(Object.keys(asyncapi.rules).map(rulekey => {
         const ruleId = rulekey
 
-        const body = parseBodyFromOpanapiRulesJson(rulesJson, ruleId)
+        const body = parseBodyFromAsyncapiRulesJson(rulesJson, ruleId)
 
         const content = "# " + ruleId + "\n\n" + body
 
@@ -63,7 +77,7 @@ async function generateSpecification(ruleset: Ruleset) {
         const enabled = true
 
         const level: Level = calculateLevel(rule[1].severity)
-        const category: Category = calculateCategory(rule[1].given)
+        const category: Category = calculateCategory(rule[1])
 
         DiagnosticSeverity[rule[1].severity]
 
@@ -100,7 +114,7 @@ async function main() {
       });
 
     await createOpenapiDescriptionFiles()
-    // await createAsyncapiDescriptionFiles()
+    await createAsyncapiDescriptionFiles()
 
     await generateSpecification(rules)
 
@@ -111,7 +125,9 @@ async function main() {
 
 main()
 
-function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
+function parseBodyFromOpenapiRulesJson(rulesJson: any, ruleId: string): string | undefined {
+
+    // TODO: clean up, or implement a specific parser, come up with escaped characters solution
 
     const ruleIdEscaped = ruleId.replace('$', '\\$')
 
@@ -152,28 +168,12 @@ function parseBodyFromOpanapiRulesJson(rulesJson: any, ruleId: string) {
     }
 }
 
+function parseBodyFromAsyncapiRulesJson(rulesJson: any, ruleId: string) {
 
-async function main2() {
-    const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].version
-    const repositoryUrl = "https://raw.githubusercontent.com/stoplightio/spectral"
-    const repoTagVersion = `%40stoplight/spectral-rulesets-v${spectralVersionInUse}`
-    const humanDocRules = "docs/reference/openapi-rules.md"
-    const rawDocFileUrl = repositoryUrl + "/" + repoTagVersion +  "/" + humanDocRules
-
-    console.log(`Read from package-lock.json the rules version in use is ${spectralVersionInUse}`)
-    console.log(`Downloading rules descriptions from: ${rawDocFileUrl}`)
-
-    axios.get(rawDocFileUrl)
-        .then(rulesRaw => {
-            const rulesInJson = md2json.parse(rulesRaw.data)
-
-            console.log(rulesRaw.data)
-            console.log(rulesInJson)
-        })
-
+    // TODO: clean up, or implement a specific parser
+    return rulesJson["AsyncAPI Rules"]["test"][ruleId]["raw"]
 }
 
-//main2()
 function calculateLevel(severity: DiagnosticSeverity) : Level{
     switch(severity){
         case DiagnosticSeverity.Error:
@@ -187,9 +187,16 @@ function calculateLevel(severity: DiagnosticSeverity) : Level{
     }
 }
 
-function calculateCategory(given: string[]): Category {
+function calculateCategory(rule: Rule): Category {
 
-    // type?: 'validation' | 'style';
+    switch(rule.definition.type) {
+        case "style":
+            return "CodeStyle"
+        case "validation":
+            return "CodeStyle"
+    }
+
+    // TODO: mapping to codacy categories
 
     //"ErrorProne" | "CodeStyle" | "Complexity" | "UnusedCode" | "Security" | "Compatibility" | "Performance" | "Documentation" | "BestPractice";
 
