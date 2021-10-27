@@ -1,4 +1,4 @@
-import { Codacyrc, Engine, Pattern, Tool, ToolResult } from "codacy-seed"
+import { Codacyrc, Engine, ToolResult } from "codacy-seed"
 
 import { convertResults } from "./convertResults"
 import { Spectral, Document, Ruleset } from "@stoplight/spectral-core"
