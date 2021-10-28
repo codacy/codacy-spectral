@@ -39,11 +39,11 @@
     "@stoplight/spectral-core": "^1.6.0",
     "@stoplight/spectral-rulesets": "^1.2.7",
     "axios": "^0.21.1",
-    "codacy-seed": "^2.2.0",
-    "md-2-json": "^2.0.0"
+    "codacy-seed": "^2.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.8",
+    "@types/marked": "^3.0.2",
     "@types/node": "^14.14.33",
     "eslint": "^7.21.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
