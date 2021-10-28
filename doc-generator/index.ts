@@ -55,6 +55,8 @@ async function generateSpecification(ruleset: Ruleset) {
         return new PatternSpec(ruleId, level, category, undefined, parametersSpecs, true)
     })
 
+
+
     const specification = new Specification("spectral-rulesets", "1.2.6", patternSpecs)
     await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2))
 }
@@ -83,7 +85,6 @@ function extractRulesMds(mdContent: string): Record<string, string> {
     contentSplitByRule.filter(rule => !rule.startsWith("#")).forEach(rule => rules[extractAndSanitizeTitle(rule)] = sanitizeRule(rule))
 
     return rules
-    
 }
 
 function extractAndSanitizeTitle(rule: string): string {
