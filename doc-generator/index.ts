@@ -10,11 +10,9 @@ import {
     ParameterSpec,
     PatternSpec,
     Specification,
-    writeFile,
-    readFile
+    writeFile
   } from "codacy-seed"
 import { promises as fs } from "fs"
-import * as md2json from "md-2-json"
 
 import pack from "./package-lock.json"
 
@@ -26,47 +24,24 @@ const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].v
 const openapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/openapi-rules.md`
 const asyncapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/asyncapi-rules.md`
 
-console.log(openapiRulesdocumentationUrl)
-console.log(asyncapiRulesdocumentationUrl)
-
 async function createOpenapiDescriptionFiles() {
 
     const rulesRequest = await axios.get(openapiRulesdocumentationUrl)
-    const rulesJson = await md2json.parse(rulesRequest.data)
+    const rulesJson = extractRulesMds(rulesRequest.data)
 
-    Promise.all(Object.keys(oas.rules).map(rulekey => {
-        const ruleId = rulekey
-
-        const body = parseBodyFromOpenapiRulesJson(rulesJson, ruleId)
-
-        const content = "# " + ruleId + "\n\n" + body
-
-        fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
+    Promise.all(Object.keys(rulesJson).map(ruleKey => {
+        const content = "#" + rulesJson[ruleKey]
+        fs.writeFile(docsPath + "description/" + ruleKey + ".md", content)
     }))
 }
 
 async function createAsyncapiDescriptionFiles() {
-
-    // TODO: implement parser that parses the asyncapi rules
-
     const rulesRequest = await axios.get(asyncapiRulesdocumentationUrl)
+    const rulesJson = extractRulesMds(rulesRequest.data)
 
-    const file = await readFile(docsPath + "description/asyncapirules.md")
-
-    // fs.writeFile(docsPath + "description/asyncapirules.md", rulesRequest.data)
-
-    const rulesJson = await md2json.parse(file.toString())
-
-    console.log(JSON.stringify(rulesJson, null, 5))
-
-    Promise.all(Object.keys(asyncapi.rules).map(rulekey => {
-        const ruleId = rulekey
-
-        const body = parseBodyFromAsyncapiRulesJson(rulesJson, ruleId)
-
-        const content = "# " + ruleId + "\n\n" + body
-
-        fs.writeFile(docsPath + "description/" + ruleId + ".md", content)
+    Promise.all(Object.keys(rulesJson).map(ruleKey => {
+        const content = "#" + rulesJson[ruleKey]
+        fs.writeFile(docsPath + "description/" + ruleKey + ".md", content)
     }))
 }
 
@@ -74,14 +49,10 @@ async function generateSpecification(ruleset: Ruleset) {
     const patternSpecs = Object.entries(ruleset.rules).map((rule) => {
         const ruleId = rule[1].name
         var parametersSpecs: ParameterSpec[] = []
-        const enabled = true
-
         const level: Level = calculateLevel(rule[1].severity)
         const category: Category = calculateCategory(rule[1])
 
-        DiagnosticSeverity[rule[1].severity]
-
-        return new PatternSpec(ruleId, level, "CodeStyle", undefined, parametersSpecs, true)
+        return new PatternSpec(ruleId, level, category, undefined, parametersSpecs, true)
     })
 
     const specification = new Specification("spectral-rulesets", "1.2.6", patternSpecs)
@@ -90,7 +61,6 @@ async function generateSpecification(ruleset: Ruleset) {
 
 async function generatePatternsDescription(ruleset: Ruleset) {
     const descriptionEntries = Object.entries(ruleset.rules).map((rule) => {
-
         const patternId = rule[1].name
         const description =  rule[1].description ? rule[1].description : "N/A"
         const title = rule[1].name + " - " + description
@@ -106,73 +76,23 @@ async function createFolderIfNotExists(dir: string) {
     await accessPromise.catch(_ => fs.mkdir(dir))
 }
 
-async function main() {
-    await createFolderIfNotExists(docsPath + "description")
+function extractRulesMds(mdContent: string): Record<string, string> {
+    const rules: Record<string, string> = {}
 
-    const rules = new Ruleset({
-        extends: [oas, asyncapi]
-      });
+    const contentSplitByRule = mdContent.split('###');
+    contentSplitByRule.filter(rule => !rule.startsWith("#")).forEach(rule => rules[extractAndSanitizeTitle(rule)] = sanitizeRule(rule))
 
-    await createOpenapiDescriptionFiles()
-    await createAsyncapiDescriptionFiles()
-
-    await generateSpecification(rules)
-
-    await generatePatternsDescription(rules)
-    
     return rules
+    
 }
 
-main()
-
-function parseBodyFromOpenapiRulesJson(rulesJson: any, ruleId: string): string | undefined {
-
-    // TODO: clean up, or implement a specific parser, come up with escaped characters solution
-
-    const ruleIdEscaped = ruleId.replace('$', '\\$')
-
-    const bodyV2V3 = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleId]
-
-    if (bodyV2V3) {
-        return bodyV2V3["raw"]
-    }
-
-    const bodyV2V3Escaped = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleIdEscaped]
-
-    if (bodyV2V3Escaped) {
-        return bodyV2V3Escaped["raw"]
-    }
-
-    const bodyV2 = rulesJson["OpenAPI Rules"]["OpenAPI v2.0-only"][ruleId]
-
-    if (bodyV2) {
-        return bodyV2["raw"]
-    }
-
-    const bodyV2Escaped = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleIdEscaped]
-
-    if (bodyV2Escaped) {
-        return bodyV2Escaped["raw"]
-    }
-
-    const bodyV3 = rulesJson["OpenAPI Rules"]["OpenAPI v3-only"][ruleId]
-
-    if (bodyV3) {
-        return bodyV3["raw"]
-    }
-
-    const bodyV3Escaped = rulesJson["OpenAPI Rules"]["OpenAPI v2 & v3"][ruleIdEscaped]
-
-    if (bodyV3Escaped) {
-        return bodyV3Escaped["raw"]
-    }
+function extractAndSanitizeTitle(rule: string): string {
+   return rule.split('\n')[0].replace('\\', '').trim()
 }
 
-function parseBodyFromAsyncapiRulesJson(rulesJson: any, ruleId: string) {
-
-    // TODO: clean up, or implement a specific parser
-    return rulesJson["AsyncAPI Rules"]["test"][ruleId]["raw"]
-}
+function sanitizeRule(rule: string): string {
+    return rule.split('##')[0].replace('\\', '')
+ }
 
 function calculateLevel(severity: DiagnosticSeverity) : Level{
     switch(severity){
@@ -188,7 +108,6 @@ function calculateLevel(severity: DiagnosticSeverity) : Level{
 }
 
 function calculateCategory(rule: Rule): Category {
-
     switch(rule.definition.type) {
         case "style":
             return "CodeStyle"
@@ -204,3 +123,20 @@ function calculateCategory(rule: Rule): Category {
     
 }
 
+async function main() {
+    await createFolderIfNotExists(docsPath + "description")
+
+    const rules = new Ruleset({
+        extends: [oas, asyncapi]
+      });
+
+    await createOpenapiDescriptionFiles()
+    await createAsyncapiDescriptionFiles()
+
+    await generateSpecification(rules)
+    await generatePatternsDescription(rules)
+    
+    return rules
+}
+
+main()
