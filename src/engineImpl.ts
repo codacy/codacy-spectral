@@ -15,13 +15,11 @@ export const engineImpl: Engine = async function (
   const spectral = new Spectral();
 
   const codacyrcFiles = await extractFiles(codacyrc)
-
   const patternIdsToApply = await extractPatternIdsToApply(codacyrc)
 
   const defaultRules = {...oas.rules, ...asyncapi.rules}
 
   if (patternIdsToApply?.length) {
-    console.log(patternIdsToApply)
     for (let defaultRuleKey in defaultRules) {
       if ( !patternIdsToApply.includes(defaultRuleKey) ) {
         delete defaultRules[defaultRuleKey]
