@@ -1,23 +1,41 @@
 # Codacy Spectral
 
-This is an integration created so that Codacy can run the [spectral](https://github.com/stoplightio/spectral)
-tool in its infrastructure, or using its [CLI](https://github.com/codacy/codacy-analysis-cli).
+## Adding new plugins / configs
+
+1.  Install the package using npm:
+
+    ```bash
+    npm install <package-name>
+    ```
+
+2.  \[Plugins only\] Add the plugin to the plugins section in the file `src/eslintDefaultOptions.ts`
+
+3.  \[Plugins only\] If the plugin has descriptions for rules on GitHub, reference them
+at `src/eslintDefaultOptions.ts` to include them on the generated documentation. To do this, add a section similar to the following example:
+
+    ```typescript
+    console.log("Generate xss description files")
+    await docGenerator.downloadDocs(
+      (pattern) =>
+        `${githubBaseUrl}/Rantanen/eslint-plugin-xss/master/docs/rules/${pattern}.md`,
+      "xss"
+    )
+    ```
+
+4.  Generate documentation so it adds the new plugin documentation
 
 ## Generating documentation
 
 ```bash
-pushd .
-cd doc-generator
 npm install
-npm run compile && node dist/index.js
-popd .
+npm run generateDocs
 ```
 
-## Build docker image
+# Heading 1
 
-```bash
-docker build -t codacy-spectral .
-```
+### Heading 3
+
+We skipped out a 2nd level heading in this document
 
 ## Test changes to codacy-seed locally
 You may need to test changes that comes from our [codacy-engine-typescript-seed](https://github.com/codacy/codacy-engine-typescript-seed).
@@ -39,7 +57,7 @@ You may need to test changes that comes from our [codacy-engine-typescript-seed]
         *  Lines from `FROM node:$NODE_IMAGE_VERSION` to `RUN rm -rf /package.json /package-lock.json`
         > This way you skip copying the files to the other docker, and another `npm install`
 
-5.  Publish your docker locally as normal: `docker build -t codacy-spectral .`
+5.  Publish your docker locally as normal: `docker build -t codacy-eslint:local .`
 
 ## What is Codacy
 

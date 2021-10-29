@@ -1,6 +1,6 @@
 
 import { ISpectralDiagnostic } from "@stoplight/spectral-core"
-import { deepEqual } from "assert"
+import { deepStrictEqual } from "assert"
 import { Issue, ToolResult } from "codacy-seed"
 
 import { convertResults } from "../convertResults"
@@ -50,6 +50,6 @@ describe("convertResults", () => {
       new Issue("example.json", "Invalid symbol", "parser", 0),
     ]
 
-    deepEqual(results, expected)
+    deepStrictEqual(results, expected)
   })
 })
