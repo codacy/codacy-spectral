@@ -16,14 +16,6 @@ describe("configExtractor", () => {
 
     deepStrictEqual(files, expectedFiles)
   })
-  it("should return empty files", async () => {
-
-    const codacyrc = new Codacyrc([]);
-  
-    const files = await extractFiles(codacyrc)
-
-    assert(!files.length)
-  })
   it("should be able to retrieve patternIds", async () => {
 
     const patternId1: string = "pattern Id 1"
