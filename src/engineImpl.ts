@@ -20,7 +20,8 @@ export const engineImpl: Engine = async function (
 
   const defaultRules = {...oas.rules, ...asyncapi.rules}
 
-  if (patternIdsToApply) {
+  if (patternIdsToApply?.length) {
+    console.log(patternIdsToApply)
     for (let defaultRuleKey in defaultRules) {
       if ( !patternIdsToApply.includes(defaultRuleKey) ) {
         delete defaultRules[defaultRuleKey]

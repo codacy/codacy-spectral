@@ -1,5 +1,5 @@
 {
-    "files" : ["petstore.json", "signup.yaml"],
+    "files" : ["files/petstore.json", "files/signup.yaml"],
     "tools":[
       {
         "name":"spectral",
