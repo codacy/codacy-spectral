@@ -1,4 +1,4 @@
-# Codacy Markdownlint
+# Codacy Spectral
 
 ## Adding new plugins / configs
 

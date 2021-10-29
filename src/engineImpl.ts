@@ -18,20 +18,17 @@ export const engineImpl: Engine = async function (
 
   const patternIdsToApply = await extractPatternIdsToApply(codacyrc)
 
-  if (!patternIdsToApply) {
-    return []
-  }
-
   const defaultRules = {...oas.rules, ...asyncapi.rules}
 
-  for (let defaultRuleKey in defaultRules) {
+  if (patternIdsToApply) {
+    for (let defaultRuleKey in defaultRules) {
       if ( !patternIdsToApply.includes(defaultRuleKey) ) {
-          delete defaultRules[defaultRuleKey]
+        delete defaultRules[defaultRuleKey]
       }
+    }
   }
 
-  const codacyRuleset = new Ruleset( { rules: defaultRules } )
-  spectral.setRuleset(codacyRuleset)
+  spectral.setRuleset(new Ruleset( { rules: defaultRules } ))
 
   const files = await Promise.all(
     codacyrcFiles.map(async (file) => {

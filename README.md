@@ -39,7 +39,7 @@ You may need to test changes that comes from our [codacy-engine-typescript-seed]
         *  Lines from `FROM node:$NODE_IMAGE_VERSION` to `RUN rm -rf /package.json /package-lock.json`
         > This way you skip copying the files to the other docker, and another `npm install`
 
-5.  Publish your docker locally as normal: `docker build -t codacy-markdownlint .`
+5.  Publish your docker locally as normal: `docker build -t codacy-spectral .`
 
 ## What is Codacy
 

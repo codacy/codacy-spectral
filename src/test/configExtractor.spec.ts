@@ -2,7 +2,7 @@ import { Codacyrc, Pattern, Tool } from "codacy-seed";
 import assert, { deepStrictEqual } from "node:assert";
 import { extractFiles, extractPatternIdsToApply } from "../configExtractor"
 
-describe("configCreator", () => {
+describe("configExtractor", () => {
   it("should be able to retrive files", async () => {
 
     const filename1: string = "filename1.json"
