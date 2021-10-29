@@ -12,35 +12,35 @@
     {
       "patternId": "oas2-operation-formData-consume-check",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-operationId-unique",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-parameters",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "operation-tag-defined",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "path-params",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -54,7 +54,7 @@
     {
       "patternId": "duplicated-entry-in-enum",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -131,7 +131,7 @@
     {
       "patternId": "operation-operationId-valid-in-url",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -180,14 +180,14 @@
     {
       "patternId": "no-$ref-siblings",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "typed-enum",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -229,42 +229,42 @@
     {
       "patternId": "oas2-operation-security-defined",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-valid-schema-example",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-valid-media-example",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-anyOf",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-oneOf",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas2-schema",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -292,7 +292,7 @@
     {
       "patternId": "oas3-operation-security-defined",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -320,21 +320,21 @@
     {
       "patternId": "oas3-valid-media-example",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-valid-schema-example",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "oas3-schema",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -369,7 +369,7 @@
     {
       "patternId": "asyncapi-headers-schema-type-object",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -418,7 +418,7 @@
     {
       "patternId": "asyncapi-operation-operationId",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -432,49 +432,49 @@
     {
       "patternId": "asyncapi-payload-default",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-payload-examples",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-payload-unsupported-schemaFormat",
       "level": "Info",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-payload",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-schema-default",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-schema-examples",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
     {
       "patternId": "asyncapi-schema",
       "level": "Error",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },
@@ -502,7 +502,7 @@
     {
       "patternId": "asyncapi-servers",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [],
       "enabled": true
     },

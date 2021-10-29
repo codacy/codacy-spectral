@@ -113,15 +113,9 @@ function calculateCategory(rule: Rule): Category {
         case "style":
             return "CodeStyle"
         case "validation":
-            return "CodeStyle"
+            return "ErrorProne"
     }
-
-    // TODO: mapping to codacy categories
-
-    //"ErrorProne" | "CodeStyle" | "Complexity" | "UnusedCode" | "Security" | "Compatibility" | "Performance" | "Documentation" | "BestPractice";
-
-    return "CodeStyle"
-    
+    return "CodeStyle"  
 }
 
 async function main() {
