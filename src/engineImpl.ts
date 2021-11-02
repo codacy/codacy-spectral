@@ -12,22 +12,30 @@ export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc
 ): Promise<ToolResult[]> {
 
-  const spectral = new Spectral();
-
   const codacyrcFiles = await extractFiles(codacyrc)
   const patternIdsToApply = await extractPatternIdsToApply(codacyrc)
 
-  const defaultRules = {...oas.rules, ...asyncapi.rules}
+  const defaultAsyncapiRules = {...asyncapi.rules}
+  const defaultOasRules = {...oas.rules}
 
   if (patternIdsToApply?.length) {
-    for (let defaultRuleKey in defaultRules) {
+    for (let defaultRuleKey in defaultAsyncapiRules) {
       if ( !patternIdsToApply.includes(defaultRuleKey) ) {
-        delete defaultRules[defaultRuleKey]
+        delete defaultAsyncapiRules[defaultRuleKey]
+      }
+    }
+    for (let defaultRuleKey in defaultOasRules) {
+      if ( !patternIdsToApply.includes(defaultRuleKey) ) {
+        delete defaultOasRules[defaultRuleKey]
       }
     }
   }
 
-  spectral.setRuleset(new Ruleset( { rules: defaultRules } ))
+  const asyncapiSpectral = new Spectral();
+  asyncapiSpectral.setRuleset(new Ruleset( { rules: defaultAsyncapiRules } ))
+
+  const oasSpectral = new Spectral();
+  oasSpectral.setRuleset(new Ruleset( { rules: defaultOasRules } ))
 
   const files = await Promise.all(
     codacyrcFiles.map(async (file) => {
@@ -40,8 +48,7 @@ export const engineImpl: Engine = async function (
     files.map((file) => {
       const filename = file[0]
       const extension = file[0].substring(filename.lastIndexOf('.') + 1, filename.length) || filename
-      const myDocument = extension === "json" ? new Document(file[1], Json, filename) : new Document(file[1], Yaml, filename)
-      return spectral.run(myDocument)
+      return extension === "json" ? oasSpectral.run(new Document(file[1], Json, filename)) : asyncapiSpectral.run(new Document(file[1], Yaml, filename))
     }).flat()
   )
 
