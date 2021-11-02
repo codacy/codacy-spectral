@@ -1,9 +1,13 @@
 {
-    "files" : ["files/signup.yaml"],
+    "files" : ["signup.yaml", "petstore.json"],
     "tools":[
       {
         "name":"spectral",
-        "patterns":[]
+        "patterns":[
+          {
+            "patternId":"asyncapi-info-contact"
+          }
+        ]
       }
     ]
   }
