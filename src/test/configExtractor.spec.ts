@@ -1,5 +1,5 @@
 import { Codacyrc, Pattern, Tool } from "codacy-seed";
-import assert, { deepStrictEqual } from "node:assert";
+import assert, { deepStrictEqual } from "assert";
 import { extractFiles, extractPatternIdsToApply } from "../configExtractor"
 
 describe("configExtractor", () => {
