@@ -1,22 +1,9 @@
 {
-    "files" : ["files/petstore.json", "files/signup.yaml"],
+    "files" : ["files/signup.yaml"],
     "tools":[
       {
         "name":"spectral",
-        "patterns":[
-          {
-            "patternId":"operation-tags",
-            "parameters": []
-          },
-          {
-            "patternId":"asyncapi-tags",
-            "parameters": []
-          },
-          {
-            "patternId":"nonexistent-rule",
-            "parameters": []
-          }
-        ]
+        "patterns":[]
       }
     ]
   }
