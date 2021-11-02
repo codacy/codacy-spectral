@@ -1,12 +1,12 @@
 import { Rule, Ruleset } from "@stoplight/spectral-core"
-import axios from "axios"
 import { DiagnosticSeverity } from "@stoplight/types"
+import axios from "axios"
 const { oas, asyncapi } = require("@stoplight/spectral-rulesets");
 
 import {
     Category,
-    Level,
     DescriptionEntry,
+    Level,
     ParameterSpec,
     PatternSpec,
     Specification,
@@ -24,44 +24,32 @@ const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].v
 const openapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/openapi-rules.md`
 const asyncapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/asyncapi-rules.md`
 
-async function createOpenapiDescriptionFiles() {
 
-    const rulesRequest = await axios.get(openapiRulesdocumentationUrl)
+async function createDescriptionFiles(rulesDocUrl: string): Promise<void> {
+    const rulesRequest = await axios.get(rulesDocUrl)
     const rulesJson = extractRulesMds(rulesRequest.data)
 
-    Promise.all(Object.keys(rulesJson).map(ruleKey => {
+    await Promise.all(Object.keys(rulesJson).map(ruleKey => {
         const content = "#" + rulesJson[ruleKey]
-        fs.writeFile(docsPath + "description/" + ruleKey + ".md", content)
+        return fs.writeFile(docsPath + "description/" + ruleKey + ".md", content)
     }))
 }
 
-async function createAsyncapiDescriptionFiles() {
-    const rulesRequest = await axios.get(asyncapiRulesdocumentationUrl)
-    const rulesJson = extractRulesMds(rulesRequest.data)
-
-    Promise.all(Object.keys(rulesJson).map(ruleKey => {
-        const content = "#" + rulesJson[ruleKey]
-        fs.writeFile(docsPath + "description/" + ruleKey + ".md", content)
-    }))
-}
-
-async function generateSpecification(ruleset: Ruleset) {
+async function generateSpecification(ruleset: Ruleset): Promise<void> {
     const patternSpecs = Object.entries(ruleset.rules).map((rule) => {
         const ruleId = rule[1].name
-        var parametersSpecs: ParameterSpec[] = []
+        const parametersSpecs: ParameterSpec[] = []
         const level: Level = calculateLevel(rule[1].severity)
         const category: Category = calculateCategory(rule[1])
 
         return new PatternSpec(ruleId, level, category, undefined, parametersSpecs, true)
     })
 
-
-
-    const specification = new Specification("spectral-rulesets", "1.2.6", patternSpecs)
+    const specification = new Specification("spectral-rulesets", spectralVersionInUse, patternSpecs)
     await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2))
 }
 
-async function generatePatternsDescription(ruleset: Ruleset) {
+async function generatePatternsDescription(ruleset: Ruleset): Promise<void> {
     const descriptionEntries = Object.entries(ruleset.rules).map((rule) => {
         const patternId = rule[1].name
         const description =  rule[1].description ? rule[1].description : "N/A"
@@ -82,7 +70,9 @@ function extractRulesMds(mdContent: string): Record<string, string> {
     const rules: Record<string, string> = {}
 
     const contentSplitByRule = mdContent.split('###');
-    contentSplitByRule.filter(rule => !rule.startsWith("#")).forEach(rule => rules[extractAndSanitizeTitle(rule)] = sanitizeRule(rule))
+    contentSplitByRule
+        .filter(rule => !rule.startsWith("#"))
+        .forEach(rule => rules[extractAndSanitizeTitle(rule)] = sanitizeRule(rule))
 
     return rules
 }
@@ -125,8 +115,8 @@ async function main() {
         extends: [oas, asyncapi]
       });
 
-    await createOpenapiDescriptionFiles()
-    await createAsyncapiDescriptionFiles()
+    await createDescriptionFiles(openapiRulesdocumentationUrl)
+    await createDescriptionFiles(asyncapiRulesdocumentationUrl)
 
     await generateSpecification(rules)
     await generatePatternsDescription(rules)
