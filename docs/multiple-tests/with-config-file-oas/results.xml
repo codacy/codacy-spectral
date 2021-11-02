@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="petstore.json">
+        <error source="operation-tags" line="27" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="75" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="109" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="143" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+    </file>
+</checkstyle>
