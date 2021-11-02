@@ -44,7 +44,7 @@ describe("convertResults", () => {
         }
     ]
 
-    const results = await convertResults(report)
+    const results = convertResults(report)
     const expected: ToolResult[] = [
       new Issue("example.json", "The provided document does not match any of the registered formats [OpenAPI 2.0 (Swagger), OpenAPI 3.x, OpenAPI 3.0.x, OpenAPI 3.1.x, AsyncAPI 2.x]", "unrecognized-format", 0),
       new Issue("example.json", "Invalid symbol", "parser", 0),
