@@ -38,6 +38,7 @@
   "dependencies": {
     "@stoplight/spectral-core": "^1.6.0",
     "@stoplight/spectral-rulesets": "^1.2.7",
+    "@stoplight/spectral-ruleset-migrator": "^1.5.0",
     "axios": "^0.21.1",
     "codacy-seed": "^2.2.0"
   },
