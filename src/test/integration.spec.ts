@@ -40,10 +40,10 @@ describe("integration", () => {
   
 
     const expected: ToolResult[] = [
-      new Issue("example2.yaml", "Object must have required property \"channels\"", "asyncapi-schema", 1),
-      new Issue("example2.yaml", "AsyncAPI object must have non-empty \"servers\" object.", "asyncapi-servers", 1),
-      new Issue("example2.yaml", "AsyncAPI object must have non-empty \"tags\" array.", "asyncapi-tags", 1),
-      new Issue("example2.yaml", "Info object must have \"license\" object.", "asyncapi-info-license", 2)
+      new Issue("example2.yaml", "Object must have required property \"channels\"", "asyncapi-schema", 2),
+      new Issue("example2.yaml", "AsyncAPI object must have non-empty \"servers\" object.", "asyncapi-servers", 2),
+      new Issue("example2.yaml", "AsyncAPI object must have non-empty \"tags\" array.", "asyncapi-tags", 2),
+      new Issue("example2.yaml", "Info object must have \"license\" object.", "asyncapi-info-license", 3)
     ]
 
     await checkResults(input, "example2.yaml", expected)
@@ -184,7 +184,7 @@ describe("integration", () => {
   
 
     const expected: ToolResult[] = [
-      new Issue("example1.json", "Operation must have non-empty \"tags\" array.", "operation-tags", 28)
+      new Issue("example1.json", "Operation must have non-empty \"tags\" array.", "operation-tags", 29)
     ]
 
     await checkResults(input, "example1.json", expected)

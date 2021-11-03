@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <checkstyle version="4.3">
     <file name="signup.yaml">
-        <error source="asyncapi-tags" line="0" message="AsyncAPI object must have non-empty &quot;tags&quot; array." severity="warning" />
-
-        <error source="asyncapi-info-contact" line="1" message="Info object must have &quot;contact&quot; object." severity="warning" />
-        <error source="asyncapi-operation-description" line="44" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
-        <error source="asyncapi-operation-description" line="56" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
-        <error source="asyncapi-operation-description" line="67" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
-        <error source="asyncapi-operation-description" line="78" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
+        <error source="asyncapi-tags" line="1" message="AsyncAPI object must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="asyncapi-info-contact" line="2" message="Info object must have &quot;contact&quot; object." severity="warning" />
+        <error source="asyncapi-operation-description" line="45" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
+        <error source="asyncapi-operation-description" line="57" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
+        <error source="asyncapi-operation-description" line="68" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
+        <error source="asyncapi-operation-description" line="79" message="Operation &quot;description&quot; must be present and non-empty string." severity="warning" />
     </file>
 
     <file name="petstore.json">
-        <error source="operation-tags" line="27" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
-        <error source="operation-tags" line="75" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
-        <error source="operation-tags" line="109" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
-        <error source="operation-tags" line="143" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="28" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="76" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="110" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="144" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
     </file>
 </checkstyle>

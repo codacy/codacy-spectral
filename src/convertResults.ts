@@ -6,7 +6,7 @@ export function convertResults(
 ): Issue[] {
   return report.map((issue) => {
     const filename = issue.source
-    const lineNumber = issue.range.start.line
+    const lineNumber = issue.range.start.line + 1
     const message = issue.message
     const patternId = issue.code as string 
     return new Issue(filename!, message, patternId, lineNumber)
