@@ -31,4 +31,3 @@ payload:
   default:
     value: nope!
 ```
-

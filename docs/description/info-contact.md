@@ -17,4 +17,3 @@ info:
     name: A-Team
     email: a-team@goarmy.com
 ```
-

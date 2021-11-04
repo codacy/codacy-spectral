@@ -12,4 +12,3 @@ paths:
     get:
       operationId: get cats
 ```
-

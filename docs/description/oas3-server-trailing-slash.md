@@ -21,4 +21,3 @@ servers:
   - url: https://example.com/
   - url: https://example.com/api/
 ```
-

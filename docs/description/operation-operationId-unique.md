@@ -39,4 +39,3 @@ paths:
         200:
           description: ok
 ```
-

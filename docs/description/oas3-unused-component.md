@@ -7,4 +7,3 @@ that acts as a library (a container storing reusable objects, leveraged by other
 specifications that reference those objects).
 
 **Recommended:** Yes
-

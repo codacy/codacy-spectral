@@ -3,4 +3,3 @@
 Server URL should not have a trailing slash.
 
 **Recommended:** Yes
-

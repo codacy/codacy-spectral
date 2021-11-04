@@ -21,4 +21,3 @@ paths:
                 externalValue: "http://example.org/foo.json"
                 # marp! no, can only have one or the other
 ```
-

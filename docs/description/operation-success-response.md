@@ -14,4 +14,3 @@ paths:
         418:
           description: teapot
 ```
-

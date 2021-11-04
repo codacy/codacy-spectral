@@ -1,7 +1,7 @@
 import { Codacyrc, Engine, ToolResult } from "codacy-seed"
 
 import { convertResults } from "./convertResults"
-import { Spectral, Document, Ruleset, Rule, RulesetDefinition } from "@stoplight/spectral-core"
+import { Spectral, Document, Ruleset, RulesetDefinition } from "@stoplight/spectral-core"
 import { readFile } from "codacy-seed"
 import { Yaml, Json } from "@stoplight/spectral-parsers"
 import { oas, asyncapi } from "@stoplight/spectral-rulesets";
@@ -16,25 +16,7 @@ export const engineImpl: Engine = async function (
   const codacyrcFiles = await extractFiles(codacyrc)
   const patternIdsToApply = await extractPatternIdsToApply(codacyrc)
 
-  const defaultAsyncapiRules = {...asyncapi.rules}
-  const defaultOasRules = {...oas.rules}
-
-  /* let rulesToApply: Record<string, Rule> = {}
-
-  if (patternIdsToApply?.length) {
-    for (let defaultRuleKey in defaultAsyncapiRules) {
-      if ( patternIdsToApply.includes(defaultRuleKey) ) {
-        rulesToApply[defaultRuleKey] = defaultAsyncapiRules[defaultRuleKey]
-      }
-    }
-    for (let defaultRuleKey in defaultOasRules) {
-      if ( patternIdsToApply.includes(defaultRuleKey) ) {
-        rulesToApply[defaultRuleKey] = defaultOasRules[defaultRuleKey]
-      }
-    }
-  } */
-
-  const spectral = createSpectralWithRules(patternIdsToApply ? patternIdsToApply : [])
+  const spectral = createSpectral(patternIdsToApply ? patternIdsToApply : [])
 
   const files = await Promise.all(
     codacyrcFiles.map(async (file) => {
@@ -47,7 +29,8 @@ export const engineImpl: Engine = async function (
     files.map((file) => {
       const filename = file[0]
       const extension = file[0].substring(filename.lastIndexOf('.') + 1, filename.length) || filename
-      return extension === "json" ? spectral.run(new Document(file[1], Json, filename)) : spectral.run(new Document(file[1], Yaml, filename))
+      const document = extension === "json" ? new Document(file[1], Json, filename) : new Document(file[1], Yaml, filename)
+      return spectral.run(document)
     }).flat()
   )
 
@@ -55,8 +38,19 @@ export const engineImpl: Engine = async function (
       spectralResults.flat()
   )
 
-  function createSpectralWithRules(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
+  function createSpectral(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
     const s = new Spectral();
+
+    if (!rulesToApply.length) {
+      s.setRuleset({
+        extends: [
+          [asyncapi as RulesetDefinition, 'recommended'],
+          [oas as RulesetDefinition, 'recommended'],
+        ]
+      });
+
+      return s;
+    }
   
     s.setRuleset({
       extends: [

@@ -3,4 +3,3 @@
 Validate structure of OpenAPI v2 specification.
 
 **Recommended:** Yes
-

@@ -13,4 +13,3 @@ info:
     name: MIT
     url: https://www.tldrlegal.com/l/mit
 ```
-

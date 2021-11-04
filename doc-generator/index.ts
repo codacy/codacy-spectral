@@ -20,18 +20,23 @@ import pack from "./package-lock.json"
 const docsPath = "../docs/"
 
 const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].version
+const repositoryUrl = "https://raw.githubusercontent.com/stoplightio/spectral"
+const repoTagVersion = `%40stoplight/spectral-rulesets-v${spectralVersionInUse}`
 
-const openapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/openapi-rules.md`
-const asyncapiRulesdocumentationUrl = `https://raw.githubusercontent.com/stoplightio/spectral/%40stoplight/spectral-rulesets-v${spectralVersionInUse}/docs/reference/asyncapi-rules.md`
+const openapiHumanReadable = "docs/reference/openapi-rules.md"
+const asyncapiHumanReadable = "docs/reference/asyncapi-rules.md"
+
+const openapiRulesdocumentationUrl = repositoryUrl + "/" + repoTagVersion +  "/" + openapiHumanReadable
+const asyncapiRulesdocumentationUrl = repositoryUrl + "/" + repoTagVersion +  "/" + asyncapiHumanReadable
 
 
-async function createDescriptionFiles(rulesDocUrl: string): Promise<void> {
+async function createDescriptionFiles(rulesDocUrl: string): Promise<void[]> {
     const rulesRequest = await axios.get(rulesDocUrl)
     const rulesJson = extractRulesMds(rulesRequest.data)
 
-    await Promise.all(Object.keys(rulesJson).map(ruleKey => {
+    return Promise.all(Object.keys(rulesJson).map(ruleKey => {
         const content = "#" + rulesJson[ruleKey]
-        return fs.writeFile(docsPath + "description/" + ruleKey + ".md", content)
+        return fs.writeFile(docsPath + "description/" + ruleKey + ".md", content.trim().concat("\n"))
     }))
 }
 
@@ -58,7 +63,7 @@ async function generatePatternsDescription(ruleset: Ruleset): Promise<void> {
         return new DescriptionEntry(patternId, title, description as string)
     })
 
-    await writeFile(docsPath + "description/description.json", JSON.stringify(descriptionEntries, null, 2) + "\n")
+    await writeFile(docsPath + "description/description.json", JSON.stringify(descriptionEntries, null, 2))
 }
 
 async function createFolderIfNotExists(dir: string) {
@@ -70,6 +75,7 @@ function extractRulesMds(mdContent: string): Record<string, string> {
     const rules: Record<string, string> = {}
 
     const contentSplitByRule = mdContent.split('###');
+
     contentSplitByRule
         .filter(rule => !rule.startsWith("#"))
         .forEach(rule => rules[extractAndSanitizeTitle(rule)] = sanitizeRule(rule))
