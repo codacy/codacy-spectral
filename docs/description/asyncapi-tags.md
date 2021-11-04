@@ -14,4 +14,3 @@ Why? Well, you _can_ reference tags arbitrarily in operations, and definition is
 Defining tags allows you to add more information like a `description`. For more information see [asyncapi-tag-description](#asyncapi-tag-description).
 
 **Recommended:** Yes
-

@@ -21,4 +21,3 @@ servers:
   - url: mqtt://example.com/
   - url: mqtt://example.com/broker/
 ```
-

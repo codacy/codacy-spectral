@@ -11,4 +11,3 @@ openapi: "3.0.2"
 info:
   title: 'some title with <script>alert("You are Hacked");</script>',
 ```
-

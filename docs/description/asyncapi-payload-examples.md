@@ -33,4 +33,3 @@ payload:
     - value: nope! # Wrong type
     - notGoodEither: 17 # Missing required property
 ```
-

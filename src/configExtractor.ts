@@ -12,5 +12,5 @@ export async function extractPatternIdsToApply(
 export async function extractFiles(
     codacyrc?: Codacyrc
 ): Promise<string[]> {
-    return codacyrc && codacyrc.files && codacyrc.files.length ? codacyrc.files : glob.sync("**/*.+(json|yaml|yml)")
+    return codacyrc && codacyrc.files ? codacyrc.files : glob.sync("**/*.+(json|yaml|yml)")
 }

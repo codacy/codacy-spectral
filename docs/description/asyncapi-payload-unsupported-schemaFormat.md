@@ -11,4 +11,3 @@ At this point, explicitly setting `schemaFormat` is not supported by Spectral, s
 Other formats such as OpenAPI Schema Object, JSON Schema Draft 07 and Avro will be added in various upcoming versions.
 
 **Recommended:** Yes
-

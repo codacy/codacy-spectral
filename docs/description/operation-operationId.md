@@ -5,4 +5,3 @@ This operation ID is essentially a reference for the operation, which can be use
 Make the value `lower-hyphen-case`, and try and think of a name for the action which does not relate to the HTTP message. Base it off the actual action being performed. `create-polygon`? `search-by-polygon`? `filter-companies`?
 
 **Recommended:** Yes
-

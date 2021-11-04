@@ -16,4 +16,3 @@ info:
   description: >+
     Some description about the general point of this API, and why it exists when another similar but different API also exists.
 ```
-

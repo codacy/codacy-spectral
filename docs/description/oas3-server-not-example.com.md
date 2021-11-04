@@ -17,4 +17,3 @@ servers:
 ```
 
 We have example.com for documentation purposes here, but you should put in actual domains.
-

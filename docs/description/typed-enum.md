@@ -35,4 +35,3 @@ TheBadModel:
         - "a string!"
         - 8
 ```
-

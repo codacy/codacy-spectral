@@ -3,4 +3,3 @@
 Parameter objects should have a `description`.
 
 **Recommended:** No
-

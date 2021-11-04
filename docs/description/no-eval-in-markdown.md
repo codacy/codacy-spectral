@@ -11,4 +11,3 @@ openapi: "3.0.2"
 info:
   title: 'some title with eval(',
 ```
-

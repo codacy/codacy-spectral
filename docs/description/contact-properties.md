@@ -19,4 +19,3 @@ info:
     email: a-team@goarmy.com
     url: goarmy.com/apis/support
 ```
-

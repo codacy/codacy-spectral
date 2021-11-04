@@ -13,4 +13,3 @@ TheBadModel:
     an_example:
       name: something
 ```
-

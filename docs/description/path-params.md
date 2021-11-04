@@ -8,4 +8,3 @@ Path parameters are correct and valid.
 2. every `path.parameters` and `operation.parameters` parameter must be used in the path string.
 
 **Recommended:** Yes
-

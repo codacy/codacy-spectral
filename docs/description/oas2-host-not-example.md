@@ -3,4 +3,3 @@
 Server URL should not point at example.com.
 
 **Recommended:** No
-
