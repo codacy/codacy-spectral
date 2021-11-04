@@ -29,7 +29,9 @@ export const engineImpl: Engine = async function (
       const filename = file[0]
       const extension = file[0].substring(filename.lastIndexOf('.') + 1, filename.length) || filename
       const document = extension === "json" ? new Document(file[1], Json, filename) : new Document(file[1], Yaml, filename)
-      return spectral.run(document)
+      return spectral.run(document,{
+        ignoreUnknownFormat: true,
+      })
     }).flat()
   )
 
