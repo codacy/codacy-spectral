@@ -1,13 +1,12 @@
-import { Codacyrc, Engine, ToolResult } from "codacy-seed"
-
-import { convertResults } from "./convertResults"
-import { Spectral, Document, Ruleset, RulesetDefinition } from "@stoplight/spectral-core"
-import { readFile } from "codacy-seed"
-import { Yaml, Json } from "@stoplight/spectral-parsers"
-import { oas, asyncapi } from "@stoplight/spectral-rulesets";
-
-import {extractPatternIdsToApply, extractFiles} from "./configExtractor"
+import { Document, Ruleset, RulesetDefinition,Spectral } from "@stoplight/spectral-core"
 import { FileRuleDefinition } from "@stoplight/spectral-core/dist/ruleset/types"
+import { Json,Yaml } from "@stoplight/spectral-parsers"
+import { asyncapi,oas } from "@stoplight/spectral-rulesets";
+import { Codacyrc, Engine, ToolResult } from "codacy-seed"
+import { readFile } from "codacy-seed"
+
+import {extractFiles,extractPatternIdsToApply} from "./configExtractor"
+import { convertResults } from "./convertResults"
 
 export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc

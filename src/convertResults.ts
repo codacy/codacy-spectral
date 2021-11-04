@@ -1,5 +1,5 @@
-import { Issue } from "codacy-seed"
 import { ISpectralDiagnostic } from "@stoplight/spectral-core"
+import { Issue } from "codacy-seed"
 
 export function convertResults(
   report: ISpectralDiagnostic[]

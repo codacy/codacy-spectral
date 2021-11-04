@@ -35,8 +35,6 @@ describe("configExtractor", () => {
 
     const files = await extractFiles(codacyrc)
 
-    console.log(files)
-
     assert(!files?.length)
   })
 
