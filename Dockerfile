@@ -18,14 +18,14 @@ RUN npm run compile
 
 
 FROM node:$NODE_IMAGE_VERSION
+COPY --from=documentation /docs/ docs/
 COPY --from=builder package*.json ./
-RUN npm ci --production
+
+RUN npm ci --production && \
+    adduser -u 2004 -D docker && \
+    chown -R docker:docker /docs
 
 COPY --from=builder /dist dist/
-COPY --from=documentation /docs/ docs/
-
-RUN adduser -u 2004 -D docker
-RUN chown -R docker:docker /docs
 
 WORKDIR /src
 CMD ["node", "/dist/src/index.js"]
