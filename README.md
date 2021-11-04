@@ -6,11 +6,9 @@ tool in its infrastructure, or using its [CLI](https://github.com/codacy/codacy-
 ## Generating documentation
 
 ```bash
-pushd .
 cd doc-generator
 npm install
 npm run compile && node dist/index.js
-popd .
 ```
 
 ## Build docker image
