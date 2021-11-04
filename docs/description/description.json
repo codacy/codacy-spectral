@@ -1,0 +1,458 @@
+[
+  {
+    "parameters": [],
+    "patternId": "operation-success-response",
+    "title": "operation-success-response - Operation must have at least one \"2xx\" or \"3xx\" response.",
+    "description": "Operation must have at least one \"2xx\" or \"3xx\" response."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-operation-formData-consume-check",
+    "title": "oas2-operation-formData-consume-check - Operations with \"in: formData\" parameter must include \"application/x-www-form-urlencoded\" or \"multipart/form-data\" in their \"consumes\" property.",
+    "description": "Operations with \"in: formData\" parameter must include \"application/x-www-form-urlencoded\" or \"multipart/form-data\" in their \"consumes\" property."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-operationId-unique",
+    "title": "operation-operationId-unique - Every operation must have unique \"operationId\".",
+    "description": "Every operation must have unique \"operationId\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-parameters",
+    "title": "operation-parameters - Operation parameters are unique and non-repeating.",
+    "description": "Operation parameters are unique and non-repeating."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-tag-defined",
+    "title": "operation-tag-defined - Operation tags must be defined in global tags.",
+    "description": "Operation tags must be defined in global tags."
+  },
+  {
+    "parameters": [],
+    "patternId": "path-params",
+    "title": "path-params - Path parameters must be defined and valid.",
+    "description": "Path parameters must be defined and valid."
+  },
+  {
+    "parameters": [],
+    "patternId": "contact-properties",
+    "title": "contact-properties - Contact object must have \"name\", \"url\" and \"email\".",
+    "description": "Contact object must have \"name\", \"url\" and \"email\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "duplicated-entry-in-enum",
+    "title": "duplicated-entry-in-enum - Enum values must not have duplicate entry.",
+    "description": "Enum values must not have duplicate entry."
+  },
+  {
+    "parameters": [],
+    "patternId": "info-contact",
+    "title": "info-contact - Info object must have \"contact\" object.",
+    "description": "Info object must have \"contact\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "info-description",
+    "title": "info-description - Info \"description\" must be present and non-empty string.",
+    "description": "Info \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "info-license",
+    "title": "info-license - Info object must have \"license\" object.",
+    "description": "Info object must have \"license\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "license-url",
+    "title": "license-url - License object must include \"url\".",
+    "description": "License object must include \"url\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "no-eval-in-markdown",
+    "title": "no-eval-in-markdown - Markdown descriptions must not have \"eval(\".",
+    "description": "Markdown descriptions must not have \"eval(\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "no-script-tags-in-markdown",
+    "title": "no-script-tags-in-markdown - Markdown descriptions must not have \"<script>\" tags.",
+    "description": "Markdown descriptions must not have \"<script>\" tags."
+  },
+  {
+    "parameters": [],
+    "patternId": "openapi-tags-alphabetical",
+    "title": "openapi-tags-alphabetical - OpenAPI object must have alphabetical \"tags\".",
+    "description": "OpenAPI object must have alphabetical \"tags\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "openapi-tags",
+    "title": "openapi-tags - OpenAPI object must have non-empty \"tags\" array.",
+    "description": "OpenAPI object must have non-empty \"tags\" array."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-description",
+    "title": "operation-description - Operation \"description\" must be present and non-empty string.",
+    "description": "Operation \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-operationId",
+    "title": "operation-operationId - Operation must have \"operationId\".",
+    "description": "Operation must have \"operationId\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-operationId-valid-in-url",
+    "title": "operation-operationId-valid-in-url - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-singular-tag",
+    "title": "operation-singular-tag - Operation must not have more than a single tag.",
+    "description": "Operation must not have more than a single tag."
+  },
+  {
+    "parameters": [],
+    "patternId": "operation-tags",
+    "title": "operation-tags - Operation must have non-empty \"tags\" array.",
+    "description": "Operation must have non-empty \"tags\" array."
+  },
+  {
+    "parameters": [],
+    "patternId": "path-declarations-must-exist",
+    "title": "path-declarations-must-exist - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "path-keys-no-trailing-slash",
+    "title": "path-keys-no-trailing-slash - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "path-not-include-query",
+    "title": "path-not-include-query - Path must not include query string.",
+    "description": "Path must not include query string."
+  },
+  {
+    "parameters": [],
+    "patternId": "tag-description",
+    "title": "tag-description - Tag object must have \"description\".",
+    "description": "Tag object must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "no-$ref-siblings",
+    "title": "no-$ref-siblings - Property must not be placed among $ref",
+    "description": "Property must not be placed among $ref"
+  },
+  {
+    "parameters": [],
+    "patternId": "typed-enum",
+    "title": "typed-enum - Enum values must respect the specified type.",
+    "description": "Enum values must respect the specified type."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-api-host",
+    "title": "oas2-api-host - OpenAPI \"host\" must be present and non-empty string.",
+    "description": "OpenAPI \"host\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-api-schemes",
+    "title": "oas2-api-schemes - OpenAPI host \"schemes\" must be present and non-empty array.",
+    "description": "OpenAPI host \"schemes\" must be present and non-empty array."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-host-not-example",
+    "title": "oas2-host-not-example - Host URL must not point at example.com.",
+    "description": "Host URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-host-trailing-slash",
+    "title": "oas2-host-trailing-slash - Server URL must not have trailing slash.",
+    "description": "Server URL must not have trailing slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-parameter-description",
+    "title": "oas2-parameter-description - Parameter objects must have \"description\".",
+    "description": "Parameter objects must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-operation-security-defined",
+    "title": "oas2-operation-security-defined - Operation \"security\" values must match a scheme defined in the \"securityDefinitions\" object.",
+    "description": "Operation \"security\" values must match a scheme defined in the \"securityDefinitions\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-valid-schema-example",
+    "title": "oas2-valid-schema-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-valid-media-example",
+    "title": "oas2-valid-media-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-anyOf",
+    "title": "oas2-anyOf - anyOf is not available in OpenAPI v2, it was added in OpenAPI v3",
+    "description": "anyOf is not available in OpenAPI v2, it was added in OpenAPI v3"
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-oneOf",
+    "title": "oas2-oneOf - oneOf is not available in OpenAPI v2, it was added in OpenAPI v3",
+    "description": "oneOf is not available in OpenAPI v2, it was added in OpenAPI v3"
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-schema",
+    "title": "oas2-schema - Validate structure of OpenAPI v2 specification.",
+    "description": "Validate structure of OpenAPI v2 specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-unused-definition",
+    "title": "oas2-unused-definition - Potentially unused definition has been detected.",
+    "description": "Potentially unused definition has been detected."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-api-servers",
+    "title": "oas3-api-servers - OpenAPI \"servers\" must be present and non-empty array.",
+    "description": "OpenAPI \"servers\" must be present and non-empty array."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-examples-value-or-externalValue",
+    "title": "oas3-examples-value-or-externalValue - Examples must have either \"value\" or \"externalValue\" field.",
+    "description": "Examples must have either \"value\" or \"externalValue\" field."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-operation-security-defined",
+    "title": "oas3-operation-security-defined - Operation \"security\" values must match a scheme defined in the \"components.securitySchemes\" object.",
+    "description": "Operation \"security\" values must match a scheme defined in the \"components.securitySchemes\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-parameter-description",
+    "title": "oas3-parameter-description - Parameter objects must have \"description\".",
+    "description": "Parameter objects must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-server-not-example.com",
+    "title": "oas3-server-not-example.com - Server URL must not point at example.com.",
+    "description": "Server URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-server-trailing-slash",
+    "title": "oas3-server-trailing-slash - Server URL must not have trailing slash.",
+    "description": "Server URL must not have trailing slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-valid-media-example",
+    "title": "oas3-valid-media-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-valid-schema-example",
+    "title": "oas3-valid-schema-example - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-schema",
+    "title": "oas3-schema - Validate structure of OpenAPI v3 specification.",
+    "description": "Validate structure of OpenAPI v3 specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3-unused-component",
+    "title": "oas3-unused-component - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-no-empty-parameter",
+    "title": "asyncapi-channel-no-empty-parameter - Channel path must not have empty parameter substitution pattern.",
+    "description": "Channel path must not have empty parameter substitution pattern."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-no-query-nor-fragment",
+    "title": "asyncapi-channel-no-query-nor-fragment - Channel path must not include query (\"?\") or fragment (\"#\") delimiter.",
+    "description": "Channel path must not include query (\"?\") or fragment (\"#\") delimiter."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-no-trailing-slash",
+    "title": "asyncapi-channel-no-trailing-slash - Channel path must not end with slash.",
+    "description": "Channel path must not end with slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-headers-schema-type-object",
+    "title": "asyncapi-headers-schema-type-object - Headers schema type must be \"object\".",
+    "description": "Headers schema type must be \"object\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-contact-properties",
+    "title": "asyncapi-info-contact-properties - Contact object must have \"name\", \"url\" and \"email\".",
+    "description": "Contact object must have \"name\", \"url\" and \"email\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-contact",
+    "title": "asyncapi-info-contact - Info object must have \"contact\" object.",
+    "description": "Info object must have \"contact\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-description",
+    "title": "asyncapi-info-description - Info \"description\" must be present and non-empty string.",
+    "description": "Info \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-license-url",
+    "title": "asyncapi-info-license-url - License object must include \"url\".",
+    "description": "License object must include \"url\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-info-license",
+    "title": "asyncapi-info-license - Info object must have \"license\" object.",
+    "description": "Info object must have \"license\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-operation-description",
+    "title": "asyncapi-operation-description - Operation \"description\" must be present and non-empty string.",
+    "description": "Operation \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-operation-operationId",
+    "title": "asyncapi-operation-operationId - Operation must have \"operationId\".",
+    "description": "Operation must have \"operationId\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-parameter-description",
+    "title": "asyncapi-parameter-description - Parameter objects must have \"description\".",
+    "description": "Parameter objects must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload-default",
+    "title": "asyncapi-payload-default - Default must be valid against its defined schema.",
+    "description": "Default must be valid against its defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload-examples",
+    "title": "asyncapi-payload-examples - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload-unsupported-schemaFormat",
+    "title": "asyncapi-payload-unsupported-schemaFormat - Message schema validation is only supported with default unspecified \"schemaFormat\".",
+    "description": "Message schema validation is only supported with default unspecified \"schemaFormat\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-payload",
+    "title": "asyncapi-payload - Payloads must be valid against AsyncAPI Schema object.",
+    "description": "Payloads must be valid against AsyncAPI Schema object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-schema-default",
+    "title": "asyncapi-schema-default - Default must be valid against its defined schema.",
+    "description": "Default must be valid against its defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-schema-examples",
+    "title": "asyncapi-schema-examples - Examples must be valid against their defined schema.",
+    "description": "Examples must be valid against their defined schema."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-schema",
+    "title": "asyncapi-schema - Validate structure of AsyncAPI v2.0.0 Specification.",
+    "description": "Validate structure of AsyncAPI v2.0.0 Specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-no-empty-variable",
+    "title": "asyncapi-server-no-empty-variable - Server URL must not have empty variable substitution pattern.",
+    "description": "Server URL must not have empty variable substitution pattern."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-no-trailing-slash",
+    "title": "asyncapi-server-no-trailing-slash - Server URL must not end with slash.",
+    "description": "Server URL must not end with slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-not-example-com",
+    "title": "asyncapi-server-not-example-com - Server URL must not point at example.com.",
+    "description": "Server URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-servers",
+    "title": "asyncapi-servers - AsyncAPI object must have non-empty \"servers\" object.",
+    "description": "AsyncAPI object must have non-empty \"servers\" object."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-tag-description",
+    "title": "asyncapi-tag-description - Tag object must have \"description\".",
+    "description": "Tag object must have \"description\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-tags-alphabetical",
+    "title": "asyncapi-tags-alphabetical - AsyncAPI object must have alphabetical \"tags\".",
+    "description": "AsyncAPI object must have alphabetical \"tags\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-tags",
+    "title": "asyncapi-tags - AsyncAPI object must have non-empty \"tags\" array.",
+    "description": "AsyncAPI object must have non-empty \"tags\" array."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-unused-components-schema",
+    "title": "asyncapi-unused-components-schema - Potentially unused components schema has been detected.",
+    "description": "Potentially unused components schema has been detected."
+  }
+]

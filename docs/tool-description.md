@@ -1,0 +1,1 @@
+Spectral is a JSON/YAML linter with out of the box support for **OpenAPI 3.0 & 2.0** and **AsyncAPI**. [Learn more](https://github.com/stoplightio/spectral)
