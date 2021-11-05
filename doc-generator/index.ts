@@ -47,7 +47,7 @@ async function generateSpecification(ruleset: Ruleset): Promise<void> {
         const level: Level = calculateLevel(rule[1].severity)
         const category: Category = calculateCategory(rule[1])
 
-        return new PatternSpec(ruleId, level, category, undefined, parametersSpecs, true)
+        return new PatternSpec(ruleId, level, category, undefined, parametersSpecs, rule[1].recommended)
     })
 
     const specification = new Specification("spectral-rulesets", spectralVersionInUse, patternSpecs)
