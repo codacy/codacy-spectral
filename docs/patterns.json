@@ -49,7 +49,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "duplicated-entry-in-enum",
@@ -77,14 +77,14 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "license-url",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "no-eval-in-markdown",
@@ -105,14 +105,14 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "openapi-tags",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "operation-description",
@@ -140,7 +140,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "operation-tags",
@@ -175,7 +175,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "no-$ref-siblings",
@@ -210,7 +210,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "oas2-host-trailing-slash",
@@ -224,7 +224,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "oas2-operation-security-defined",
@@ -301,14 +301,14 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "oas3-server-not-example.com",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "oas3-server-trailing-slash",
@@ -399,7 +399,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "asyncapi-info-license",
@@ -427,7 +427,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "asyncapi-payload-default",
@@ -497,7 +497,7 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "asyncapi-servers",
@@ -511,14 +511,14 @@
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "asyncapi-tags-alphabetical",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "asyncapi-tags",
