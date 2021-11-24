@@ -1,7 +1,7 @@
-import { Codacyrc } from "codacy-seed"
+import {Codacyrc} from "codacy-seed"
 import * as glob from "glob"
 
-import { toolName } from "./toolMetadata"
+import {toolName} from "./toolMetadata"
 
 export async function extractPatternIdsToApply(
     codacyrc?: Codacyrc

@@ -1,0 +1,4 @@
+extends: spectral:oas
+parserOptions:
+  duplicateKeys: warn # error is the default value
+  incompatibleValues: off # error is the default value
