@@ -258,20 +258,20 @@ import * as path from 'path';
 //  - on discord: https://discord.com/channels/841794018173648916/859895506271600670/904538079283515403
 //  - on github issue: https://github.com/stoplightio/spectral/issues/1956
 export async function getRulesetFromFile(configurationFile: string): Promise<RulesetDefinition | undefined> {
-    // input is expected to be an already found configuration file.
-
-    // transform into absolute path.
-    const rulesetSource = path.join(__dirname, configurationFile)
+    // input is expected to be an already found configuration file and the string an absolute path to it.
     console.debug(`configuration file: ${configurationFile}`)
-    console.debug(`ruleset source: ${rulesetSource}`)
 
     // the json and yaml file have a different "handling"/"conversion" than a plain js file.
     // For now we are just supporting the json and yaml versions.
     if (/(json|ya?ml)$/.test(path.extname(configurationFile))) {
-        return migrateRuleset(rulesetSource, {format: "commonjs", fs})
+        console.debug("conf file is one of json | yml | yaml. trying to apply migrateRuleset...")
+
+        return migrateRuleset(configurationFile, {format: "commonjs", fs})
             .then(source => {
                 const m: { exports?: RulesetDefinition } = {}
-                const paths = [path.dirname(rulesetSource), __dirname]
+                const paths = [path.dirname(configurationFile), __dirname]
+                console.debug(`paths: ${paths}`)
+
                 const _require = (id: string): unknown => require(require.resolve(id, {paths}))
 
                 Function('module, require', source)(m, _require)

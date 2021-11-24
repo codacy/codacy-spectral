@@ -5,6 +5,7 @@ import {asyncapi, oas} from "@stoplight/spectral-rulesets"
 import {Codacyrc, Engine, ToolResult} from "codacy-seed"
 import {readFile} from "codacy-seed"
 import * as fs from "fs"
+import * as path from 'path';
 
 import {extractFiles, extractPatternIdsToApply} from "./configExtractor"
 import {convertResults} from "./convertResults"
@@ -16,7 +17,7 @@ export const engineImpl: Engine = async function (
 ): Promise<ToolResult[]> {
 
     const filesToProcess = await extractFiles(codacyrc)
-    const patternIdsToApply = await extractPatternIdsToApply(codacyrc)
+    const patternIdsToApply = await extractPatternIdsToApply(codacyrc) || []
 
     console.debug(`files to process: ${filesToProcess.length}`)
     filesToProcess.forEach(file =>
@@ -25,23 +26,23 @@ export const engineImpl: Engine = async function (
 
     console.debug(`patterns to process: ${patternIdsToApply?.length}`)
     patternIdsToApply?.forEach(patt =>
-        console.debug(`  file: ${patt}`)
+        console.debug(`  pattern: ${patt}`)
     )
 
-    const [existsConfFile, file] = await checkExistsDefaultConfFile()
+    const existsConfFile = await checkExistsConfFile()
 
     let spectral: Spectral
-
     if (existsConfFile) {
         console.debug("trying to initialize spectral with given configuration...")
 
         // try to create a spectral for the configuration.
         // in case we fail, fallback to create a spectral with our defaults.
 
-        const maybeSpectral = await createSpectralWithConfFile(file!).catch(e => {
-            console.error(`some error occurred loading conf file: ${e}`)
-            return undefined
-        })
+        const maybeSpectral = await createSpectralWithConfFile(existsConfFile)
+            .catch(e => {
+                console.error(`some error occurred loading conf file: ${e}`)
+                return undefined
+            })
 
         if (!maybeSpectral) {
             console.error("couldn't create spectral with configuration. Falling back to spectral with defaults...")
@@ -49,9 +50,9 @@ export const engineImpl: Engine = async function (
 
         spectral = maybeSpectral
             ? maybeSpectral
-            : createSpectralWithDefaults(patternIdsToApply ? patternIdsToApply : [])
+            : createSpectralWithDefaults(patternIdsToApply)
     } else {
-        spectral = createSpectralWithDefaults(patternIdsToApply ? patternIdsToApply : [])
+        spectral = createSpectralWithDefaults(patternIdsToApply)
     }
 
     const files = await Promise.all(
@@ -136,7 +137,7 @@ export const engineImpl: Engine = async function (
     }
 
     // looks for one of the default files the tool supports in the user files
-    async function checkExistsDefaultConfFile(): Promise<[boolean, string?]> {
+    async function checkExistsConfFile(): Promise<string | undefined> {
         async function fileExists(name: string) {
             return fs.promises
                 .stat(name).then(s => s.isFile()).catch(_ => false)
@@ -151,11 +152,12 @@ export const engineImpl: Engine = async function (
             if (await fileExists(supportedFile)) {
                 console.debug(`[conf] found the following: ${supportedFile}`)
 
-                return [true, supportedFile]
+                // exposing the detected file name with its absolute path
+                return path.join(process.cwd(), supportedFile)
             }
         }
 
         console.debug("[conf] couldn't find any of the configuration supported files")
-        return [false, undefined]
+        return undefined
     }
 }
