@@ -4,6 +4,7 @@ import {Json, Yaml} from "@stoplight/spectral-parsers"
 import {asyncapi, oas} from "@stoplight/spectral-rulesets"
 import {Codacyrc, Engine, ToolResult} from "codacy-seed"
 import {readFile} from "codacy-seed"
+import {parseSpecification, readJsonFile} from "codacy-seed/dist/src/fileUtils";
 import * as fs from "fs"
 import * as path from 'path';
 
@@ -15,6 +16,8 @@ import {supportedConfigFiles} from "./toolMetadata"
 export const engineImpl: Engine = async function (
     codacyrc?: Codacyrc
 ): Promise<ToolResult[]> {
+    const specification = await readJsonFile("/docs/patterns.json")
+        .then(f => parseSpecification(f!))
 
     const filesToProcess = await extractFiles(codacyrc)
     const patternIdsToApply = await extractPatternIdsToApply(codacyrc) || []
@@ -78,9 +81,17 @@ export const engineImpl: Engine = async function (
         }).flat()
     )
 
-    return convertResults(
+    // ensure the output only exposes rules that we know as defined in our specification
+    const knownPatternIds =
+        new Set(specification.patterns.map(pattern => pattern.patternId))
+
+    const results = convertResults(
         spectralResults.flat()
-    )
+    ).filter(issue => {
+        return knownPatternIds.has(issue.patternId)
+    })
+
+    return results
 
     // configure spectral to use our rules only.
     function createSpectralWithDefaults(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
