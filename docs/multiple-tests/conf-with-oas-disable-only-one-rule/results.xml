@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="petstore.json">
+        <error source="openapi-tags" line="1" message="OpenAPI object must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="contact-properties" line="8" message="Contact object must have &quot;name&quot;, &quot;url&quot; and &quot;email&quot;." severity="warning" />
+        <error source="license-url" line="11" message="License object must include &quot;url&quot;." severity="warning" />
+        <error source="operation-tags" line="28" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="76" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="110" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+        <error source="operation-tags" line="144" message="Operation must have non-empty &quot;tags&quot; array." severity="warning" />
+    </file>
+</checkstyle>
