@@ -1,7 +1,7 @@
-extends: spectral:oas
+extends: [[spectral:oas, all]]
 rules:
   tag-description:
-    description: Please provide a description for each tag.
+    description: my special description
     given: $.tags[*]
     then:
       field: description
