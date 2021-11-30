@@ -8,9 +8,9 @@ import {parseSpecification, readJsonFile} from "codacy-seed/dist/src/fileUtils";
 import * as fs from "fs"
 import * as path from 'path';
 
-import {extractFilesFromRC, extractPatternsFromRC} from "./configExtractor"
+import {extractFilesFromCodacyrc, extractPatternsFromCodacyrc} from "./configExtractor"
 import {convertResults} from "./convertResults"
-import {log, logEach} from "./logging";
+import {debug, debugEach} from "./logging";
 import {getRulesetFromFile} from "./spectralRulesetLoader"
 import {supportedConfigFiles} from "./toolMetadata"
 
@@ -20,14 +20,14 @@ export const engineImpl: Engine = async function (
     const specification = await readJsonFile("/docs/patterns.json")
         .then(f => parseSpecification(f!))
 
-    const filesToProcess = await extractFilesFromRC(codacyrc)
-    const patternsToApply = await extractPatternsFromRC(codacyrc)
+    const filesToProcess = await extractFilesFromCodacyrc(codacyrc)
+    const patternsToApply = await extractPatternsFromCodacyrc(codacyrc)
 
-    log(`files to process: ${filesToProcess.length}`)
-    logEach(filesToProcess, file => `  file: ${file}`)
+    debug(`files to process: ${filesToProcess.length}`)
+    debugEach(filesToProcess, file => `  file: ${file}`)
 
-    log(`patterns to process: ${patternsToApply?.length}`)
-    logEach(patternsToApply, pattern => `  pattern: ${pattern}`)
+    debug(`patterns to process: ${patternsToApply?.length}`)
+    debugEach(patternsToApply, pattern => `  pattern: ${pattern}`)
 
     let spectral: Spectral
 
@@ -40,21 +40,21 @@ export const engineImpl: Engine = async function (
         const existsConfFile = await checkExistsConfFile()
 
         if (existsConfFile) {
-            log("trying to initialize spectral with given configuration...")
+            debug("trying to initialize spectral with given configuration...")
 
             // try to create a spectral for the configuration.
             // in case we fail, fallback to create a spectral with our defaults.
 
             const maybeSpectral = await createSpectralWithConfFile(existsConfFile)
                 .catch(e => {
-                    log(`some error occurred loading conf file: ${e}`)
+                    debug(`some error occurred loading conf file: ${e}`)
                     return undefined
                 })
 
             if (maybeSpectral)  {
                 spectral = maybeSpectral
             } else {
-                log("couldn't create spectral with configuration...")
+                debug("couldn't create spectral with configuration...")
 
                 throw new Error(
                     "A configuration file was found but an error occurred trying to load it."
@@ -102,7 +102,7 @@ export const engineImpl: Engine = async function (
 
     // configure spectral to use our rules only.
     function createSpectralWithCodacyRules(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
-        log("initializing spectral with codacy rules...")
+        debug("initializing spectral with codacy rules...")
 
         const s = new Spectral()
 
@@ -113,7 +113,7 @@ export const engineImpl: Engine = async function (
         //   rules not loaded and then explicitly turn on only the
         //   ones given in function parameters.
         if (!rulesToApply.length) {
-            log("configuring spectral to use all recommended rules...")
+            debug("configuring spectral to use all recommended rules...")
 
             s.setRuleset({
                 extends: [
@@ -122,7 +122,7 @@ export const engineImpl: Engine = async function (
                 ]
             })
         } else {
-            log("configuring spectral to use explicit rules defined in codacyrc...")
+            debug("configuring spectral to use explicit rules defined in codacyrc...")
 
             s.setRuleset({
                 extends: [
@@ -136,8 +136,8 @@ export const engineImpl: Engine = async function (
             })
         }
 
-        log("rules [ENABLED]:")
-        logEach(Object.values(s.ruleset!.rules), rule => `  ${rule.name} - ${rule.enabled}`)
+        debug("rules [ENABLED]:")
+        debugEach(Object.values(s.ruleset!.rules), rule => `  ${rule.name} - ${rule.enabled}`)
 
         return s
     }
@@ -163,21 +163,21 @@ export const engineImpl: Engine = async function (
                 .stat(name).then(s => s.isFile()).catch(_ => false)
         }
 
-        log(`[conf] supported files: ${supportedConfigFiles}`)
+        debug(`[conf] supported files: ${supportedConfigFiles}`)
 
         // we look for the first file that exists in our array of supported files
         for (const supportedFile of supportedConfigFiles) {
-            log(`[conf] looking for: ${supportedFile}`)
+            debug(`[conf] looking for: ${supportedFile}`)
 
             if (await fileExists(supportedFile)) {
-                log(`[conf] found the following: ${supportedFile}`)
+                debug(`[conf] found the following: ${supportedFile}`)
 
                 // exposing the detected file name with its absolute path
                 return path.join(process.cwd(), supportedFile)
             }
         }
 
-        log("[conf] couldn't find any of the configuration supported files")
+        debug("[conf] couldn't find any of the configuration supported files")
 
         return undefined
     }

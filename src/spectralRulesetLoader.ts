@@ -3,7 +3,7 @@ import {migrateRuleset} from '@stoplight/spectral-ruleset-migrator';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import {log} from "./logging";
+import {debug} from "./logging";
 
 // get a ruleset from a configuration file that is yaml or json in the filesystem.
 // needed this special workaround since the tool doesn't have a proper api to just say
@@ -16,18 +16,18 @@ import {log} from "./logging";
 //  - on github issue: https://github.com/stoplightio/spectral/issues/1956
 export async function getRulesetFromFile(configurationFile: string): Promise<RulesetDefinition | undefined> {
     // input is expected to be an already found configuration file and the string an absolute path to it.
-    log(`configuration file: ${configurationFile}`)
+    debug(`configuration file: ${configurationFile}`)
 
     // the json and yaml file have a different "handling"/"conversion" than a plain js file.
     // For now we are just supporting the json and yaml versions.
     if (/(json|ya?ml)$/.test(path.extname(configurationFile))) {
-        log("conf file is one of json | yml | yaml. trying to apply migrateRuleset...")
+        debug("conf file is one of json | yml | yaml. trying to apply migrateRuleset...")
 
         return migrateRuleset(configurationFile, {format: "commonjs", fs})
             .then(source => {
                 const m: { exports?: RulesetDefinition } = {}
                 const paths = [path.dirname(configurationFile), __dirname]
-                log(`paths: ${paths}`)
+                debug(`paths: ${paths}`)
 
                 const _require = (id: string): unknown => require(require.resolve(id, {paths}))
 
@@ -36,7 +36,7 @@ export async function getRulesetFromFile(configurationFile: string): Promise<Rul
                 return m.exports
             })
     } else {
-        log(`could not process configuration file.`)
+        debug(`could not process configuration file.`)
 
         return undefined
     }
