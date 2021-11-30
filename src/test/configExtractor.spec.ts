@@ -1,7 +1,7 @@
 import assert, { deepStrictEqual } from "assert";
 import { Codacyrc, Pattern, Tool } from "codacy-seed";
 
-import { extractFiles, extractPatternIdsToApply } from "../configExtractor"
+import { extractFilesFromCodacyrc, extractPatternsFromCodacyrc } from "../configExtractor"
 
 describe("configExtractor", () => {
   it("should be able to retrieve files", async () => {
@@ -9,7 +9,7 @@ describe("configExtractor", () => {
     const filename2: string = "filename2.yaml"
     const codacyrc = new Codacyrc([filename1, filename2]);
 
-    const files = await extractFiles(codacyrc)
+    const files = await extractFilesFromCodacyrc(codacyrc)
 
     const expectedFiles: string[] = [filename1, filename2]
 
@@ -25,7 +25,7 @@ describe("configExtractor", () => {
 
     const expectedPatternIds: string[] = [patternId1, patternId2]
 
-    const patternIds = await extractPatternIdsToApply(codacyrc)
+    const patternIds = await extractPatternsFromCodacyrc(codacyrc)
 
     deepStrictEqual(expectedPatternIds, patternIds)
   })
@@ -33,7 +33,7 @@ describe("configExtractor", () => {
     const tools: Tool[] = [new Tool("spectral")]
     const codacyrc = new Codacyrc([], tools);
 
-    const files = await extractFiles(codacyrc)
+    const files = await extractFilesFromCodacyrc(codacyrc)
 
     assert(!files?.length)
   })
@@ -42,14 +42,14 @@ describe("configExtractor", () => {
     const tools: Tool[] = [new Tool("spectral")]
     const codacyrc = new Codacyrc([], tools);
 
-    const patternIds = await extractPatternIdsToApply(codacyrc)
+    const patternIds = await extractPatternsFromCodacyrc(codacyrc)
 
     assert(!patternIds?.length)
   })
   it("should return empty patternIds when no tools are present", async () => {
     const codacyrc = new Codacyrc([], []);
 
-    const patternIds = await extractPatternIdsToApply(codacyrc)
+    const patternIds = await extractPatternsFromCodacyrc(codacyrc)
 
     assert(!patternIds?.length)
   })

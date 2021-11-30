@@ -1,16 +1,16 @@
-import { Codacyrc } from "codacy-seed"
+import {Codacyrc} from "codacy-seed"
 import * as glob from "glob"
 
-import { toolName } from "./toolMetadata"
+import {toolName} from "./toolMetadata"
 
-export async function extractPatternIdsToApply(
+export async function extractPatternsFromCodacyrc(
     codacyrc?: Codacyrc
 ): Promise<string[] | undefined> {
     const tool = codacyrc?.tools ? codacyrc?.tools.find((codacyTool) => codacyTool.name === toolName) : undefined
     return tool?.patterns?.map(pattern => pattern.patternId)
 }
 
-export async function extractFiles(
+export async function extractFilesFromCodacyrc(
     codacyrc?: Codacyrc
 ): Promise<string[]> {
     return codacyrc && codacyrc.files ? codacyrc.files : glob.sync("**/*.+(json|yaml|yml)")

@@ -1,0 +1,8 @@
+extends: [[spectral:oas, all]]
+rules:
+  tag-description:
+    description: my special description
+    given: $.tags[*]
+    then:
+      field: description
+      function: truthy
