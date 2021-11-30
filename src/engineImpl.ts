@@ -8,7 +8,7 @@ import {parseSpecification, readJsonFile} from "codacy-seed/dist/src/fileUtils";
 import * as fs from "fs"
 import * as path from 'path';
 
-import {extractFiles, extractPatternIdsToApply} from "./configExtractor"
+import {extractFilesFromRC, extractPatternsFromRC} from "./configExtractor"
 import {convertResults} from "./convertResults"
 import {log, logEach} from "./logging";
 import {getRulesetFromFile} from "./spectralRulesetLoader"
@@ -20,39 +20,49 @@ export const engineImpl: Engine = async function (
     const specification = await readJsonFile("/docs/patterns.json")
         .then(f => parseSpecification(f!))
 
-    const filesToProcess = await extractFiles(codacyrc)
-    const patternIdsToApply = await extractPatternIdsToApply(codacyrc) || []
+    const filesToProcess = await extractFilesFromRC(codacyrc)
+    const patternsToApply = await extractPatternsFromRC(codacyrc)
 
     log(`files to process: ${filesToProcess.length}`)
     logEach(filesToProcess, file => `  file: ${file}`)
 
-    log(`patterns to process: ${patternIdsToApply?.length}`)
-    logEach(patternIdsToApply, pattern => `  pattern: ${pattern}`)
-
-    const existsConfFile = await checkExistsConfFile()
+    log(`patterns to process: ${patternsToApply?.length}`)
+    logEach(patternsToApply, pattern => `  pattern: ${pattern}`)
 
     let spectral: Spectral
-    if (existsConfFile) {
-        log("trying to initialize spectral with given configuration...")
 
-        // try to create a spectral for the configuration.
-        // in case we fail, fallback to create a spectral with our defaults.
-
-        const maybeSpectral = await createSpectralWithConfFile(existsConfFile)
-            .catch(e => {
-                log(`some error occurred loading conf file: ${e}`)
-                return undefined
-            })
-
-        if (!maybeSpectral) {
-            log("couldn't create spectral with configuration. Falling back to spectral with defaults...")
-        }
-
-        spectral = maybeSpectral
-            ? maybeSpectral
-            : createSpectralWithDefaults(patternIdsToApply)
+    // we only try to initialize spectral with user custom configuration
+    // when no patterns are defined in the codacyrc
+    if (patternsToApply) {
+        spectral = createSpectralWithCodacyRules(patternsToApply)
     } else {
-        spectral = createSpectralWithDefaults(patternIdsToApply)
+        // looking for a user config file, which may not exist...
+        const existsConfFile = await checkExistsConfFile()
+
+        if (existsConfFile) {
+            log("trying to initialize spectral with given configuration...")
+
+            // try to create a spectral for the configuration.
+            // in case we fail, fallback to create a spectral with our defaults.
+
+            const maybeSpectral = await createSpectralWithConfFile(existsConfFile)
+                .catch(e => {
+                    log(`some error occurred loading conf file: ${e}`)
+                    return undefined
+                })
+
+            if (maybeSpectral)  {
+                spectral = maybeSpectral
+            } else {
+                log("couldn't create spectral with configuration...")
+
+                throw new Error(
+                    "A configuration file was found but an error occurred trying to load it."
+                )
+            }
+        } else {
+            spectral = createSpectralWithCodacyRules([])
+        }
     }
 
     const files = await Promise.all(
@@ -91,8 +101,8 @@ export const engineImpl: Engine = async function (
     return results
 
     // configure spectral to use our rules only.
-    function createSpectralWithDefaults(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
-        log("initializing spectral with defaults...")
+    function createSpectralWithCodacyRules(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
+        log("initializing spectral with codacy rules...")
 
         const s = new Spectral()
 
@@ -103,6 +113,8 @@ export const engineImpl: Engine = async function (
         //   rules not loaded and then explicitly turn on only the
         //   ones given in function parameters.
         if (!rulesToApply.length) {
+            log("configuring spectral to use all recommended rules...")
+
             s.setRuleset({
                 extends: [
                     [asyncapi as RulesetDefinition, 'recommended'],
@@ -110,6 +122,8 @@ export const engineImpl: Engine = async function (
                 ]
             })
         } else {
+            log("configuring spectral to use explicit rules defined in codacyrc...")
+
             s.setRuleset({
                 extends: [
                     [asyncapi as RulesetDefinition, 'off'],
@@ -123,7 +137,7 @@ export const engineImpl: Engine = async function (
         }
 
         log("rules [ENABLED]:")
-        logEach(Object.values(s.ruleset!.rules), rule => `${rule.name} - ${rule.enabled}`)
+        logEach(Object.values(s.ruleset!.rules), rule => `  ${rule.name} - ${rule.enabled}`)
 
         return s
     }
