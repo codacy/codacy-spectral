@@ -10,6 +10,7 @@ import * as path from 'path';
 
 import {extractFiles, extractPatternIdsToApply} from "./configExtractor"
 import {convertResults} from "./convertResults"
+import {log, logEach} from "./logging";
 import {getRulesetFromFile} from "./spectralRulesetLoader"
 import {supportedConfigFiles} from "./toolMetadata"
 
@@ -22,33 +23,29 @@ export const engineImpl: Engine = async function (
     const filesToProcess = await extractFiles(codacyrc)
     const patternIdsToApply = await extractPatternIdsToApply(codacyrc) || []
 
-    console.debug(`files to process: ${filesToProcess.length}`)
-    filesToProcess.forEach(file =>
-        console.debug(`  file: ${file}`)
-    )
+    log(`files to process: ${filesToProcess.length}`)
+    logEach(filesToProcess, file => `  file: ${file}`)
 
-    console.debug(`patterns to process: ${patternIdsToApply?.length}`)
-    patternIdsToApply?.forEach(patt =>
-        console.debug(`  pattern: ${patt}`)
-    )
+    log(`patterns to process: ${patternIdsToApply?.length}`)
+    logEach(patternIdsToApply, pattern => `  pattern: ${pattern}`)
 
     const existsConfFile = await checkExistsConfFile()
 
     let spectral: Spectral
     if (existsConfFile) {
-        console.debug("trying to initialize spectral with given configuration...")
+        log("trying to initialize spectral with given configuration...")
 
         // try to create a spectral for the configuration.
         // in case we fail, fallback to create a spectral with our defaults.
 
         const maybeSpectral = await createSpectralWithConfFile(existsConfFile)
             .catch(e => {
-                console.error(`some error occurred loading conf file: ${e}`)
+                log(`some error occurred loading conf file: ${e}`)
                 return undefined
             })
 
         if (!maybeSpectral) {
-            console.error("couldn't create spectral with configuration. Falling back to spectral with defaults...")
+            log("couldn't create spectral with configuration. Falling back to spectral with defaults...")
         }
 
         spectral = maybeSpectral
@@ -95,7 +92,7 @@ export const engineImpl: Engine = async function (
 
     // configure spectral to use our rules only.
     function createSpectralWithDefaults(rulesToApply: (keyof Ruleset['rules'])[]): Spectral {
-        console.debug("initializing spectral with defaults...")
+        log("initializing spectral with defaults...")
 
         const s = new Spectral()
 
@@ -125,10 +122,8 @@ export const engineImpl: Engine = async function (
             })
         }
 
-        console.info("rules [ENABLED]:")
-        Object.values(s.ruleset!.rules).forEach(rule => {
-            console.info(`${rule.name} - ${rule.enabled}`)
-        })
+        log("rules [ENABLED]:")
+        logEach(Object.values(s.ruleset!.rules), rule => `${rule.name} - ${rule.enabled}`)
 
         return s
     }
@@ -154,21 +149,22 @@ export const engineImpl: Engine = async function (
                 .stat(name).then(s => s.isFile()).catch(_ => false)
         }
 
-        console.debug(`[conf] supported files: ${supportedConfigFiles}`)
+        log(`[conf] supported files: ${supportedConfigFiles}`)
 
         // we look for the first file that exists in our array of supported files
         for (const supportedFile of supportedConfigFiles) {
-            console.debug(`[conf] looking for: ${supportedFile}`)
+            log(`[conf] looking for: ${supportedFile}`)
 
             if (await fileExists(supportedFile)) {
-                console.debug(`[conf] found the following: ${supportedFile}`)
+                log(`[conf] found the following: ${supportedFile}`)
 
                 // exposing the detected file name with its absolute path
                 return path.join(process.cwd(), supportedFile)
             }
         }
 
-        console.debug("[conf] couldn't find any of the configuration supported files")
+        log("[conf] couldn't find any of the configuration supported files")
+
         return undefined
     }
 }

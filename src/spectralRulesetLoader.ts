@@ -3,6 +3,8 @@ import {migrateRuleset} from '@stoplight/spectral-ruleset-migrator';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import {log} from "./logging";
+
 // get a ruleset from a configuration file that is yaml or json in the filesystem.
 // needed this special workaround since the tool doesn't have a proper api to just say
 // "load this conf file". It appears in a soon to be released version the api will be available.
@@ -14,18 +16,18 @@ import * as path from 'path';
 //  - on github issue: https://github.com/stoplightio/spectral/issues/1956
 export async function getRulesetFromFile(configurationFile: string): Promise<RulesetDefinition | undefined> {
     // input is expected to be an already found configuration file and the string an absolute path to it.
-    console.debug(`configuration file: ${configurationFile}`)
+    log(`configuration file: ${configurationFile}`)
 
     // the json and yaml file have a different "handling"/"conversion" than a plain js file.
     // For now we are just supporting the json and yaml versions.
     if (/(json|ya?ml)$/.test(path.extname(configurationFile))) {
-        console.debug("conf file is one of json | yml | yaml. trying to apply migrateRuleset...")
+        log("conf file is one of json | yml | yaml. trying to apply migrateRuleset...")
 
         return migrateRuleset(configurationFile, {format: "commonjs", fs})
             .then(source => {
                 const m: { exports?: RulesetDefinition } = {}
                 const paths = [path.dirname(configurationFile), __dirname]
-                console.debug(`paths: ${paths}`)
+                log(`paths: ${paths}`)
 
                 const _require = (id: string): unknown => require(require.resolve(id, {paths}))
 
@@ -34,7 +36,7 @@ export async function getRulesetFromFile(configurationFile: string): Promise<Rul
                 return m.exports
             })
     } else {
-        console.debug(`could not process configuration file.`)
+        log(`could not process configuration file.`)
 
         return undefined
     }
