@@ -48,16 +48,22 @@ export const engineImpl: Engine = async function (
             const maybeSpectral = await createSpectralWithConfFile(existsConfFile)
                 .catch(e => {
                     debug(`some error occurred loading conf file: ${e}`)
-                    return undefined
+
+                    return (e instanceof Error)
+                        ? e.message
+                        : "unknown error"
                 })
 
-            if (maybeSpectral)  {
+            if (maybeSpectral && typeof maybeSpectral != "string") {
                 spectral = maybeSpectral
             } else {
                 debug("couldn't create spectral with configuration...")
 
+                const someError = maybeSpectral
                 throw new Error(
-                    "A configuration file was found but an error occurred trying to load it."
+                    someError
+                        ? `A configuration file was found but an error occurred trying to load it:\n${someError}`
+                        : "A configuration file was found but an error occurred trying to load it."
                 )
             }
         } else {
