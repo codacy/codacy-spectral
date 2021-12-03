@@ -51,7 +51,7 @@ export const engineImpl: Engine = async function (
 
                     return (e instanceof Error)
                         ? e.message
-                        : "unknown error"
+                        : String(e)
                 })
 
             if (maybeSpectral && typeof maybeSpectral != "string") {
