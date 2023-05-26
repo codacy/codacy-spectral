@@ -2,7 +2,7 @@
 
 Every operation must have a unique `operationId`.
 
-Why? A lot of documentation systems use this as an identifier, some SDK generators convert them to a method name, all sorts of things like that.
+Why? A lot of documentation systems use this as an identifier, some SDK generators convert them to a method name, among other things.
 
 **Recommended:** Yes
 

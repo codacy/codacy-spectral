@@ -21,7 +21,7 @@ FROM node:$NODE_IMAGE_VERSION
 COPY --from=documentation /docs/ docs/
 COPY --from=builder package*.json ./
 
-RUN npm ci --production && \
+RUN npm ci --omit=dev && \
     adduser -u 2004 -D docker && \
     chown -R docker:docker /docs
 

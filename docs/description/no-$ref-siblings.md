@@ -1,6 +1,6 @@
 # no-$ref-siblings
 
-An object exposing a `$ref` property cannot be further extended with additional properties.
+Before OpenAPI v3.1, keywords next to `$ref` were ignored by most tooling, but not all. This leads to inconsistent experiences depending on what combinations of tools are used. As of v3.1 $ref siblings are allowed, so this rule will not be applied.
 
 **Recommended:** Yes
 
@@ -9,7 +9,6 @@ An object exposing a `$ref` property cannot be further extended with additional 
 ```yaml
 TheBadModel:
   $ref: "#/components/TheBadModelProperties"
-  examples: # <= This property will be ignored
-    an_example:
-      name: something
+  # This property should be ignored
+  example: May or may not show up
 ```

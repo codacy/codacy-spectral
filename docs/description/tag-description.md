@@ -5,12 +5,12 @@ Tags alone are not very descriptive. Give folks a bit more information to work w
 ```yaml
 tags:
   - name: "Aardvark"
-    description: Funny nosed pig-head racoon.
+    description: Funny-nosed pig-head raccoon.
   - name: "Badger"
     description: Angry short-legged omnivores.
 ```
 
-If your tags are business objects then you can use the term to explain them a bit. An 'Account' could be a user account, company information, bank account, potential sales lead, anything. What is clear to the folks writing the document is probably not as clear to others.
+If your tags are business objects then you can use the term to explain them a bit. An 'Account' could be a user account, company information, bank account, potential sales lead, or anything. What is clear to the folks writing the document is probably not as clear to others.
 
 ```yaml
 tags:

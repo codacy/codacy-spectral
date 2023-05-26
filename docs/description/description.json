@@ -91,6 +91,12 @@
   },
   {
     "parameters": [],
+    "patternId": "openapi-tags-uniqueness",
+    "title": "openapi-tags-uniqueness - Each tag must have a unique name.",
+    "description": "Each tag must have a unique name."
+  },
+  {
+    "parameters": [],
     "patternId": "openapi-tags",
     "title": "openapi-tags - OpenAPI object must have non-empty \"tags\" array.",
     "description": "OpenAPI object must have non-empty \"tags\" array."
@@ -172,6 +178,12 @@
     "patternId": "oas2-api-schemes",
     "title": "oas2-api-schemes - OpenAPI host \"schemes\" must be present and non-empty array.",
     "description": "OpenAPI host \"schemes\" must be present and non-empty array."
+  },
+  {
+    "parameters": [],
+    "patternId": "oas2-discriminator",
+    "title": "oas2-discriminator - discriminator property must be defined and required",
+    "description": "discriminator property must be defined and required"
   },
   {
     "parameters": [],
@@ -313,6 +325,18 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-channel-parameters",
+    "title": "asyncapi-channel-parameters - Channel parameters must be defined and there must be no redundant parameters.",
+    "description": "Channel parameters must be defined and there must be no redundant parameters."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-channel-servers",
+    "title": "asyncapi-channel-servers - Channel servers must be defined in the \"servers\" object.",
+    "description": "Channel servers must be defined in the \"servers\" object."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-headers-schema-type-object",
     "title": "asyncapi-headers-schema-type-object - Headers schema type must be \"object\".",
     "description": "Headers schema type must be \"object\"."
@@ -349,15 +373,45 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-latest-version",
+    "title": "asyncapi-latest-version - Checking if the AsyncAPI document is using the latest version.",
+    "description": "Checking if the AsyncAPI document is using the latest version."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-message-examples",
+    "title": "asyncapi-message-examples - Examples of message object should follow by \"payload\" and \"headers\" schemas.",
+    "description": "Examples of message object should follow by \"payload\" and \"headers\" schemas."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-message-messageId-uniqueness",
+    "title": "asyncapi-message-messageId-uniqueness - \"messageId\" must be unique across all the messages.",
+    "description": "\"messageId\" must be unique across all the messages."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-operation-description",
     "title": "asyncapi-operation-description - Operation \"description\" must be present and non-empty string.",
     "description": "Operation \"description\" must be present and non-empty string."
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-operation-operationId-uniqueness",
+    "title": "asyncapi-operation-operationId-uniqueness - \"operationId\" must be unique across all the operations.",
+    "description": "\"operationId\" must be unique across all the operations."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-operation-operationId",
     "title": "asyncapi-operation-operationId - Operation must have \"operationId\".",
     "description": "Operation must have \"operationId\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-operation-security",
+    "title": "asyncapi-operation-security - Operation have to reference a defined security schemes.",
+    "description": "Operation have to reference a defined security schemes."
   },
   {
     "parameters": [],
@@ -404,8 +458,14 @@
   {
     "parameters": [],
     "patternId": "asyncapi-schema",
-    "title": "asyncapi-schema - Validate structure of AsyncAPI v2.0.0 Specification.",
-    "description": "Validate structure of AsyncAPI v2.0.0 Specification."
+    "title": "asyncapi-schema - Validate structure of AsyncAPI v2 specification.",
+    "description": "Validate structure of AsyncAPI v2 specification."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-server-variables",
+    "title": "asyncapi-server-variables - Server variables must be defined and there must be no redundant variables.",
+    "description": "Server variables must be defined and there must be no redundant variables."
   },
   {
     "parameters": [],
@@ -427,6 +487,12 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-server-security",
+    "title": "asyncapi-server-security - Server have to reference a defined security schemes.",
+    "description": "Server have to reference a defined security schemes."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-servers",
     "title": "asyncapi-servers - AsyncAPI object must have non-empty \"servers\" object.",
     "description": "AsyncAPI object must have non-empty \"servers\" object."
@@ -445,6 +511,12 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-tags-uniqueness",
+    "title": "asyncapi-tags-uniqueness - Each tag must have a unique name.",
+    "description": "Each tag must have a unique name."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-tags",
     "title": "asyncapi-tags - AsyncAPI object must have non-empty \"tags\" array.",
     "description": "AsyncAPI object must have non-empty \"tags\" array."
@@ -454,5 +526,11 @@
     "patternId": "asyncapi-unused-components-schema",
     "title": "asyncapi-unused-components-schema - Potentially unused components schema has been detected.",
     "description": "Potentially unused components schema has been detected."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-unused-components-server",
+    "title": "asyncapi-unused-components-server - Potentially unused components server has been detected.",
+    "description": "Potentially unused components server has been detected."
   }
 ]

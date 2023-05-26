@@ -16,10 +16,9 @@ import { promises as fs } from "fs"
 
 import pack from "./package-lock.json"
 
-
 const docsPath = "../docs/"
 
-const spectralVersionInUse = pack.dependencies["@stoplight/spectral-rulesets"].version
+const spectralVersionInUse = pack.packages["node_modules/@stoplight/spectral-rulesets"].version
 const repositoryUrl = "https://raw.githubusercontent.com/stoplightio/spectral"
 const repoTagVersion = `%40stoplight/spectral-rulesets-v${spectralVersionInUse}`
 
