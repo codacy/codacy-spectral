@@ -2,7 +2,7 @@
 
 Info object should contain `contact` object.
 
-Hopefully your API description document is so good that nobody ever needs to contact you with questions, but that is rarely the case. The contact object has a few different options for contact details.
+Hopefully, your API description document is so good that nobody ever needs to contact you with questions, but that is rarely the case. The contact object has a few different options for contact details.
 
 **Recommended:** Yes
 
