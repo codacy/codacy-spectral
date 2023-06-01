@@ -11,7 +11,7 @@ import {
     PatternSpec,
     Specification,
     writeFile
-  } from "codacy-seed"
+} from "codacy-seed"
 import { promises as fs } from "fs"
 
 import pack from "./package-lock.json"
@@ -25,8 +25,8 @@ const repoTagVersion = `%40stoplight/spectral-rulesets-v${spectralVersionInUse}`
 const openapiHumanReadable = "docs/reference/openapi-rules.md"
 const asyncapiHumanReadable = "docs/reference/asyncapi-rules.md"
 
-const openapiRulesdocumentationUrl = repositoryUrl + "/" + repoTagVersion +  "/" + openapiHumanReadable
-const asyncapiRulesdocumentationUrl = repositoryUrl + "/" + repoTagVersion +  "/" + asyncapiHumanReadable
+const openapiRulesdocumentationUrl = repositoryUrl + "/" + repoTagVersion + "/" + openapiHumanReadable
+const asyncapiRulesdocumentationUrl = repositoryUrl + "/" + repoTagVersion + "/" + asyncapiHumanReadable
 
 
 async function createDescriptionFiles(rulesDocUrl: string): Promise<void[]> {
@@ -49,14 +49,14 @@ async function generateSpecification(ruleset: Ruleset): Promise<void> {
         return new PatternSpec(ruleId, level, category, undefined, parametersSpecs, rule[1].recommended)
     })
 
-    const specification = new Specification("spectral-rulesets", spectralVersionInUse, patternSpecs)
-    await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2))
+    const specification = new Specification("spectral", spectralVersionInUse, patternSpecs)
+    await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2) + '\n')
 }
 
 async function generatePatternsDescription(ruleset: Ruleset): Promise<void> {
     const descriptionEntries = Object.entries(ruleset.rules).map((rule) => {
         const patternId = rule[1].name
-        const description =  rule[1].description ? rule[1].description : "N/A"
+        const description = rule[1].description ? rule[1].description : "N/A"
         const title = rule[1].name + " - " + description
 
         return new DescriptionEntry(patternId, title, description as string)
@@ -83,15 +83,15 @@ function extractRulesMds(mdContent: string): Record<string, string> {
 }
 
 function extractAndSanitizeTitle(rule: string): string {
-   return rule.split('\n')[0].replace('\\', '').trim()
+    return rule.split('\n')[0].replace('\\', '').trim()
 }
 
 function sanitizeRule(rule: string): string {
     return rule.split('##')[0].replace('\\', '')
- }
+}
 
-function calculateLevel(severity: DiagnosticSeverity) : Level{
-    switch(severity){
+function calculateLevel(severity: DiagnosticSeverity): Level {
+    switch (severity) {
         case DiagnosticSeverity.Error:
             return "Error"
         case DiagnosticSeverity.Warning:
@@ -104,13 +104,13 @@ function calculateLevel(severity: DiagnosticSeverity) : Level{
 }
 
 function calculateCategory(rule: Rule): Category {
-    switch(rule.definition.type) {
+    switch (rule.definition.type) {
         case "style":
             return "CodeStyle"
         case "validation":
             return "ErrorProne"
     }
-    return "CodeStyle"  
+    return "CodeStyle"
 }
 
 async function main() {
@@ -118,14 +118,14 @@ async function main() {
 
     const rules = new Ruleset({
         extends: [oas, asyncapi]
-      });
+    });
 
     await createDescriptionFiles(openapiRulesdocumentationUrl)
     await createDescriptionFiles(asyncapiRulesdocumentationUrl)
 
     await generateSpecification(rules)
     await generatePatternsDescription(rules)
-    
+
     return rules
 }
 

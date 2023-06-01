@@ -1,5 +1,5 @@
 {
-  "name": "spectral-rulesets",
+  "name": "spectral",
   "version": "1.16.0",
   "patterns": [
     {
