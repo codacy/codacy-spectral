@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@stoplight/spectral-core": "^1.18.3",
-    "@stoplight/spectral-rulesets": "^1.16.0",
+    "@stoplight/spectral-rulesets": "^1.18.0",
     "@stoplight/types": "^13.20.0",
     "@types/fs-extra": "^11.0.1",
     "@types/marked": "^5.0.1",

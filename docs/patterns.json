@@ -1,6 +1,6 @@
 {
   "name": "spectral",
-  "version": "1.16.0",
+  "version": "1.18.0",
   "patterns": [
     {
       "patternId": "operation-success-response",
@@ -355,6 +355,13 @@
     {
       "patternId": "oas3-unused-component",
       "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3-server-variables",
+      "level": "Error",
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
