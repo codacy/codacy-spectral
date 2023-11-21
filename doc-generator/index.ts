@@ -20,7 +20,7 @@ const docsPath = "../docs/"
 
 const spectralVersionInUse = pack.packages["node_modules/@stoplight/spectral-rulesets"].version
 const repositoryUrl = "https://raw.githubusercontent.com/stoplightio/spectral"
-const repoTagVersion = `%40stoplight/spectral-rulesets-v${spectralVersionInUse}`
+const repoTagVersion = `%40stoplight/spectral-rulesets-${spectralVersionInUse}`
 
 const openapiHumanReadable = "docs/reference/openapi-rules.md"
 const asyncapiHumanReadable = "docs/reference/asyncapi-rules.md"

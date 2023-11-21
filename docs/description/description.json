@@ -307,6 +307,12 @@
   },
   {
     "parameters": [],
+    "patternId": "oas3-server-variables",
+    "title": "oas3-server-variables - Server variables must be defined and valid and there must be no unused variables.",
+    "description": "Server variables must be defined and valid and there must be no unused variables."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-channel-no-empty-parameter",
     "title": "asyncapi-channel-no-empty-parameter - Channel path must not have empty parameter substitution pattern.",
     "description": "Channel path must not have empty parameter substitution pattern."
