@@ -37,19 +37,19 @@
   },
   "dependencies": {
     "@stoplight/spectral-core": "^1.18.3",
-    "@stoplight/spectral-rulesets": "^1.18.0",
+    "@stoplight/spectral-rulesets": "^1.18.1",
     "@stoplight/types": "^13.20.0",
-    "@types/fs-extra": "^11.0.1",
-    "@types/marked": "^5.0.1",
-    "@types/node": "^18.16.14",
-    "axios": "^1.6.0",
-    "codacy-seed": "^2.2.0",
-    "eslint": "^8.49.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^20.11.24",
+    "axios": "^1.6.7",
+    "codacy-seed": "^2.2.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-unused-imports": "^3.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
