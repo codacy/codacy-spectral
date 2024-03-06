@@ -1,6 +1,10 @@
 {
   "name": "codacy-spectral-doc-generator",
   "description": "Documentation generator for Codacy's spectral",
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es5"
+  },
   "keywords": [
     "codacy",
     "spectral",
