@@ -1,6 +1,7 @@
 {
   "name": "codacy-spectral",
   "description": "Spectral Tool for Codacy",
+  "type":"module",
   "keywords": [
     "codacy",
     "spectral",
