@@ -1,5 +1,5 @@
 # asyncapi-schema
 
-Validate structure of AsyncAPI v2 specification.
+Validate structure of AsyncAPI specification.
 
 **Recommended:** Yes

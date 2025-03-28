@@ -19,5 +19,3 @@ tags:
   - name: "Aardvark"
   - name: "Badger"
 ```
-
-**Recommended:** No

@@ -6,7 +6,7 @@ It can be hard to pick a license, so if you don't have a lawyer around you can u
 
 How useful this is in court is not entirely known, but having a license is better than not having a license.
 
-**Recommended:** Yes
+**Recommended:** No
 
 **Good Example**
 

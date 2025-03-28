@@ -7,6 +7,7 @@ Server `security` values must match a scheme defined in the `components.security
 **Good Example**
 
 ```yaml
+asyncapi: 2.0.0
 servers:
   production:
     url: test.mosquitto.org
@@ -20,6 +21,7 @@ components:
 **Bad Example**
 
 ```yaml
+asyncapi: 2.0.0
 servers:
   production:
     url: test.mosquitto.org

@@ -163,6 +163,12 @@
   },
   {
     "parameters": [],
+    "patternId": "array-items",
+    "title": "array-items - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
     "patternId": "typed-enum",
     "title": "typed-enum - Enum values must respect the specified type.",
     "description": "Enum values must respect the specified type."
@@ -313,9 +319,33 @@
   },
   {
     "parameters": [],
+    "patternId": "oas3-callbacks-in-callbacks",
+    "title": "oas3-callbacks-in-callbacks - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3_1-servers-in-webhook",
+    "title": "oas3_1-servers-in-webhook - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
+    "patternId": "oas3_1-callbacks-in-webhook",
+    "title": "oas3_1-callbacks-in-webhook - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-channel-no-empty-parameter",
     "title": "asyncapi-channel-no-empty-parameter - Channel path must not have empty parameter substitution pattern.",
     "description": "Channel path must not have empty parameter substitution pattern."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-channel-no-empty-parameter",
+    "title": "asyncapi-3-channel-no-empty-parameter - Channel address must not have empty parameter substitution pattern.",
+    "description": "Channel address must not have empty parameter substitution pattern."
   },
   {
     "parameters": [],
@@ -325,9 +355,21 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-channel-no-query-nor-fragment",
+    "title": "asyncapi-3-channel-no-query-nor-fragment - Channel address must not include query (\"?\") or fragment (\"#\") delimiter.",
+    "description": "Channel address must not include query (\"?\") or fragment (\"#\") delimiter."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-channel-no-trailing-slash",
     "title": "asyncapi-channel-no-trailing-slash - Channel path must not end with slash.",
     "description": "Channel path must not end with slash."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-channel-no-trailing-slash",
+    "title": "asyncapi-3-channel-no-trailing-slash - Channel address must not end with slash.",
+    "description": "Channel address must not end with slash."
   },
   {
     "parameters": [],
@@ -343,8 +385,20 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-channel-servers",
+    "title": "asyncapi-3-channel-servers - Channel servers must be defined in the \"servers\" object.",
+    "description": "Channel servers must be defined in the \"servers\" object."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-headers-schema-type-object",
     "title": "asyncapi-headers-schema-type-object - Headers schema type must be \"object\".",
+    "description": "Headers schema type must be \"object\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-headers-schema-type-object",
+    "title": "asyncapi-3-headers-schema-type-object - Headers schema type must be \"object\".",
     "description": "Headers schema type must be \"object\"."
   },
   {
@@ -403,6 +457,12 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-operation-description",
+    "title": "asyncapi-3-operation-description - Operation \"description\" must be present and non-empty string.",
+    "description": "Operation \"description\" must be present and non-empty string."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-operation-operationId-uniqueness",
     "title": "asyncapi-operation-operationId-uniqueness - \"operationId\" must be unique across all the operations.",
     "description": "\"operationId\" must be unique across all the operations."
@@ -417,6 +477,12 @@
     "parameters": [],
     "patternId": "asyncapi-operation-security",
     "title": "asyncapi-operation-security - Operation have to reference a defined security schemes.",
+    "description": "Operation have to reference a defined security schemes."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-operation-security",
+    "title": "asyncapi-3-operation-security - Operation have to reference a defined security schemes.",
     "description": "Operation have to reference a defined security schemes."
   },
   {
@@ -445,6 +511,12 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-payload-unsupported-schemaFormat",
+    "title": "asyncapi-3-payload-unsupported-schemaFormat - Message schema validation is only supported with default unspecified \"schemaFormat\".",
+    "description": "Message schema validation is only supported with default unspecified \"schemaFormat\"."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-payload",
     "title": "asyncapi-payload - Payloads must be valid against AsyncAPI Schema object.",
     "description": "Payloads must be valid against AsyncAPI Schema object."
@@ -464,8 +536,8 @@
   {
     "parameters": [],
     "patternId": "asyncapi-schema",
-    "title": "asyncapi-schema - Validate structure of AsyncAPI v2 specification.",
-    "description": "Validate structure of AsyncAPI v2 specification."
+    "title": "asyncapi-schema - Validate structure of AsyncAPI specification.",
+    "description": "Validate structure of AsyncAPI specification."
   },
   {
     "parameters": [],
@@ -481,15 +553,33 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-server-no-empty-variable",
+    "title": "asyncapi-3-server-no-empty-variable - Server host and pathname must not have empty variable substitution pattern.",
+    "description": "Server host and pathname must not have empty variable substitution pattern."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-server-no-trailing-slash",
     "title": "asyncapi-server-no-trailing-slash - Server URL must not end with slash.",
     "description": "Server URL must not end with slash."
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-server-no-trailing-slash",
+    "title": "asyncapi-3-server-no-trailing-slash - Server host must not end with slash.",
+    "description": "Server host must not end with slash."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-server-not-example-com",
     "title": "asyncapi-server-not-example-com - Server URL must not point at example.com.",
     "description": "Server URL must not point at example.com."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-server-not-example-com",
+    "title": "asyncapi-3-server-not-example-com - Server host must not point at example.com.",
+    "description": "Server host must not point at example.com."
   },
   {
     "parameters": [],
@@ -511,8 +601,20 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-tag-description",
+    "title": "asyncapi-3-tag-description - Tag object must have \"description\".",
+    "description": "Tag object must have \"description\"."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-tags-alphabetical",
     "title": "asyncapi-tags-alphabetical - AsyncAPI object must have alphabetical \"tags\".",
+    "description": "AsyncAPI object must have alphabetical \"tags\"."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-tags-alphabetical",
+    "title": "asyncapi-3-tags-alphabetical - AsyncAPI object must have alphabetical \"tags\".",
     "description": "AsyncAPI object must have alphabetical \"tags\"."
   },
   {
@@ -523,9 +625,21 @@
   },
   {
     "parameters": [],
+    "patternId": "asyncapi-3-tags-uniqueness",
+    "title": "asyncapi-3-tags-uniqueness - Each tag must have a unique name.",
+    "description": "Each tag must have a unique name."
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-tags",
     "title": "asyncapi-tags - AsyncAPI object must have non-empty \"tags\" array.",
     "description": "AsyncAPI object must have non-empty \"tags\" array."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-tags",
+    "title": "asyncapi-3-tags - AsyncAPI document must have non-empty \"tags\" array.",
+    "description": "AsyncAPI document must have non-empty \"tags\" array."
   },
   {
     "parameters": [],
@@ -538,5 +652,17 @@
     "patternId": "asyncapi-unused-components-server",
     "title": "asyncapi-unused-components-server - Potentially unused components server has been detected.",
     "description": "Potentially unused components server has been detected."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-document-resolved",
+    "title": "asyncapi-3-document-resolved - Checking if the AsyncAPI v3 document has valid structure after resolving references.",
+    "description": "Checking if the AsyncAPI v3 document has valid structure after resolving references."
+  },
+  {
+    "parameters": [],
+    "patternId": "asyncapi-3-document-unresolved",
+    "title": "asyncapi-3-document-unresolved - Checking if the AsyncAPI v3 document has valid structure before resolving references.",
+    "description": "Checking if the AsyncAPI v3 document has valid structure before resolving references."
   }
 ]
