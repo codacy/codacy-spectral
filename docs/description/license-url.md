@@ -2,7 +2,7 @@
 
 Mentioning a license is only useful if people know what the license means, so add a link to the full text for those who need it.
 
-**Recommended:** Yes
+**Recommended:** No
 
 **Good Example**
 
