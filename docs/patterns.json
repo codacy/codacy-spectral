@@ -1,894 +1,783 @@
 {
   "name": "spectral",
-  "version": "1.21.4",
+  "version": "1.22.0",
   "patterns": [
     {
       "patternId": "operation-success-response",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-operation-formData-consume-check",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "operation-operationId-unique",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "operation-parameters",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "operation-tag-defined",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "path-params",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "contact-properties",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "duplicated-entry-in-enum",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "info-contact",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "info-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "info-license",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "license-url",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "no-eval-in-markdown",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "no-script-tags-in-markdown",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "openapi-tags-alphabetical",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "openapi-tags-uniqueness",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "openapi-tags",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "operation-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "operation-operationId",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "operation-operationId-valid-in-url",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "operation-singular-tag",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "operation-tags",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "path-declarations-must-exist",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "path-keys-no-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "path-not-include-query",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "tag-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "no-$ref-siblings",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "array-items",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "typed-enum",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-api-host",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-api-schemes",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-discriminator",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-host-not-example",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "oas2-host-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-parameter-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "oas2-operation-security-defined",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-valid-schema-example",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-valid-media-example",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-anyOf",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-oneOf",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-schema",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas2-unused-definition",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-api-servers",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-examples-value-or-externalValue",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-operation-security-defined",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-parameter-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "oas3-server-not-example.com",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "oas3-server-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-valid-media-example",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-valid-schema-example",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-schema",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-unused-component",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-server-variables",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3-callbacks-in-callbacks",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3_1-servers-in-webhook",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "oas3_1-callbacks-in-webhook",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-channel-no-empty-parameter",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-channel-no-empty-parameter",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-channel-no-query-nor-fragment",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-channel-no-query-nor-fragment",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-channel-no-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-channel-no-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-channel-parameters",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-channel-servers",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-channel-servers",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-headers-schema-type-object",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-headers-schema-type-object",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-info-contact-properties",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-info-contact",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-info-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-info-license-url",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-info-license",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-latest-version",
       "level": "Info",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-message-examples",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-message-messageId-uniqueness",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-operation-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-operation-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-operation-operationId-uniqueness",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-operation-operationId",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-operation-security",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-operation-security",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-parameter-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-payload-default",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-payload-examples",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-payload-unsupported-schemaFormat",
       "level": "Info",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-payload-unsupported-schemaFormat",
       "level": "Info",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-payload",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-schema-default",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-schema-examples",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-schema",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-server-variables",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-server-no-empty-variable",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-server-no-empty-variable",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-server-no-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-server-no-trailing-slash",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-server-not-example-com",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-3-server-not-example-com",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-server-security",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-servers",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-tag-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-3-tag-description",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-tags-alphabetical",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-3-tags-alphabetical",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": false,
+      "parameters": [],
       "enabled": false
     },
     {
       "patternId": "asyncapi-tags-uniqueness",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-tags-uniqueness",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-tags",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-tags",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-unused-components-schema",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-unused-components-server",
       "level": "Warning",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-document-resolved",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     },
     {
       "patternId": "asyncapi-3-document-unresolved",
       "level": "Error",
       "category": "CodeStyle",
-      "scanType": [],
-      "parameters": true,
-      "enabled": false
+      "parameters": [],
+      "enabled": true
     }
   ]
 }
