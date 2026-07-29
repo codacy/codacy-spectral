@@ -1,6 +1,6 @@
 {
   "name": "spectral",
-  "version": "1.22.0",
+  "version": "1.22.6",
   "patterns": [
     {
       "patternId": "operation-success-response",

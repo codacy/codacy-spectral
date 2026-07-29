@@ -1,4 +1,4 @@
-ARG NODE_IMAGE_VERSION=24-alpine3.22
+ARG NODE_IMAGE_VERSION=24-alpine3.24
 
 
 FROM node:$NODE_IMAGE_VERSION as documentation
