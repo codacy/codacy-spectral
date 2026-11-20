@@ -4,6 +4,8 @@
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Bad Example**
 
 ```yaml

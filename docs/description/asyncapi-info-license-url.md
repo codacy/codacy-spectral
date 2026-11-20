@@ -4,6 +4,8 @@ Mentioning a license is only useful if people know what the license means, so ad
 
 **Recommended:** No
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

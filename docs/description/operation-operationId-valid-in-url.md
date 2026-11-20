@@ -4,6 +4,8 @@ Seeing as operationId is often used for unique URLs in documentation systems, it
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

@@ -8,6 +8,8 @@ How useful this is in court is not entirely known, but having a license is bette
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

@@ -4,6 +4,8 @@ Tags must not have duplicate names (identifiers).
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Bad Example**
 
 ```yaml

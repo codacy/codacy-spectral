@@ -6,6 +6,8 @@ Examples can contain Markdown so you can really go to town with them, implementi
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

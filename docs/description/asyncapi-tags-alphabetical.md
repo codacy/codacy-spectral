@@ -4,6 +4,8 @@ AsyncAPI object should have alphabetical `tags`. This will be sorted by the `nam
 
 **Recommended:** No
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

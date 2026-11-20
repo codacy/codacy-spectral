@@ -3,3 +3,5 @@
 The schema definition of the application headers must be of type “object”.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** error

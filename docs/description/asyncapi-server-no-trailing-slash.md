@@ -6,6 +6,8 @@ Some tooling forgets to strip trailing slashes off when it's joining the `server
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

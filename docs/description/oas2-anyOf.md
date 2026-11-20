@@ -3,3 +3,5 @@
 OpenAPI v3 keyword `anyOf` detected in OpenAPI v2 document.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** warn

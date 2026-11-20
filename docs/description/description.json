@@ -337,6 +337,12 @@
   },
   {
     "parameters": [],
+    "patternId": "oas3_2-no-deprecated-xml-attribute",
+    "title": "oas3_2-no-deprecated-xml-attribute - N/A",
+    "description": "N/A"
+  },
+  {
+    "parameters": [],
     "patternId": "asyncapi-channel-no-empty-parameter",
     "title": "asyncapi-channel-no-empty-parameter - Channel path must not have empty parameter substitution pattern.",
     "description": "Channel path must not have empty parameter substitution pattern."

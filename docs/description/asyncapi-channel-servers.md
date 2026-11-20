@@ -39,3 +39,5 @@ channels:
 ```
 
 **Recommended:** Yes
+
+**Default severity when enabled:** error

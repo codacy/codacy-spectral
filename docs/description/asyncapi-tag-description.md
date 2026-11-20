@@ -17,6 +17,9 @@ tags:
   - name: Invoice Items
     description: |+
       Giant long explanation about what this business concept is, because other people _might_ not have a clue!
+
 ```
 
 **Recommended:** No
+
+**Default severity when enabled:** warn

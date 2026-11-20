@@ -3,3 +3,5 @@
 Checking if the AsyncAPI document is using the latest version.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** info

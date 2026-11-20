@@ -4,6 +4,8 @@ Examples for `requestBody` or response examples can have an `externalValue` or a
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

@@ -4,6 +4,8 @@ Schemas with `type: array`, require a sibling `items` field.
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Good Example**
 
 ```yaml

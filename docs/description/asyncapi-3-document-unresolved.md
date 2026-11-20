@@ -3,3 +3,5 @@
 Validate structure of AsyncAPI specification before references have been resolved.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** error

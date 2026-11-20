@@ -1,5 +1,4 @@
 import {Document, Ruleset, RulesetDefinition, Spectral} from "@stoplight/spectral-core"
-import {FileRuleDefinition} from "@stoplight/spectral-core/dist/ruleset/types"
 import {Json, Yaml} from "@stoplight/spectral-parsers"
 import {asyncapi, oas} from "@stoplight/spectral-rulesets"
 import {Codacyrc, Engine, ToolResult} from "codacy-seed"
@@ -135,7 +134,7 @@ export const engineImpl: Engine = async function (
                     [asyncapi as RulesetDefinition, 'off'],
                     [oas as RulesetDefinition, 'off'],
                 ],
-                rules: rulesToApply.reduce((obj: Record<string, Readonly<FileRuleDefinition>>, name: string) => {
+                rules: rulesToApply.reduce((obj: Record<string, boolean>, name: string) => {
                     obj[name] = true
                     return obj
                 }, {}),

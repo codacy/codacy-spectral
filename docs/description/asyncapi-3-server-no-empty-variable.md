@@ -3,3 +3,5 @@
 Server host and pathname variable declarations cannot be empty, ex.`gigantic-server.com{}` is invalid.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** warn

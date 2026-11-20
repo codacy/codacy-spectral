@@ -42,3 +42,5 @@ components:
 ```
 
 **Recommended:** Yes
+
+**Default severity when enabled:** error

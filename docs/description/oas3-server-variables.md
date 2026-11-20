@@ -1,8 +1,10 @@
 # oas3-server-variables
 
-This rule ensures that server variables defined in OpenAPI Specification 3 (OAS3) and 3.1 are valid, not unused, and result in a valid URL. Properly defining and using server variables is crucial for the accurate representation of API endpoints and preventing potential misconfigurations or security issues.
+This rule ensures that server variables defined in OpenAPI Specification 3 (OAS3), 3.1, and 3.2 are valid, not unused, and result in a valid URL. Properly defining and using server variables is crucial for the accurate representation of API endpoints and preventing potential misconfigurations or security issues.
 
-**Recommended**: Yes
+**Recommended:** Yes
+
+**Default severity when enabled:** error
 
 **Bad Examples**
 
