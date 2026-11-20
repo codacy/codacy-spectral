@@ -116,8 +116,8 @@
   {
     "parameters": [],
     "patternId": "operation-operationId-valid-in-url",
-    "title": "operation-operationId-valid-in-url - N/A",
-    "description": "N/A"
+    "title": "operation-operationId-valid-in-url - Seeing as operationId is often used for unique URLs in documentation systems, it's a good idea to avoid non-URL-safe characters.",
+    "description": "Seeing as operationId is often used for unique URLs in documentation systems, it's a good idea to avoid non-URL-safe characters."
   },
   {
     "parameters": [],
@@ -134,14 +134,14 @@
   {
     "parameters": [],
     "patternId": "path-declarations-must-exist",
-    "title": "path-declarations-must-exist - N/A",
-    "description": "N/A"
+    "title": "path-declarations-must-exist - Path parameter declarations cannot be empty, ex.`/given/{}` is invalid.",
+    "description": "Path parameter declarations cannot be empty, ex.`/given/{}` is invalid."
   },
   {
     "parameters": [],
     "patternId": "path-keys-no-trailing-slash",
-    "title": "path-keys-no-trailing-slash - N/A",
-    "description": "N/A"
+    "title": "path-keys-no-trailing-slash - Keep trailing slashes off of paths, as it can cause some confusion. Some web tooling (like mock servers, real servers, code generators, application frameworks, etc.) will treat `example.com/foo` and `example.com/foo/` as the same thing, but other tooling will not. Avoid any confusion by just documenting them without the slash, and maybe some tooling will let people shove a / on there when they're using it, or maybe not, but at least the docs are suggesting how it should be done properly.",
+    "description": "Keep trailing slashes off of paths, as it can cause some confusion. Some web tooling (like mock servers, real servers, code generators, application frameworks, etc.) will treat `example.com/foo` and `example.com/foo/` as the same thing, but other tooling will not. Avoid any confusion by just documenting them without the slash, and maybe some tooling will let people shove a / on there when they're using it, or maybe not, but at least the docs are suggesting how it should be done properly."
   },
   {
     "parameters": [],
@@ -164,8 +164,8 @@
   {
     "parameters": [],
     "patternId": "array-items",
-    "title": "array-items - N/A",
-    "description": "N/A"
+    "title": "array-items - Schemas with `type: array`, require a sibling `items` field.",
+    "description": "Schemas with `type: array`, require a sibling `items` field."
   },
   {
     "parameters": [],
@@ -308,8 +308,8 @@
   {
     "parameters": [],
     "patternId": "oas3-unused-component",
-    "title": "oas3-unused-component - N/A",
-    "description": "N/A"
+    "title": "oas3-unused-component - Potential unused reusable `components` entry has been detected.",
+    "description": "Potential unused reusable `components` entry has been detected."
   },
   {
     "parameters": [],
@@ -320,26 +320,26 @@
   {
     "parameters": [],
     "patternId": "oas3-callbacks-in-callbacks",
-    "title": "oas3-callbacks-in-callbacks - N/A",
-    "description": "N/A"
+    "title": "oas3-callbacks-in-callbacks - A callback should not be defined within another callback.",
+    "description": "A callback should not be defined within another callback."
   },
   {
     "parameters": [],
     "patternId": "oas3_1-servers-in-webhook",
-    "title": "oas3_1-servers-in-webhook - N/A",
-    "description": "N/A"
+    "title": "oas3_1-servers-in-webhook - Servers should not be defined in a webhook. Applies to OpenAPI v3.1 and v3.2.",
+    "description": "Servers should not be defined in a webhook. Applies to OpenAPI v3.1 and v3.2."
   },
   {
     "parameters": [],
     "patternId": "oas3_1-callbacks-in-webhook",
-    "title": "oas3_1-callbacks-in-webhook - N/A",
-    "description": "N/A"
+    "title": "oas3_1-callbacks-in-webhook - Callbacks should not be defined in a webhook. Applies to OpenAPI v3.1 and v3.2.",
+    "description": "Callbacks should not be defined in a webhook. Applies to OpenAPI v3.1 and v3.2."
   },
   {
     "parameters": [],
     "patternId": "oas3_2-no-deprecated-xml-attribute",
-    "title": "oas3_2-no-deprecated-xml-attribute - N/A",
-    "description": "N/A"
+    "title": "oas3_2-no-deprecated-xml-attribute - The `xml.attribute` field is deprecated in OpenAPI v3.2. Use `xml.nodeType: attribute` instead.",
+    "description": "The `xml.attribute` field is deprecated in OpenAPI v3.2. Use `xml.nodeType: attribute` instead."
   },
   {
     "parameters": [],

@@ -1,4 +1,4 @@
-# oas3_callbacks_in_callbacks
+# oas3-callbacks-in-callbacks
 
 A callback should not be defined within another callback.
 
