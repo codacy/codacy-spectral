@@ -78,6 +78,17 @@ async function generateSpecification(ruleset: Ruleset): Promise<void> {
     await writeFile(docsPath + "patterns.json", JSON.stringify(specification, null, 2) + '\n')
 }
 
+// pattern titles cannot be bigger than 255 characters
+const maxTitleLength = 255
+
+// cut at the last word boundary that fits
+function truncate(text: string, max: number): string {
+    if (text.length <= max) return text
+    const cut = text.slice(0, max - 1)
+    const lastSpace = cut.lastIndexOf(" ")
+    return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).replace(/[\s,.;:-]+$/, "") + "…"
+}
+
 // first prose paragraph of the rule's markdown doc, used when Spectral defines no description
 async function descriptionFromMarkdown(patternId: string): Promise<string | undefined> {
     const content = await fs.readFile(docsPath + "description/" + patternId + ".md", "utf8").catch(() => undefined)
@@ -95,7 +106,7 @@ async function generatePatternsDescription(ruleset: Ruleset): Promise<void> {
     const descriptionEntries = await Promise.all(Object.entries(ruleset.rules).map(async (rule) => {
         const patternId = rule[1].name
         const description = rule[1].description || await descriptionFromMarkdown(patternId) || rule[1].message || "N/A"
-        const title = rule[1].name + " - " + description
+        const title = truncate(rule[1].name + " - " + description, maxTitleLength)
 
         return new DescriptionEntry(patternId, title, description)
     }))
