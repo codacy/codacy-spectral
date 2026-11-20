@@ -6,6 +6,8 @@ Hopefully, your API description document is so good that nobody ever needs to co
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

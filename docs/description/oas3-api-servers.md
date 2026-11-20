@@ -4,6 +4,8 @@ OpenAPI `servers` must be present and non-empty array.
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 Share links to any servers that people might care about. If this is going to be given to internal people then usually that is localhost (so they know the right port number), staging, and production.
 
 ```yaml

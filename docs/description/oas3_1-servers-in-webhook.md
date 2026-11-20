@@ -1,8 +1,10 @@
 # oas3_1-servers-in-webhook
 
-Servers should not be defined in a webhook.
+Servers should not be defined in a webhook. Applies to OpenAPI v3.1 and v3.2.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** warn
 
 **Bad Example**
 

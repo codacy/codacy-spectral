@@ -4,6 +4,8 @@ Operation must have at least one `2xx` or `3xx` response. Any API operation (end
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

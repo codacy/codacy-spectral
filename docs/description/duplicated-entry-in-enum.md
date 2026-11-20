@@ -4,6 +4,8 @@ Each value of an `enum` must be different from one another.
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

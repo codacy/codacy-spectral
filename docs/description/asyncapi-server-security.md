@@ -4,6 +4,8 @@ Server `security` values must match a scheme defined in the `components.security
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Good Example**
 
 ```yaml

@@ -4,6 +4,8 @@ Examples must be valid against their defined schema. This rule is applied to Med
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 For example, if you have a Pet object with an `id` property as type `integer`, and `name` and `petType` properties as type `string`, the examples properties type should match the schema:
 
 ```yaml

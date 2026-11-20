@@ -4,6 +4,8 @@ This rule protects against an edge case, for anyone bringing in description docu
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

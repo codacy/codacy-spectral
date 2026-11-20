@@ -6,6 +6,8 @@ Why? A lot of documentation systems use this as an identifier, some SDK generato
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Bad Example**
 
 ```yaml

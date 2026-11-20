@@ -4,6 +4,8 @@ Before OpenAPI v3.1, keywords next to `$ref` were ignored by most tooling, but n
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Bad Example**
 
 ```yaml

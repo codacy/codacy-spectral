@@ -3,3 +3,5 @@
 Parameter objects should have a `description`.
 
 **Recommended:** No
+
+**Default severity when enabled:** warn

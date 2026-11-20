@@ -4,6 +4,8 @@ Examples must be valid against their defined schema. This rule is applied to Sch
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Good Example**
 
 ```yaml

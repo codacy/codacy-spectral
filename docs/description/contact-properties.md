@@ -6,6 +6,8 @@ Putting in the name of the developer/team/department/company responsible for the
 
 **Recommended:** No
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

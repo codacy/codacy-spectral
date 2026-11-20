@@ -7,3 +7,5 @@ Operation parameters are unique and non-repeating.
 3. Operation must have only one `in: body` parameter. (OpenAPI v2.0)
 
 **Recommended:** Yes
+
+**Default severity when enabled:** warn

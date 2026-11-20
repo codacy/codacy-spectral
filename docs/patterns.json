@@ -1,6 +1,6 @@
 {
   "name": "spectral",
-  "version": "1.22.6",
+  "version": "1.23.1",
   "patterns": [
     {
       "patternId": "operation-success-response",
@@ -389,6 +389,13 @@
     },
     {
       "patternId": "oas3_1-callbacks-in-webhook",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "oas3_2-no-deprecated-xml-attribute",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [],

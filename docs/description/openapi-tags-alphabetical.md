@@ -4,6 +4,8 @@ OpenAPI object should have alphabetical `tags`. This will be sorted by the `name
 
 **Recommended:** No
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

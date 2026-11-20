@@ -4,6 +4,8 @@ Server URL should not point to example.com.
 
 **Recommended:** No
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

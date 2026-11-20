@@ -4,6 +4,8 @@ Enum values should respect the `type` specifier.
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml

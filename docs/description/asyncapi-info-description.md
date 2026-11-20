@@ -6,6 +6,8 @@ Examples can contain Markdown so you can really go to town with them, implementi
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Good Example**
 
 ```yaml
@@ -15,4 +17,5 @@ info:
   title: Descriptive API
   description: >+
     Some description about the general point of this API, and why it exists when another similar but different API also exists.
+
 ```

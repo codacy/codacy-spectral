@@ -4,6 +4,8 @@ This rule protects against a potential hack, for anyone bringing in description 
 
 **Recommended:** Yes
 
+**Default severity when enabled:** warn
+
 **Bad Example**
 
 ```yaml

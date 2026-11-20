@@ -4,6 +4,8 @@ OpenAPI object must not have duplicated tag names (identifiers).
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Bad Example**
 
 ```yaml

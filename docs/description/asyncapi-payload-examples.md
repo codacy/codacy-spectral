@@ -4,6 +4,8 @@ Values of the `examples` array should be valid against the `payload` they decora
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Good Example**
 
 ```yaml

@@ -4,3 +4,5 @@ Operation `security` values must match a scheme defined in the `securityDefiniti
 Ignores empty `security` values for cases where authentication is explicitly not required or optional.
 
 **Recommended:** Yes
+
+**Default severity when enabled:** warn

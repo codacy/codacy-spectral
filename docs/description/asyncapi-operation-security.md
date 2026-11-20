@@ -4,6 +4,8 @@ Operation `security` values must match a scheme defined in the `components.secur
 
 **Recommended:** Yes
 
+**Default severity when enabled:** error
+
 **Good Example**
 
 ```yaml
